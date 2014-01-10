@@ -1,6 +1,6 @@
 #, name, email, github, twitter, hip chat 
 0, 
-1, 
+1, Andrew Haydock, ahaydock@gmail.com, ahaydock, N/A, Andrew
 2, 
 3, 
 4, 
