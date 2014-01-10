@@ -83,9 +83,12 @@ describe "The Rspec ruby gem" do
       "doga".should_not eq "tuncay"
     end
   	
-  	it "should check basic math"
+  	it "should check basic math" do
+      1.should_not eq "tuncay"
 
-  	it "should check basic spelling"
+
+  	it "should check basic spelling" do
+      (2*2).should_not 3
 
   end
 
