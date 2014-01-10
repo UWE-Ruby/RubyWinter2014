@@ -1,7 +1,7 @@
 #, name, email, github, twitter, hip chat 
 0, 
 1, 
-2, 
+2, Armie, armiemargaretlee@yahoo.com, aml888, lilac888, Armie
 3, 
 4, 
 5, 
