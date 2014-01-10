@@ -1,8 +1,8 @@
 ﻿#, name, email, github, twitter, hip chat 
-0, Brandon, lafaveb@gmail.com, none, @BrandonLaFave
+0, 
 1, 
 2, 
-3, 
+3, Brandon, lafaveb@gmail.com, none, @BrandonLaFave
 4, 
 5, 
 6, 
