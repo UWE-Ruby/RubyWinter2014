@@ -1,5 +1,5 @@
 #, name, email, github, twitter, hip chat 
-0, 
+0, Renée, renee@nird.us, reneedv, @nirdllc, Renee
 1, 
 2, 
 3, 
