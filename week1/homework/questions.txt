@@ -4,15 +4,15 @@ p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
 
-An object is an instance of a class.
+An object is an instance of a class that is represented in memory.
 
 2. What is a variable?
 
-Variables holds a reference to an object or data
+Variables holds a reference to an object or data. There are different types of variables with different scopes. 
 
 3. What is the difference between an object and a class?
 
-A class is the code or container that has properties ( methods / variable ) that can be used to create an instance of an object. A object is an instance of that class. That class can be used to create many objects.
+A class is the code or container that has properties ( methods / variable ) that can be used to create an instance of an object. A object is an instance of that class. 
 
 4. What is a String?
 
@@ -20,4 +20,27 @@ A string are a sequence of characters, for example "Testing", "This is a string.
 
 5. What are three messages that I can send to a string object? Hint: think methods
 
+str.capitalize 
+	This will capitalize a string
+
+str.downcase
+	returns a copy of the string where every uppercase character in the string is a lowercase 
+
+str.hash
+	returns a hash of the string
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+
+Good lord, I've never seen so many ways to define a string literal in a language before. What is the best practice here?
+
+I'll the ones I find most interesting:
+
+%q and %Q can be used to create string literals, and the difference between them is the degree of substitution performed. 
+
+%q is the equivalent to a single-quoted delimited string, and a substitution is performed by using a single "\".
+
+%q!This is a test string string!
+
+%Q is the equivalent to a double-quote delimited string, and quoting the book supports a "boatload" more escape sequences. They reference the most common one, the new line sequence "\n"
+
+%Q!Yada yada double quoted string!
