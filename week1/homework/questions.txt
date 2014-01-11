@@ -4,11 +4,19 @@ p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
 
+An object is an instance of a class.
+
 2. What is a variable?
+
+Variables holds a reference to an object or data
 
 3. What is the difference between an object and a class?
 
+A class is the code or container that has properties ( methods / variable ) that can be used to create an instance of an object. A object is an instance of that class. That class can be used to create many objects.
+
 4. What is a String?
+
+A string are a sequence of characters, for example "Testing", "This is a string.", and even "324234". 
 
 5. What are three messages that I can send to a string object? Hint: think methods
 
