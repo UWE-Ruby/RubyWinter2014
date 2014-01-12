@@ -18,12 +18,12 @@ describe String do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
 
-		it "should be able to count the charaters" do
+		it "should be able to count the characters" do
 			string_length = @my_string.length
 			@my_string.should have(string_length).characters
 		end
 
-		it "should be able to split on the . charater" do
+		it "should be able to split on the . character" do
 			result = @my_string.split(".")
 			result.should have(2).items	
 		end
