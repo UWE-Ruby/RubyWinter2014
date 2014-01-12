@@ -2,14 +2,16 @@ Please read:
 Chapter 3 Classes, Objects, and Variables 
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
-1. What is an object?
+1. What is an object?  An instance of a class.
 
-2. What is a variable?
+2. What is a variable?  A reference to an object.
 
-3. What is the difference between an object and a class?
+3. What is the difference between an object and a class?  Class defines an object.  Objects are the instanciation of a class.
 
-4. What is a String?
+4. What is a String?   A class.
 
-5. What are three messages that I can send to a string object? Hint: think methods
+5. What are three messages that I can send to a string object? Hint: think methods  split, chomp, squeeze
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+single quotes - only uses 2 escape sequences \\ and \'
+double quotes - uses lots of different escape sequences
