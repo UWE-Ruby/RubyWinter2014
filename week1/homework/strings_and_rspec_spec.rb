@@ -14,8 +14,7 @@ describe String do
 		end
 
 		it "should be able to count the characters" do
-			puts @my_string.length
-			@my_string.length should eq 67
+			@my_string.length.should eq 67
 		end
 
 		it "should be able to split on the . charater" do
@@ -24,7 +23,8 @@ describe String do
 		end
 
 		it "should be able to give the encoding of the string" do
-			puts @my_string.encoding
+			@my_string.encoding.should eq Encoding.find("UTF-8")
+
 			 #helpful hint: should eq (Encoding.find("UTF-8"))'
 		end
 	end
