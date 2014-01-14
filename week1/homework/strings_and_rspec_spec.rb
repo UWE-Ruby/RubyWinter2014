@@ -12,17 +12,18 @@ describe String do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
-		it "should be able to count the charaters" do
-			"Doga".should have(4).charaters
+
+		it "should be able to count the characters" do
+			"ruby".should have(4).characters
 		end
 
-		it "should be able to split on the . charater" do
-			result = "doga.tuncay".split('.') #do something with @my_string here
+		it "should be able to split on the . character" do
+			result = @my_string.split('.') 
 			result.should have(2).items	
 		end
+
 		it "should be able to give the encoding of the string" do
-			"Doga".encoding.should eq Encoding.find("utf-8")
-			
+			"Renée".encoding.should eq Encoding.find("UTF-8")
 		end
 	end
 end
