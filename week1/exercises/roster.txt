@@ -1,7 +1,7 @@
 #, name, email, github, twitter, hip chat 
 0, Renée, renee@nird.us, reneedv, @nirdllc, Renee
 1, Andrew Haydock, ahaydock@gmail.com, ahaydock, N/A, Andrew
-2, 
+2, Armie, armiemargaretlee@yahoo.com, aml888, lilac888, Armie
 3, Brandon, lafaveb@gmail.com, none, @BrandonLaFave
 4, 
 5, 
