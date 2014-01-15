@@ -1,8 +1,8 @@
 #, name, email, github, twitter, hip chat 
 0, 
 1, 
-2, 
-3, 
+2, Chris Ashfield, biodieselchris@gmail.com, kewpiedoll, N/A, chrisashfield
+3,
 4, 
 5, 
 6, 
