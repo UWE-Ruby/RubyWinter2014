@@ -1,15 +1,77 @@
+Sarah Wheeler
+1/14/14
+Ruby 110
+
+Week 1 Homework
+
 Please read: 
 Chapter 3 Classes, Objects, and Variables 
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
+
+
 1. What is an object?
+
+	An object is simply an instance of a class. Every object 
+	has a unique object id (because it occupies a unique space 
+	in the computer's memory), is associated with a class, and 
+	can be instantiated through the .new method. Multiple 
+	variables can point to the same object, however. 
 
 2. What is a variable?
 
+	A variable is not an object, but actually holds a reference 
+	to an object. Syntactically, variables should be all lowercase, 
+	can start with or include underscores, and include (but not 
+	begin with) numbers. Depending on whether they are prefixed 
+	by $, @, @@, or no symbol at all, the scope of the variable 
+	changes. For example, you can't access an object's instance 
+	variables until you have written an accessor method in the 
+	class definition, because its scope is restricted to where 
+	it was first created.
+
 3. What is the difference between an object and a class?
+
+	Classes are not objects themselves, but they do act as the 
+	blueprints for objects. They allow you to dictate what actions 
+	can be performed with, to, and through objects by giving you 
+	the power to define the methods that will be available to them. 
+	Classes are used to instantiate individual objects that are a 
+	referenced through the use of variables.
 
 4. What is a String?
 
+	Strings are sequences of characters (either binary or printable) 
+	that belong to the String class. Strings are created with string 
+	literals (example: string1 = "String!") and can appear between 
+	either single or double quotes. 
+
 5. What are three messages that I can send to a string object? Hint: think methods
 
+	.capitalize will tell a String object to make the first letter 
+	of your string a capital letter.
+
+	.split will divide a String object by the character you pass it 
+	(for example, a comma, period, or vertical bar), and create an 
+	Array out of the pieces.
+
+	.length will tell you how many characters a String object contains. 
+
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+
+	Method 1: By using single quotes as your delimiters, like so: 
+
+			'This is a string.'
+
+	Method 2: By using %Q followed by any nonalphanumeric or nonmultibyte 
+	character, which acts like a double quote like so: 
+	
+			%Q{This is also a string.}
+
+	The difference between single quotes and double quotes is that double 
+	quotes support more escape sequences, as well as string interpolation 
+	(inserting a variable into text through #{variable}). Since single 
+	quotes perform fewer functions, they are also processed slightly faster 
+	by the computer. 
+
