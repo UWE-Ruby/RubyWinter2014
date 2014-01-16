@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 describe "The Rspec ruby gem" do
-  
+
   context "Domain Specific Language" do
 
     it "creates examples with the #it keyword" do
@@ -43,11 +43,12 @@ describe "The Rspec ruby gem" do
 
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      # 1.should eq 2
+      1.should_not eq 2
 
     end
 
-    it "supports placeholder examples that lack code (like this one)"
+    # it "supports placeholder examples that lack code (like this one)"
 
     it "requires that examples use expectations (like #should) to work properly" do
 
@@ -67,7 +68,7 @@ describe "The Rspec ruby gem" do
     end
 
     it "should check how to spell my name" do
-	    "Renée".should include("ée") 
+	    "Renée".should include("ée")
     end
 
   end
@@ -77,15 +78,20 @@ describe "The Rspec ruby gem" do
   		# Fix the Failing Test
   		# Order of Operations is Please Excuse My Dear Aunt Sally:
   		# Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
-  		(1+2-5*6/2).should eq -6
+  		# (1+2-5*6/2).should eq -6
+  		(1+2-3*6/2).should eq -6
   	end
   	it "should count the characters in your name" do
-      pending
-    end
-  	
-  	it "should check basic math"
+          "Robert".should have(6).characters
+        end
 
-  	it "should check basic spelling"
+  	it "should check basic math" do
+          (100-50).should eq 50
+        end
+
+  	it "should check basic spelling" do
+          "Jon".should eq "Jon"
+        end
 
   end
 
