@@ -20,3 +20,5 @@ capitolize, length, to_i
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
 	1. "String Literal" used in interpolation with the #{interpolation of some type} 
 	2. 'String literal' can't use interpolation.
+
+7. 

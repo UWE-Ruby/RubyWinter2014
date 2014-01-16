@@ -23,3 +23,4 @@ describe String do
 	end
 end
 
+puts "This is a test"
