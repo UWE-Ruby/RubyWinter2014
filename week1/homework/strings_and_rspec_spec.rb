@@ -19,7 +19,6 @@ describe String do
 
 		it "should be able to split on the . character" do
 			result = @my_string.split('.') 
-			result.should have(2).items	
 		end
 
 		it "should be able to give the encoding of the string" do
