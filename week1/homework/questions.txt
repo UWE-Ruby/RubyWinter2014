@@ -16,7 +16,8 @@ instance even though it was generated from the same class. A class is code read 
 A string is a literal sequence of characters. In ruby, Strings are objects.
 
 5. What are three messages that I can send to a string object? Hint: think methods
+length, empty?, and encoding
 
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
-You can use single or double quotes (' or "). The double quotes allows for many more escape sequences.
+You can use single or double quotes (' or "). The double quotes allows for many more escape sequences and ruby expressions to be included. You can also use %q or %Q which behave much like ' and ".
