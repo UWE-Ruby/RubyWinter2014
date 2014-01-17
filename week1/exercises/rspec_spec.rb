@@ -2,7 +2,7 @@
 
 describe "The Rspec ruby gem" do
   
-  context "Domain Specific Language" do
+  context "Domain Specific Language" do 
 
     it "creates examples with the #it keyword" do
 
@@ -63,16 +63,17 @@ describe "The Rspec ruby gem" do
     end
 
     it "should count the characters in my name" do
-	    "Renée".should have(5).characters
+      "Renée".should have(5).characters
     end
 
     it "should check how to spell my name" do
-	    "Renée".should include("ée") 
+      "Renée".should include("ée") 
     end
 
   end
 
   context "Examples for in-class test exploration" do
+<<<<<<< HEAD
   	it "should know order of operations" do
   		# Fix the Failing Test
   		# Order of Operations is Please Excuse My Dear Aunt Sally:
@@ -90,6 +91,24 @@ describe "The Rspec ruby gem" do
 
   	it "should check basic spelling" do
       "Matt".should include("Matt")
+=======
+    it "should know order of operations" do
+      # Fix the Failing Test
+      # Order of Operations is Please Excuse My Dear Aunt Sally:
+      # Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
+      ((((1+2)-5)*6)/2).should eq -6
+    end
+    it "should count the characters in your name" do
+      "Tom".should have(3).characters
+    end
+    
+    it "should check basic math" do
+      (40+2).should eq 42
+    end
+
+    it "should check basic spelling" do
+      "Field".should include('ie')
+>>>>>>> 4981dd20c06248919b350fa8600269a41e169e64
     end
 
   end
