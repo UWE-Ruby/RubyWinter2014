@@ -1,21 +1,22 @@
 #, name, email, github, twitter, hip chat 
-0, 
-1, 
-2, 
-3, 
-4, 
+0, Renée, renee@nird.us, reneedv, @nirdllc, Renee
+1, Andrew Haydock, ahaydock@gmail.com, ahaydock, N/A, Andrew
+2, Armie, armiemargaretlee@yahoo.com, aml888, lilac888, Armie
+3, Brandon, lafaveb@gmail.com, none, @BrandonLaFave
+4, Chris Ashfield, biodieselchris@gmail.com, kewpiedoll, N/A, chrisashfield 
 5, 
-6, 
+6, doga tuncay, dogatuncay@hotmail.com, dogatuncay	dogat
 7, emory christenson, neverless@gmail.com, @lightener, seattlecidal, lightener
-8, 
-9, 
-10, 
+8, jack,jack.howl@gmail.com,jackhowl,,jackhowl 
+9, John Wade, JohnRobertWade@gmail.com, THEJRRR, @THEJRRR, John Wade
+10, Kevin LaFave, kjlafave@gmail.com, kjlafave, none, @Kevin 
 11, 
 12, 
-13, 
-14, 
-15, 
-16, 
-17, 
+13, Matt Spah, spahmatthew@gmail.com, MattsFace, @MatthewsFace, Matthew Spah
+14, Neil Woodward, n.woodward.iii@gmail.com, drlctr,,Neil Woodward
+15, Owen, owen.james.kelly@gmail.com, owenkelly, n/a, @owenkelly
+16, Robert McCreary Mannino, rmccreary8@gmail.com, psytau, maalaoshi, rmccreary8@gmail.com
+17, Rukia,	rukk86@gmail.com, 	rukk86, 	no twitter, 	Rukia
 18, 
 19, 
+20, Zack Walkingstick, zackwalkingstick@gmail.com, zackwalkingstick, no twitter, @zack
