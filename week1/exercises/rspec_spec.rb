@@ -64,11 +64,11 @@ describe "The Rspec ruby gem" do
     end
 
     it "should count the characters in my name" do
-	    "Renée".should have(5).characters
+      "Renée".should have(5).characters
     end
 
     it "should check how to spell my name" do
-	    "Renée".should include("ée")
+      "Renée".should include("ée")
     end
 
   end
