@@ -15,6 +15,7 @@ describe String do
 
 		it "should be able to count the charaters" do
 			@my_string.should have(66).characters
+			@my_string.should have(@my_string.length).characters
 		end
 
 		it "should be able to split on the . charater" do
