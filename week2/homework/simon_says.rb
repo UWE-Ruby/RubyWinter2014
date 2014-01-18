@@ -1,27 +1,27 @@
+module SimonSays
 
-
-class SimonSays
-	def initialize(word)
-		@word = word
+	# return the string
+	def echo(string)
+		return "#{string}"
 	end
 
-	def echo
-		puts "#{SimonSays.word}"
+	# return string in all capitals 
+	def shout(string)
+		return "#{string.upcase}"
 	end
 
-	def shout
-		puts "#{SimonSays.word.capitalize}"
+	# repeat the string a min of 2 times, unless specified 
+	def repeat(string, repeat=2)
+		return ("#{string} " * repeat).strip
 	end
 
-	def repeat
-
+	# return the charaters starting from start of string to length
+	def start_of_word(string, length)
+		return "#{string[0, length]}"
 	end
 
-	def start_of_word
-
-	end
-
-	def first_word
-
+	# return first word in a string using a space has a delimiter 
+	def first_word(string)
+		return "#{string.split(" ")[0]}"
 	end
 end
