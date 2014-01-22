@@ -20,15 +20,12 @@ describe String do
             @my_string.should have(66).characters
         end
 		it "should be able to split on the . charater" do
-            #This passes:
-			# result = ['foo', 'bar']
-			# result.should have(2).items	
-            #
 			result = @my_string.split '.'
 			result.should have(2).items	
 		end
 		it "should be able to give the encoding of the string" do
-			pending 'helpful hint: should eq (Encoding.find("UTF-8"))'
+			#pending 'helpful hint: should eq (Encoding.find("UTF-8"))'
+            @my_string.encoding.name.should == 'UTF-8'
 		end
 	end
 end
