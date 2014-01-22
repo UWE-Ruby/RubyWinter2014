@@ -3,8 +3,18 @@ Containers, Blocks, and Iterators
 Sharing Functionality: Inheritance, Modules, and Mixins
 
 1. What is the difference between a Hash and an Array?
+An array is an ordered list of items (objects in ruby), indexed by sequential
+integers starting at 0. 
+A hash is a set of key=value pairs, indexed by the key. Traditionally it is not
+ordered, but the pickaxe book says ruby retains the order items are stored. 
+Other languages would view this as too costly. Is ruby slower by this?
 
 2. When would you use an Array over a Hash and vice versa?
+I would use an array when 
+  order is the best way access or enter the values, or
+  the data structure has a known number of items
+A hash is nice when
+  a name is the best way to access or enter the values
 
 3. What is a module? Enumerable is a built in Ruby module, what is it?
 
