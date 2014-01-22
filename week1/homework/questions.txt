@@ -3,13 +3,35 @@ Chapter 3 Classes, Objects, and Variables
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
+A representation of a "thing" in a program.
 
 2. What is a variable?
+In ruby, a named pointer to an object. In some other languages, more like a 
+container for a value.
 
 3. What is the difference between an object and a class?
+A class is a representation of a "type of thing" - e.g. the class of all
+toasters.  An object is a representation of an individual "thing" - e.g. the
+toaster in my kitchen.  This is not the same as a Platonic Ideal Form vs a Real
+Object - ruby objects are not second rate to classes; each is an "instances" of 
+a class.
 
 4. What is a String?
+A sequence of characters. In ruby, an object of the class String. And in ruby,
+it is mutable. This still freaks me out and I would like to understand if this
+is considered to be a deliberate feature or a side-effect of something.
 
 5. What are three messages that I can send to a string object? Hint: think methods
+upcase
+kind_of?
+sub
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+'single quoted, which has #{no interpration}, except \\\\ renders as \\,
+and \\\' renders as \''
+
+interpretation='lots of interprations'
+"double quoted, which has #{interpretation}"
+
+%q{wrapped in some arbitrary brace pair, allowing one to embed plenty of
+nasties like ', ", and \, without escapes}
