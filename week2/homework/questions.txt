@@ -12,7 +12,7 @@ You would use a hash when you have a key and an object corresponding to that key
 A module is simliar to a library, and it interacts with functions to perform repeatable processes. Enumerable allows you to terminate a loop cleanly when there are no additional values. 
 
 4. Can you inherit more than one thing in Ruby? How could you get around this problem?
-
+You cannot inherit more than one thing in Ruby, and you get around this with mixins. 
 
 5. What is the difference between a Module and a Class?
 Modules interact with functions while classes are about objects. 
