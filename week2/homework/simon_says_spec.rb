@@ -37,6 +37,11 @@ describe SimonSays do
     start_of_word("Bob", 2).should == "Bo"
   end
 
+  it "should do something sane with a bad call to start_of_word" do
+    pending
+    start_of_word("Bob", 4).should == what?
+  end
+
   it "should tell us the first word of 'Hello World' is 'Hello'" do
     first_word("Hello World").should == "Hello"
   end
@@ -44,4 +49,10 @@ describe SimonSays do
   it "should tell us the first word of 'oh dear' is 'oh'" do
     first_word("oh dear").should == "oh"
   end
+
+  it "should maybe tell us the first word of ' oh dear' is 'oh'" do
+    pending
+    first_word(" oh dear").should == "oh"
+  end
 end
+# vim: ts=2:sw=2
