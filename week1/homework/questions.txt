@@ -3,13 +3,23 @@ Chapter 3 Classes, Objects, and Variables
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
+An instance of a class and is defined by a state and a behavior.
 
 2. What is a variable?
+A variable is a storage location that has an associated identifier.
 
 3. What is the difference between an object and a class?
+A class specifies the generic properties/behavior of it's objects.
 
 4. What is a String?
+A string is a data type that is used to represent text.
 
 5. What are three messages that I can send to a string object? Hint: think methods
+split
+chomp
+squeeze!
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+Single-Quote
+Double-Quote
+It seems like the difference between them is pretty straight forward in Ruby, you can either use single or double quote depending on yourstyle.
