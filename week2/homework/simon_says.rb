@@ -1,13 +1,13 @@
 module SimonSays
-  def echo( statement ) 
+  def echo(statement)
     statement
   end
 
-  def shout( statement )
+  def shout(statement)
     statement.upcase
   end
 
-  def repeat( statement, amount = 2 )
+  def repeat(statement, amount = 2)
     ([statement] * amount).join(" ")
   end
 
