@@ -1,4 +1,3 @@
-# vim: ts=2:sw=2
 module SimonSays
   def echo(string)
     string
@@ -17,10 +16,22 @@ module SimonSays
     string.slice(0..nchars-1)
   end
 
-  # FIXME naíve - non-word before first word? Single quoted phrase?
   def first_word(string)
-    string.sub(/[^a-zA-Z'].*/, '')
+    ## This one works, for the tests given...
+    #string.sub(/[^a-zA-Z'].*/, '')
+    #
+    # And this one works on my added test. But it's uglier
+    #string.sub(/^\W*(\w+)[^a-zA-Z'].*/, '\1')
+
+    ##Is there a more ruby way to do this?
+    #
+    #This isn't bad, and seems more ruby-ish. I like it.
+    #but it breaks on my additional test.
+    #string.split(/\s+/).first
+    #
+    #This works on my additional test.
+    #But it might be uglier than my perl-ish version.
+    (string.split(/\s+/).select { |word| word !~ /^\s*$/ }).first
   end
 end
-      
-  
+# vim: ts=2:sw=2

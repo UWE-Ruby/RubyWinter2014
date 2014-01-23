@@ -37,7 +37,7 @@ describe SimonSays do
     start_of_word("Bob", 2).should == "Bo"
   end
 
-  it "should do something sane with a bad call to start_of_word" do
+  it "should do something sane if word is shorter than we thought" do
     pending
     start_of_word("Bob", 4).should == what?
   end
@@ -51,7 +51,6 @@ describe SimonSays do
   end
 
   it "should maybe tell us the first word of ' oh dear' is 'oh'" do
-    pending
     first_word(" oh dear").should == "oh"
   end
 end
