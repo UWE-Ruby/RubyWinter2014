@@ -5,9 +5,10 @@ Sharing Functionality: Inheritance, Modules, and Mixins
 1. What is the difference between a Hash and an Array?
 An array is an ordered list of items (objects in ruby), indexed by sequential
 integers starting at 0. 
+
 A hash is a set of key=value pairs, indexed by the key. Traditionally it is not
-ordered, but the pickaxe book says ruby retains the order items are stored. 
-Other languages would view this as too costly. Is ruby slower by this?
+ordered, but the pickaxe book says ruby retains the order in which items are
+stored.  Other languages would view this as too costly. Is ruby slower by this?
 
 2. When would you use an Array over a Hash and vice versa?
 I would use an array when 
@@ -17,7 +18,45 @@ A hash is nice when
   a name is the best way to access or enter the values
 
 3. What is a module? Enumerable is a built in Ruby module, what is it?
+A module providing a discrete namespace, so I can "require" multiple source
+files (or otherwise work on things too big to hold in my head), and not worry
+about namespace collisions, by fully qualifying the module's methods and
+constants:
+Module1.method(Module3::CONSTANT)
+Module2.method(Module4::CONSTANT)
+
+A module also provides a way to 'include' code in multiple classes, allowing us
+to reuse methods and variables without the horror of multiple inheritance.
+
+Enumerable provides nice generic methods appropriate to arrays and hashes -
+map, include?  and others. Would inject come from Enumerable? How do I tell? ri
+inject gives "Implementation from Enumerable". OK, How do I go the other way?
+(ie, what does Enumerable provide?) Yay, it works how I would hope: ri
+Enumerable gives in introductory paragraph and a list of methods.
 
 4. Can you inherit more than one thing in Ruby? How could you get around this problem?
+You can't inherit from more than one class. My instinct is that this is a 
+feature, not a problem, but pickaxe assures us that it is a problem, and for it
+we need mixins. 
+In a class, we can include a module and get it's methods. Nice enough. 
+We can also get its instance variables, which seems to me a way of destroying
+all of that good namespace separation. I do not understand the bit in pickaxe
+about using a "module-level hash, indexed by the current object ID".
+So mixins alarm me at first glance, especially the instance variables.
 
 5. What is the difference between a Module and a Class?
+A class is, well, a class... from ri Class:
+"first-class objects---each is an instance of class Class". 
+So they can be sub-classed, and all objects belong to some a class. You can
+define methods for them, which are inherited by subclasses and by instances of
+the class.
+
+Modules, according to pickaxe, are not classes, but just provide namespace
+(and mixins 'for free'). But, from ri Class:
+= Class < Module
+So Classes are a class of Module? Or do I misread that?
+
+Anyway, you can define methods and constants for a Module too, but they are 
+then pulled in to classes and the methods and constants used there. And 
+instance variable too, but I don't understand how to do that safely. 
+
