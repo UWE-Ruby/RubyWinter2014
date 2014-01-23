@@ -34,4 +34,3 @@ module SimonSays
     (string.split(/\s+/).select { |word| word !~ /^\s*$/ }).first
   end
 end
-# vim: ts=2:sw=2

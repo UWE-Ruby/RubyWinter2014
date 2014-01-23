@@ -54,4 +54,3 @@ describe SimonSays do
     first_word(" oh dear").should == "oh"
   end
 end
-# vim: ts=2:sw=2
