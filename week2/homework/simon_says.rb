@@ -1,17 +1,18 @@
 module SimonSays
   
-  def echo(word)
-	 "#{word}"
+  def echo word
+	 word
   end
   
-  def shout(word)
+  def shout word
   	"#{word.upcase}"
   end
   	
   def repeat(word)
+    word + ' ' + word
   end
 
-  def repeat(word, n)
+  def repeat(word, n=2)
   	if n > 2
   	  string = ""
   	  while n > 1
@@ -42,14 +43,14 @@ module SimonSays
 
 end
 
-class RunSimon
-  include SimonSays
-end
+#class RunSimon
+ # include SimonSays
+#end
 
 #below was only for testing
-w = RunSimon.new
-p w.echo("Hello")
-p w.echo("Hello")
-p w.shout("Hello")
-p w.repeat("hello", 3)
-p w.first_word("Hello there")
+# w = RunSimon.new
+# p w.echo("Hello")
+# p w.echo("Hello")
+# p w.shout("Hello")
+# p w.repeat("hello", 3)
+# p w.first_word("Hello there")
