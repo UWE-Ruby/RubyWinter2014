@@ -15,7 +15,8 @@ module SimonSays
     simon.split.first
   end
 
-  def repeat(simon,last)
-    last.times.collect { simon }.join(' ')
+  def repeat simon, n=2
+    results = (simon + ' ') * n
+    results.chop
   end
 end
