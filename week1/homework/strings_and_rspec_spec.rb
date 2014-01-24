@@ -12,16 +12,10 @@ describe String do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
-
-		it "allows us to test for empty strings" do
-			@my_string.should_not be_empty
-		end
-
 		it "should be able to count the characters" do
-			@my_string.should have(@my_string.length).characters
+			@my_string.should have(@my_string.size).characters
 		end
-
-		it "should be able to split on the . character" do
+		it "should be able to split on the . charater" do
 			result = @my_string.split('.')
 			result.should have(2).items	
 		end
@@ -30,4 +24,3 @@ describe String do
 		end
 	end
 end
-
