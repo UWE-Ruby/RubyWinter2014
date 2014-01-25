@@ -6,10 +6,20 @@ Please Read:
 
 1. What is a symbol?
 
+A symbol in Ruby is an identifier corresponding to a name, but can be any string of characters. 
+
 2. What is the difference between a symbol and a string?
+
+The object id for a symbol will always be the same, but a string's object id will return different objects. 
 
 3. What is a block and how do I call a block?
 
+A block is a chunk of code that can be run as the file is loaded. You must call out these blocks with a Begin block and an End block. 
+
 4. How do I pass a block to a method? What is the method signature?
 
+You define your variable, and where you want to place your block, yield and then the block name to call that block of code into that section. 
+
 5. Where would you use regular expressions?
+
+You would use a regular expression if you needed to search strings for a specific pattern of symbols, and then manipulate that pattern. 
