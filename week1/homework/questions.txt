@@ -6,11 +6,17 @@ p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 Everything you manipulate is an object, and the results of those manipulations are themselves objects.
 
 2. What is a variable?
+A reference to an object.
 
 3. What is the difference between an object and a class?
+A class is a way to define methods for objects and is an object itself.
 
 4. What is a String?
+Strings are objects holding sequences of characters.
 
 5. What are three messages that I can send to a string object? Hint: think methods
+length, split, upcase
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+single quotes = fewer escape sequences, usually used when you don't need something in the quotes to change (no interpolation).
+double quotes = lots of escape sequences and interpolation, ie. "#{some_var} is awesome!" to add some_var to string.
