@@ -8,9 +8,25 @@ class Calculator
     addends.inject(0, :+)
   end
 
-  def multiply(multiplicands)
-    multiplicands.inject(1, :*)
+  def multiply(multiplicands, multiplier = 1)
+    # Looks gross to me. What I want is to flatten all incoming arguments
+    # to one array.
+    (Array(multiplicands) + Array(multiplier)).inject(1, :*)
   end
+
+  def pow(base, index)
+#    p = 1
+#    # This returns index,
+#    index.times { p *= base }
+#    # so I have to return p
+#    p
+#    # instead, let's try the builtin
+    base**index
+  end
+
+  def fac(integer)
+  end
+
 end
 
   
