@@ -20,8 +20,20 @@ Well, mostly that I can't change a symbol, I think. But it is missing a few
 methods, too. 
 
 3. What is a block and how do I call a block?
+In ruby, some code wrapped in braces or do/end. Used like an anonymous method.
+Not used immediately, but when called later. (This part I find subtle and
+difficult to understand.) Can only appear after another method, so:
+> ["foo", "bar", "baz"].each {|metasyntactic_variable_name| puts metasyntactic_variable_name }
+
+but
+> "foo" { |alone| puts alone }
+is meaningless and an error.
 
 4. How do I pass a block to a method? What is the method signature?
+Just put the block right after the method, as discussed above, with any 
+items passed to the block placed between pipes at the beginning of the block.
+I am not sure if this is a different question than "how do I call a block?".
+
 
 5. Where would you use regular expressions?
 All over the place, because I come from shell and perl. In ruby, I can 
