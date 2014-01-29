@@ -25,6 +25,14 @@ class Calculator
   end
 
   def fac(integer)
+    case integer
+    when 0
+      1
+    when 1
+      1
+    else
+      integer * fac(integer - 1)
+    end
   end
 
 end
