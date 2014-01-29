@@ -37,11 +37,20 @@ describe SimonSays do
     start_of_word("Bob", 2).should == "Bo"
   end
 
+  it "should do something sane if word is shorter than we thought" do
+    pending
+    start_of_word("Bob", 4).should == what?
+  end
+
   it "should tell us the first word of 'Hello World' is 'Hello'" do
     first_word("Hello World").should == "Hello"
   end
 
   it "should tell us the first word of 'oh dear' is 'oh'" do
     first_word("oh dear").should == "oh"
+  end
+
+  it "should maybe tell us the first word of ' oh dear' is 'oh'" do
+    first_word(" oh dear").should == "oh"
   end
 end

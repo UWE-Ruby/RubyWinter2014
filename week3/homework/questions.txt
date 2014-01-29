@@ -5,11 +5,54 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+An immutable string of characters. It seems like we've seen them mostly for
+hash keys (which is a reasonable use), but I am inclined to want to use them
+somehow to replace ruby's missing constants. Is that possible, or advisable?
 
 2. What is the difference between a symbol and a string?
+> "foo".methods.sort - :foo.methods.sort
+Lots of bang methods. Why can't I sub a symbol? I can upcase it. Hm.
+
+> :foo.methods.sort - "foo".methods.sort
+=> [:id2name, :to_proc]
+
+Well, mostly that I can't change a symbol, I think. But it is missing a few
+methods, too. 
 
 3. What is a block and how do I call a block?
+In ruby, some code wrapped in braces or do/end. Used like an anonymous method.
+Not used immediately, but when called later. (This part I find subtle and
+difficult to understand.) Can only appear after another method, so:
+> ["foo", "bar", "baz"].each {|metasyntactic_variable_name| puts metasyntactic_variable_name }
+
+but
+> "foo" { |alone| puts alone }
+is meaningless and an error.
 
 4. How do I pass a block to a method? What is the method signature?
+Just put the block right after the method, as discussed above, with any 
+items passed to the block placed between pipes at the beginning of the block.
+I am not sure if this is a different question than "how do I call a block?".
+
 
 5. Where would you use regular expressions?
+All over the place, because I come from shell and perl. In ruby, I can 
+(should?) use them less, because:
+  1. Ruby has a lot more string methods (which are maybe calling regexes under 
+     the hood, but 
+       > string.strip 
+     is a lot more readable and concise than 
+       > string.gsub(/^\s*|\s*$/, "")
+  2. Things that I "shouldn't" have been doing with regexes (like parsing html,
+    or otherwise using them for syntax) are probably easier done with all of 
+    ruby's endless builtins and gems.
+  3. Well, that's about it, but that's plenty.
+
+But then again,
+  >  "foot".sub("fo") {|subbed| "Wo" if subbed.end_with? "o" }
+  OMG, OMG, OMG! Passing substitutions to blocks! I could fall in love with 
+    regexes all over again!
+
+Anyway, the formal answer is: wherever I need to make string matches or
+substitutions which are not syntax- or context-sensitive, and there is no
+builtin for the task.
