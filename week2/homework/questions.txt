@@ -53,3 +53,4 @@ Sharing Functionality: Inheritance, Modules, and Mixins
 		A module cannot have instances, which means that it is not meant 
 		to help create objects like a class is--instead, it is meant to 
 		provide a set of specialized methods to another class.
+
