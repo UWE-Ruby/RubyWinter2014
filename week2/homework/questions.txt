@@ -3,11 +3,24 @@ Containers, Blocks, and Iterators
 Sharing Functionality: Inheritance, Modules, and Mixins
 
 1. What is the difference between a Hash and an Array?
+An array is an ordered list of items that are referenced by their index (order), a hash is a collection of items that can be referenced by a key and have no order.
+
+Both ihashes and arrays hold objects indexed with a key value. Arrays are indexed by an integer, where hashes can be indexed with a string, integer, or floating point number. Hashes are more flexible, but arrays are more efficent. 
 
 2. When would you use an Array over a Hash and vice versa?
+When the items have an inherent order I would use an array, when I want to reference the items in my collection by a name or key and their order does not matter I would use a hash.
+
+An array would be better for sorting through large amounts of data, If you run the .each method on a large hash, both index and key are returned, but with an array, just the key value is returned. An array would itinerate through the data faster. Hashes are much more flexible as you can hold a range of different data types. If your storing a name paired with a date of birth the hash would be better.
 
 3. What is a module? Enumerable is a built in Ruby module, what is it?
+A module is a way to group code that you can use across multiple classes. Enumerable is a Ruby module that provides collection functionality; iteration, searching, and sorting. It requires an implementation of the each method.
+<plagerize>Enumerable is a standard mixin, implementing a bunch of methods in terms of the host class’s each method</plagerize>. Enumerable allows us to use the methods created by the Enumerable mixin.  
 
-4. Can you inherit more than one thing in Ruby? How could you get around this problem?
+4. Can you inherit more than one thing in Ruby? How could you get around this problem? 
+
+No, Ruby is single inheritence. A Ruby class can have only one parent. 
+however it can have multiple mixins. 
 
 5. What is the difference between a Module and a Class?
+
+Modules are a way of grouping methods and classes together in there own namespace. Modules also support mixins. 
