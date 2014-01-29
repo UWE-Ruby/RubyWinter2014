@@ -4,12 +4,29 @@ p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
 
+Everything we manipulate in ruby is an object. 
+
 2. What is a variable?
+
+Variables hold an objects state. It's a reference to an object.
 
 3. What is the difference between an object and a class?
 
+Every object in Ruby was generated either directly or indirectly from a class.
+
 4. What is a String?
+
+Sequences of charachters and objects of the class "Strings".
 
 5. What are three messages that I can send to a string object? Hint: think methods
 
+The string class is one of the largest classes. Three methods in the string class are "chomp" to remove the last chrachter, "length", to return the length of a string, and "capitalize" to return the string with the first charachter in uppercase. 
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+
+Single quotes or double quotes:
+my_string = "string1"
+my_string = 'string2'
+Double quotes are usefull for string interpolation, for example:
+my_dir = "#{base_dir}/shared/bin"
+Double quoted strings can also handle more escape sequences.
