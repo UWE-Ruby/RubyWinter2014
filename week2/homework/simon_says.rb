@@ -5,9 +5,6 @@ module SimonSays
   def shout(scream)
     scream.upcase
   end
-  def repeat(greet)
-    ("#{greet} " * 2).chop
-  end
   def repeat(greet, quant=2)
     ("#{greet} " * quant).chop
   end
