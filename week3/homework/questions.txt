@@ -34,6 +34,10 @@ Just put the block right after the method, as discussed above, with any
 items passed to the block placed between pipes at the beginning of the block.
 I am not sure if this is a different question than "how do I call a block?".
 
+What is the method signature of what? I don't think I understand what a method
+signature is, in any case. Googling around makes me think it is analogous to 
+a function declaration - a statement of what parameters a method takes. Is it
+simply the def line? 
 
 5. Where would you use regular expressions?
 All over the place, because I come from shell and perl. In ruby, I can 
