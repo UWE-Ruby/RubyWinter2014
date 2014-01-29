@@ -2,7 +2,7 @@ require './book'
 
 describe Book do
 
-  
+
   context "::book_count" do
 
     it "should count how many books have been created" do
@@ -26,7 +26,7 @@ describe Book do
     end
 
   end
-  
+
   context "#title" do
 
     before :each do

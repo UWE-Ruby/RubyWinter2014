@@ -16,4 +16,3 @@ Sharing Functionality: Inheritance, Modules, and Mixins
 
 5. What is the difference between a Module and a Class?
     A Class is an object while a Module allows the use of methods accross many different classes.
-

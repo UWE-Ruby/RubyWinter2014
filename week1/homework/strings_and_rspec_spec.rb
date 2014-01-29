@@ -12,16 +12,24 @@ describe String do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
+<<<<<<< HEAD
 		it "should be able to count the charaters" do
 			@my_string.should have(66).characters
 		end
 		it "should be able to split on the . charater" do
 			result = @my_string.split(/\./)
 			result.should have(2).items
+=======
+		it "should be able to count the characters" do
+			@my_string.should have(@my_string.size).characters
+		end
+		it "should be able to split on the . charater" do
+			result = @my_string.split('.')
+			result.should have(2).items	
+>>>>>>> 3f908987d4313d0076dc2a2b4164ffb931a8aa80
 		end
 		it "should be able to give the encoding of the string" do
 			@my_string.encoding.should eq (Encoding.find("UTF-8"))
 		end
 	end
 end
-
