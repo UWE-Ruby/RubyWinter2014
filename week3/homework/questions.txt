@@ -22,4 +22,4 @@ You can pass a block to a method by using an ampersand. The method signature is 
 
 5. Where would you use regular expressions?
 
-Regular expressions are one of the coolest concepts ever. I've used them to strip html from and wrap lines for the text part of a multipart email message. I've used them to convert root urls to absolute urls and vice versa. I've used them to convert markup from formats as obscure as a Word Perfect document to html back when there were no other tools available.
+Regular expressions are one of the coolest concepts ever. I've used them to strip html from and wrap lines for the text part of a multipart email message. I've used them to convert root urls to absolute urls and vice versa. I've used them to convert markup from formats as obscure as a Word Perfect document to html back when there were no other tools available. I've used them for transposing columns in CSV files.
