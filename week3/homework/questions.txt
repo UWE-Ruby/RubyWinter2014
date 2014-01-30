@@ -5,11 +5,30 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+	They are similar to a string, and can be used to represent strings or names, but unlike strings they are created only once in memory and are immutable. 
 
 2. What is the difference between a symbol and a string?
-
+	One simple difference is that symbols are immutable and strings are mutable. Symbols are only created once in memory, unlike strings.
+	
 3. What is a block and how do I call a block?
+	A block is similar to a nameless function. They are always called in conjunction with a method, and wrapped in braces or a do/end. You can call a block by calling a method on a certain object, and then following up with brackets or the do/end. For example 
+
+	array = [1, 2, 3, 4, 5]
+	array.each { |n| puts n }
+
+	Blocks are probably my favorite part of Ruby so far :)
 
 4. How do I pass a block to a method? What is the method signature?
 
+	You can pass a block to a method by using the yield command. 
+
+	def testmethod
+		yield
+	end
+
+	testmethod { puts "This text" } => "This text"
+
+	The method signature is the method name, the arguments, and the order of the arugments. 
+
 5. Where would you use regular expressions?
+	There are lots of places to use a regular expression, parsing log files, trying to match certain fields in text files, and finding hidden treasure.
