@@ -1,0 +1,25 @@
+Please Read: 
+ - Chapter 6 Standard Types
+ - Review Blocks
+ - Chapter 7 Regular Expressions
+ - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
+
+1. What is a symbol?
+
+A symbol is an immutable string
+
+2. What is the difference between a symbol and a string?
+
+Strings are mutable, symbols are immutable.
+
+3. What is a block and how do I call a block?
+
+A block is code contained within do and end, or in curly {} braces. It is called by defining a variable within || for the block to scan for within a given array, hash or other ream of data.
+
+4. How do I pass a block to a method? What is the method signature?
+
+The yeild statement within the block can then pass the output of a block into a method when the block is called.
+
+5. Where would you use regular expressions?
+
+Where you needed to search a string for a pattern or word.

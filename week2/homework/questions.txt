@@ -21,3 +21,4 @@ No. You can have a "chain of sucession", where each object inherits from a prior
 5. What is the difference between a Module and a Class?
 
 Classes define objects, while Modules group together classes, methods and objects which are designed to work together.
+
