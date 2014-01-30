@@ -1,13 +1,31 @@
-Please Read The Chapters on: 
-Containers, Blocks, and Iterators 
+Please Read The Chapters on:
+Containers, Blocks, and Iterators
 Sharing Functionality: Inheritance, Modules, and Mixins
 
 1. What is the difference between a Hash and an Array?
+    Both Arrays and Hashes are indexed collections of object references (they store data),
+    but Arrays use ordered integers as the index (starting with 0), while hashes use key-value pairs,
+    where key serves as the index but it can be an object of any type.
 
 2. When would you use an Array over a Hash and vice versa?
+    It depends on the problem at hand. If the data is ordered naturally then I would use an Array, if
+    I want to store associated data I would use a Hash. They also respond to different methods or can
+    respond to the same methods differently.
+
 
 3. What is a module? Enumerable is a built in Ruby module, what is it?
+    Modules are a way of grouping together methods, classes and constants and they facilitate code
+    reuse and removing duplication. More specifically, they allow you to use namespaces to group
+    things together that may not naturally form a class and they provide a facility called mixin which
+    allows you to include a module within a class definition and be able to use the module's instance
+    methods. Enumerable is a standard mixin that allows your collectionclass to use any number of the built in
+    methods, it simply requires you to define an iterator for the collection.
 
 4. Can you inherit more than one thing in Ruby? How could you get around this problem?
+    No Ruby only supports single inheritance, but Ruby can simulate multiple inheritance using Modules
+    and mixins.
 
 5. What is the difference between a Module and a Class?
+    Modules provide methods and constants that you can use across multiple classes, they serve as "libraries".
+    Classes are about objects and how they are related (a class can inherit from a parent class, etc.). You create
+    instances of a class but you cannot create an instance of a module.
