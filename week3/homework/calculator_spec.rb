@@ -1,6 +1,6 @@
 require "#{File.dirname(__FILE__)}/calculator"
 
-describe Calculator do
+describe Calculator do          
   
   before do
     @calculator = Calculator.new
