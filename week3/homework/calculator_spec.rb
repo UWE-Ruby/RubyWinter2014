@@ -18,9 +18,17 @@ describe Calculator do
     it "computes the sum of an array of two numbers" do
       @calculator.sum([7,11]).should == 18
     end
+
+    it "computes the sum of an array of floating point numbers" do
+      @calculator.sum([7.1,11.5]).should == 18.6
+    end
     
     it "computes the sum of an array of many numbers" do
       @calculator.sum([1,3,5,7,9]).should == 25
+    end
+
+    it "computes the sum of an array of with negative numbers numbers" do
+      @calculator.sum([1,3,5,7,-100]).should == -84
     end
   end
   
@@ -30,6 +38,10 @@ describe Calculator do
   	it "multiplies two numbers" do
 		@calculator.multiply(2,2).should eq 4
 	end
+
+    it "multiplies an empty array of numbers" do
+    @calculator.multiply([]).should eq 1
+    end
 
   	it "multiplies an array of numbers" do
 		@calculator.multiply([2,2]).should eq 4
