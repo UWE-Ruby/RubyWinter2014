@@ -6,10 +6,20 @@ Please Read:
 
 1. What is a symbol?
 
+A symbol is a contstant name that does not need to be declared in advance and in guaranteed to be unique.
+
 2. What is the difference between a symbol and a string?
+
+Strings are mutable and symbols are not. Each string with the same value that is not assigned to a variable creates a new object. Symbols with the same value do not create a new object.
 
 3. What is a block and how do I call a block?
 
+A block is a chunk of code enclosed in braces or the keywords do and end. A block is called by invoking a method.
+
 4. How do I pass a block to a method? What is the method signature?
 
+You can pass a block to a method by using an ampersand. The method signature is method_name(&block).
+
 5. Where would you use regular expressions?
+
+Regular expressions are one of the coolest concepts ever. I've used them to strip html from and wrap lines for the text part of a multipart email message. I've used them to convert root urls to absolute urls and vice versa. I've used them to convert markup from formats as obscure as a Word Perfect document to html back when there were no other tools available.
