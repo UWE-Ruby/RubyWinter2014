@@ -12,7 +12,6 @@ describe String do
 		before(:all) do
 			@myString = "JayaPrakash likes programming and mystery novels"
 		end
-<<<<<<< HEAD
 		it "should be able to count the charaters" do
 			(@myString.length).should eq 48
 		end
@@ -28,17 +27,6 @@ describe String do
 			(@myString.encoding).should eq Encoding.find("ASCII-8BIT")
 			(@myString.encoding).should_not eq Encoding.find("UTF-8")
 			(@myString.encoding == Encoding.find("UTF-8")).should eq false
-=======
-		it "should be able to count the characters" do
-			@my_string.should have(@my_string.size).characters
-		end
-		it "should be able to split on the . charater" do
-			result = @my_string.split('.')
-			result.should have(2).items	
-		end
-		it "should be able to give the encoding of the string" do
-			@my_string.encoding.should eq (Encoding.find("UTF-8"))
->>>>>>> cba25955989e180ca8e193c9e3162b72b1fb0329
 		end
 	end
 end

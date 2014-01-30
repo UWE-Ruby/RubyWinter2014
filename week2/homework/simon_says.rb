@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 module SimonSays
 
 def echo(str)
@@ -8,10 +6,6 @@ end
 
 def shout(str)
 	str.upcase
-end
-
-def doRepeat(str)
-	str.concat(" ".concat(str))
 end
 
 def repeat(*args)
@@ -38,28 +32,4 @@ end
 def first_word(str)
 	str.split[0]
 end
-=======
-module SimonSays
-
-  def echo input
-    input
-  end
-
-  def shout input
-    input.upcase
-  end
-
-  def repeat input, n = 2
-    ([input] * n ).join(' ')
-  end
-
-  def start_of_word input, n
-    input.slice(0,n)
-  end
-
-  def first_word sentance
-    sentance.split.first
-  end
->>>>>>> cba25955989e180ca8e193c9e3162b72b1fb0329
-
 end
