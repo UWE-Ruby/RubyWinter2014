@@ -15,6 +15,7 @@ class Book
 	end
 
 	def happy
+		$global_hello = "hello"
 		"There are #{pages} happy pages in this book"
 	end
 
