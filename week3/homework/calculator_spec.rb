@@ -31,6 +31,14 @@ describe Calculator do
 		@calculator.multiply(2,2).should eq 4
 	end
 
+    it "multiplies three numbers" do
+    @calculator.multiply(2,2,2).should eq 8
+  end
+
+    it "multiplies four numbers" do
+    @calculator.multiply(2,2,2,3).should eq 24
+  end
+
   	it "multiplies an array of numbers" do
 		@calculator.multiply([2,2]).should eq 4
   	end
