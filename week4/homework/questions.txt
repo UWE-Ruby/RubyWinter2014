@@ -3,12 +3,30 @@ Chapter 10 Basic Input and Output
 The Rake Gem: http://rake.rubyforge.org/
 
 1. How does Ruby read files?
+With File IO objects. Practically, you can mostly do
+> while line = gets
+but there is also explicit 
+> to_be_read = File.new("readme", "r")
+or, more idiomatically
+> File.open("readme", "r") { |file| <code> }
 
 2. How would you output "Hello World!" to a file called my_output.txt?
+Very casually: 
+> File.open("my_output.txt", "a"){|file| file.puts "Hello World!"}
+Very very casually, and maybe not so portably (though `sokay across *nix and 
+Windows):
+> `echo "Hello World!" >>my_output.txt`
 
 3. What is the Directory class and what is it used for?
 
 4. What is an IO object?
+An object representing something outside of your program that you can use as 
+a sink or source for data. Files, stdin, stdout, stderr, sockets, FIFOs, and
+I'm not sure what else would all be represented as IO objects of some sort. 
+Here is a bit where I am still thinking shell is nicer than ruby, because - 
+well, see my shell out in question 2.
 
 5. What is rake and what is it used for? What is a rake task?
+A replacement for Makefiles, supposedly with cleaner syntax. I'll get back to
+you on this one.
 
