@@ -1,23 +1,23 @@
 module SimonSays
-	def echo(greeting)
-		greeting
-	end
 
-	def shout(greeting)
-		greeting
-	end
-	
-	def repeat(repeat)
-		repeat
-	end
+  def echo input
+    input
+  end
 
-	def start_of_word(start)
-		start
+  def shout input
+    input.upcase
+  end
 
-	end
+  def repeat input, n = 2
+    ([input] * n ).join(' ')
+  end
 
-	def first_word(first)
-		first
-	end
-	
+  def start_of_word input, n
+    input.slice(0,n)
+  end
+
+  def first_word sentance
+    sentance.split.first
+  end
+
 end
