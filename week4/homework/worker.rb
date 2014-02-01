@@ -3,7 +3,7 @@ class Worker
   def initialize
   end
 
-  def work
+  def self.work n=1
     yield
   end
 
