@@ -28,5 +28,10 @@ well, see my shell out in question 2.
 
 5. What is rake and what is it used for? What is a rake task?
 A replacement for Makefiles, supposedly with cleaner syntax. I'll get back to
-you on this one.
+you on this one. A task is the rake equivalent of a target: something which 
+we can request be accomplished, which rake will use logic programming to 
+determine what prerequisites must be fulfilled in order to accomplish. Is 
+'default' always the default task, or is it like make where the first target
+is the default target? I've been using make to run tests, so I'll commit
+my Makefile and add a rakefile and compare the two.
 
