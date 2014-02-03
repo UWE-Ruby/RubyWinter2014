@@ -1,5 +1,21 @@
 task :default => [:test]
 
-task :test => do
-  rspec -c --format nested "worker_spec.rb"
-end
+# OK, you don't get a free shell.
+#task :test do
+#  rspec -c --format nested "worker_spec.rb"
+#end
+
+## But shelling out just cheerfully returns success (and loses the output)
+#task :test do
+#  `rspec -c --format nested "worker_spec.rb"`
+#end
+
+#http://blog.revathskumar.com/2011/12/run-rspec-as-rake-task.html
+#
+#Didn't work until moving spec to ./spec/, per
+#https://www.relishapp.com/rspec/rspec-core/docs/command-line/rake-task
+#which meant I had to change header in rspec.
+#Seriously? I have got to be missing something. 
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
+task :test => :spec
