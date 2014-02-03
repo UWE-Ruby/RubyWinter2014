@@ -18,6 +18,11 @@ Windows):
 > `echo "Hello World!" >>my_output.txt`
 
 3. What is the Directory class and what is it used for?
+I have no idea. I can't find such a class.
+
+The Dir class, though, is a class of directories, and gives us nice *nixy stuff
+like .pwd, .home, and .entries (which I would like to see aliased as 'ls'). Is
+this what you were looking for? It seems fitting with IO.
 
 4. What is an IO object?
 An object representing something outside of your program that you can use as 
