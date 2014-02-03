@@ -1,0 +1,5 @@
+task :default => [:test]
+
+task :test => do
+  rspec -c --format nested "worker_spec.rb"
+end
