@@ -5,6 +5,10 @@ class Worker
   def initialize
   end
 
+#  # works on 1st 3 tests. Gives 6 on 4th test
+#  def self.work
+#    yield
+#  end
 #  # some failures:
 #  #
 #  # returns n. times always returns the receiver. ?!
@@ -33,8 +37,8 @@ class Worker
   # block. Not sure I like this approach, but it is reasonably concise and 
   # works. 
   def self.work reps=1
-    1.upto(reps){ $result = yield }
-    $result
+    1.upto(reps){ @result = yield }
+    @result
   end
 
 end
