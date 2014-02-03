@@ -36,6 +36,8 @@ class Worker
   # The block acts as a side effect, so we need to capture what happens in the
   # block. Not sure I like this approach, but it is reasonably concise and 
   # works. 
+  # Heh - I was using $ to keep result in scope. Matthew Spah pointed out that
+  # this is a global variable. Let's make it @.
   def self.work reps=1
     1.upto(reps){ @result = yield }
     @result
