@@ -1,8 +1,3 @@
-Sarah Wheeler
-1/28/14
-Ruby 110
-
-Week 3 Homework
 
 Please Read: 
  - Chapter 6 Standard Types
@@ -12,81 +7,12 @@ Please Read:
 
 1. What is a symbol?
 
-	A symbol is an object that references a name 
-	(and sometimes strings). Symbols are constant, 
-	unique, and don't change (immutable). They are a way of  
-	referencing an object multiple times without 
-	creating multiple copies/object ids of that object,
-	which helps reduce the amount a memory a program is 
-	using. For these reasons, they are frequently used as 
-	keys in hashes. 
 
 2. What is the difference between a symbol and a string?
 
-	A string can be changed at any time, whereas a symbol 
-	cannot be changed after it is initially created. Another 
-	important distinction is that symbols take up less memory 
-	space than strings do, and they are also faster when it 
-	comes to processing equality comparisons. (Even strings 
-	with the same value must first compare object id's before 
-	comparing the contents of the string itself; symbols have
-	unique object id's, so processing time is saved with this
-	step.)
-
 3. What is a block and how do I call a block?
-
-	A block functions similarly to an anonymous method; it is 
-	a piece of code enclosed between either braces ({}) or 
-	"do"/"end" that takes parameters between vertical bars, 
-	and can be passed around to other methods, used for iteration, 
-	or stored in a variable. Blocks are especially useful as
-	an alternative to loops when combined with the Enumerable
-	module, or to provide more transactional control (for 
-	example, having a file automatically open/close itself
-	without explicit instructions from the file user). 
-
-	You can call a block by inserting the "yield" statement into 
-	a method and invoking that method, or by simply writing the 
-	block after a method call that uses them. For example, the 
-	.map method can take a block object when it is called:
-
-		array = ["a", "b", "c"]
-		array.map { |x| "#{x} is a letter"}
-
-
-	Blocks aren't executed when Ruby first sees them; instead, 
-	Ruby will wait for the method that the block is being passed
-	 to to be called, and then it will execute the block. 
-
-	If you have made your block into a Proc object, you can also
-	call the block by using the .call method on the proc. 
 
 4. How do I pass a block to a method? What is the method signature?
 
-	A block can be passed to a method in a couple ways. 
-	Blocks can be inserted directly into the flow of a method 
-	by using the 'yield' statement, which will initialize the
-	block before returning to the rest of the method's code. 
-
-	A block can also be explicitly passed to a method by including 
-	it as a method parameter and prefixing the name with an ampersand 
-	(as in: &block_name). Ruby will then locate the block, convert it 
-	to a Proc object, and treat it like a variable. You can then call 
-	the block inside of the method by using .call and the block's name 
-	(block_name.call). The method signature--which is the method name 
-	followed by its list of arguments--would look something like this:
-
-		def method_receives_block (var1, var2, &block_name)
-			block_name.call
-		end
-
-	This allows the method to use the block as its return value. 
-
 5. Where would you use regular expressions?
 
-	Regular expressions are typically used to search, match, 
-	and replace string sequences. They allow you to define
-	a specific pattern for your program to look for, and 
-	depending on what method you used in combination with the 
-	regular expression, that particular action will be applied 
-	to the results (or simply be returned to you by the method).

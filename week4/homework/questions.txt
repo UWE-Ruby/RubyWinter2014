@@ -1,0 +1,99 @@
+Sarah Wheeler
+2/4/14
+Ruby 110
+
+Week 4 Homework
+
+Please Read: 
+- Chapter 10 Basic Input and Output
+- The Rake Gem: http://rake.rubyforge.org/
+
+
+1. How does Ruby read files?
+
+	Ruby uses its input features to open a 
+	bidirectional communication stream between 
+	itself and external programs and files. It 
+	then "gets" one item at a time from the 
+	specified resource it is talking to. In a 
+	text file, for example, Ruby's default would 
+	be to read one line of text at a time. Just 
+	as you would tell Ruby which file to open, 
+	it is also a best practice to explicitly close 
+	that file when Ruby has completed a task. 
+
+
+
+2. How would you output "Hello World!" to a file called my_output.txt?
+
+	Assuming that the file didn't already exist, 
+	I would start by creating a file object and 
+	passing it the file name (my_output.txt) and 
+	a mode string. Next,  I would use the 'puts' 
+	method to give the file the string I wanted 
+	to be inserted. Once that was done, I would 
+	then close the file. My resulting code would 
+	look like this:
+
+		file = File.new("my_output.txt", "w")
+		file.puts "Hello World!"
+		file.close
+
+	However, this code could be improved by 
+	incorporating a block, which would 
+	automatically close the file for us even if 
+	errors occurred:
+
+		File.open("my_output.txt", "w") do |file|
+	    	puts "Hello World!"
+		end
+
+
+
+3. What is the Directory class and what is it used for?
+
+	The Directory, or Dir class, creates objects 
+	that represent directories (aka folders). 
+	This class allows you to create, delete, and 
+	edit directories.  It also gives Ruby a way 
+	to navigate to and through directories so 
+	that you can access locations outside of your 
+	current working directory. The Enumerable 
+	module can also be mixed in to allow for 
+	iteration through directories and the files 
+	they contain.
+
+
+
+4. What is an IO object?
+
+	An IO object establishes an input/output 
+	connection between Ruby and another resource, 
+	such as a text file or a URL. IO objects 
+	are meant to be read or written to. A simple 
+	example is the Ruby command line: this allows 
+	you to type in your input, which Ruby will 
+	interpret before outputting the returning 
+	information to you.
+
+
+
+5. What is rake and what is it used for? What is a rake task?
+
+	Rake is a former gem (now included with 
+	the base Ruby language) that allows you to 
+	build and test Ruby frameworks. It is commonly 
+	used with Rails, and uses its task feature to 
+	help automate the creation (or deletion) of 
+	files. Like RSpec, Rake is a domain specific 
+	language, and is similar to utilities like 
+	Make and Ant. 
+
+	All Rake code goes into an extensionless file 
+	called Rakefile, which is made up of Rake tasks. 
+	A Rake task is simply a chunk of code that can 
+	be called with 'rake' in the command line. For 
+	example, a ":delete_gitignore_files" task could 
+	be run by entering "rake delete_gitignore_files", 
+	which would use the code in your task script to 
+	delete files ending in .gitignore. 
