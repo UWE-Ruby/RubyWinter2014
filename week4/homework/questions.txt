@@ -3,12 +3,28 @@ Chapter 10 Basic Input and Output
 The Rake Gem: http://rake.rubyforge.org/
 
 1. How does Ruby read files?
+You can open a file using File.open, or another File method.
+If you are running from the command line, you can specify the 
+files by listing them on the command line like so:
+
+my_program my_file1 my_file2
+
+If you do that, the files will be read through stdin. When one file is finished, the next will be opened.
+
+One nice thing about ruby, is that it can close files for you if you pass a block to open. So 
+File.open('./myfile') {|f| buffer = f.read}
+would read './myfile' into a buffer and close the file.
 
 2. How would you output "Hello World!" to a file called my_output.txt?
+Open the file with options: 
+File.open('my_output.txt', 'w') {|f| f.puts('Hello World')}
 
 3. What is the Directory class and what is it used for?
+Dir can open up and manage directories. It is Enumerable, so you can filter files and iterate over them easily.
 
 4. What is an IO object?
+It represensts a stream you can read from. It doesn't have to be a file. It can be a socket connection, or and http connection, etc. There are functions in the net library which return these. Since a File is also and IO object, you can operate on them just as you would a file.
 
 5. What is rake and what is it used for? What is a rake task?
+Rake is like make. But it is even better. It is not just for building projects, it is a convienient way to automate various tasks. For example, you can run your tests ,if you set up a test task, using "rake test". Or you could set up a task to compile your sass to css. Or you could set up a task to watch for changes and do both of those when you make changes.
 
