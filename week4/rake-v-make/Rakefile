@@ -1,0 +1,47 @@
+task :default => :delete_backups
+
+def delete(pattern)
+  files = Dir[pattern]
+  rm(files, verbose: true) unless files.empty?
+end
+
+desc "Remove files whose names end with a tilde"
+task :delete_unix_backups do
+  delete "*~"
+end
+
+desc "Remove files with a .bak extension"
+task :delete_windows_backups do
+  delete "*.bak"
+end
+
+desc "Remove Unix and Windows backup files"
+task :delete_backups => [ :delete_unix_backups, :delete_windows_backups ] do
+  puts "All backups deleted"
+end
+
+desc "make dummy files for testing"
+task :fake do
+  # cool or disgusting? is map really what I want here? It's sort of 
+  # a 2D array I'm doing here. Anyway, it works.
+  1.upto(3){|n| ['.bak','~'].each{|x| touch n.to_s + x}}
+end
+
+desc "show non-comment non-blank lines of code"
+task :compare do
+  ["Makefile", "Rakefile"].each do |f|
+    puts f + ":" 
+    File.open(f, 'r') do |fh|
+      count = Hash.new(0)
+      while line=fh.gets do #match against our regex
+        count[:l] += 1
+        count[:w] += line.scan(/\S+/).length
+        count[:c] += line.length
+      end
+      puts count
+    end
+  end
+end
+
+
+
