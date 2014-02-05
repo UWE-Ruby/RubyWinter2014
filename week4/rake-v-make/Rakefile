@@ -33,7 +33,7 @@ task :compare do
     puts f + ":" 
     File.open(f, 'r') do |fh|
       count = Hash.new(0)
-      while line=fh.gets do #match against our regex
+      while line=fh.gets do #FIXME refactor
         next if (line =~ /(^\s*#)|(^\s*$)/)
         count[:l] += 1
         count[:w] += line.scan(/\S+/).length
