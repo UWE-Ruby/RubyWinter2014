@@ -3,13 +3,25 @@ Chapter 3 Classes, Objects, and Variables
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
+  An object is a collection of methods and data.
+  The object responds to messages that are sent to it by defining methods methods.
+  Objects can be created from a Class using a constructor.
+
 
 2. What is a variable?
+  A reference to an object. (Since everything is an object here.)
+  There are instance variables within objects (@x or @y) which persist in the object. Then there are local variables without a funny prefix. There are $GLOBAL_VARIABLES with a $ prefix. There are variables with two @@ that are associated with the class. Even a class name is a variable, I suppose. They should be capitalized (Klass).
 
 3. What is the difference between an object and a class?
+  An object is an instance of a class. (But a Class is also an Object, technically.) a class is for creating new objects.
 
 4. What is a String?
+  An object or, I guess Class that creates objects, which hold text, and has handy methods for operating on text.
 
 5. What are three messages that I can send to a string object? Hint: think methods
+  "encoding", "length", "+" (does that count?)
 
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+With double and single quotes.
+'I\'m a string.'
+"I'm a string...\n with a variable in it. #{x}"
