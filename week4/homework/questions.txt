@@ -40,3 +40,38 @@ determine what prerequisites must be fulfilled in order to accomplish. Is
 is the default target? I've been using make to run tests, so I'll commit
 my Makefile and add a rakefile and compare the two.
 
+OK, the rakefile looks a bit ugly.
+
+In ../rake-v-make/ are comparable rake and make files, based on the rake intro
+in pickaxe, plus tasks to compare, and to generate dummy files.
+
+$ time make fake default compare
+...
+real    0m0.013s
+user    0m0.005s
+sys     0m0.008s
+
+$ time rake fake default compare
+...
+real    0m0.109s
+user    0m0.094s
+sys     0m0.013s
+This is all too fast to worry about, but the difference in speeds is shocking.
+I wonder what big builds end up looking like.
+
+rake is 37 SLOC vs make's 18
+I'm sure a more experienced rubyist could shorten that up at least a few
+lines. Also, the 5 desc lines aren't necessary - but neither are the 2 lines
+providing 'make help'
+
+make uses shell utilities, so you get stuff like wc(1) for free, instead of
+re-implementing in ruby.
+
+Contrariwise, make uses shell utilities, so you can't be sure it will run the
+same (or at all) on all platforms. I wanted to use seq(1) in the Makefile, but
+that isn't in *BSD base (and when it is ported, it's called gseq). Rake uses
+1.upto, and if you're running rake you have .upto. 
+
+rake is a hell of a lot more readable than make, even for a seasoned maker /
+noob rubyist like me.
+
