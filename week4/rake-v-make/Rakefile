@@ -34,11 +34,12 @@ task :compare do
     File.open(f, 'r') do |fh|
       count = Hash.new(0)
       while line=fh.gets do #match against our regex
+        next if (line =~ /(^\s*#)|(^\s*$)/)
         count[:l] += 1
         count[:w] += line.scan(/\S+/).length
         count[:c] += line.length
       end
-      puts count
+      puts count.values.join("\t")
     end
   end
 end
