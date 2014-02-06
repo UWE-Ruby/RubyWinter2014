@@ -6,10 +6,32 @@ Please Read:
 
 1. What is a symbol?
 
+An alternative "shortcut" syntax that can be used in a hash instead of a hash rocket. For example:
+
+app_hash = { 
+  user => "apache"
+  base => "/var/www/app/"
+}
+
+The same hash using symbols:
+app_hash = {
+  user: 'apache'
+  base: '/var/www/app/'
+}
+The values can be referenced by app_hash[:user] 
+ 
 2. What is the difference between a symbol and a string?
 
-3. What is a block and how do I call a block?
+Symbols are immutable where strings are mutable (can be changed after assingment). That means for symbols, the string class methods like upcase or gsub can't be used. 
+
+3. What is a block and how do I call a block
+
+Block is a chunk of code that you itinerate through. Usually begins with a "do" and ends with "end". You can also use curly braces to start and end your block "{}".
 
 4. How do I pass a block to a method? What is the method signature?
 
+You can pass a call to a method in a block using "yeild".
+
 5. Where would you use regular expressions?
+
+Mostly in patern matching with strings.
