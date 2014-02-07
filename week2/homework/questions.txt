@@ -1,3 +1,8 @@
+Sarah Wheeler
+1/22/14
+Ruby 110
+
+Week 2 Homework
 
 Please Read The Chapters on: 
 Containers, Blocks, and Iterators 
@@ -5,10 +10,46 @@ Sharing Functionality: Inheritance, Modules, and Mixins
 
 1. What is the difference between a Hash and an Array?
 
+		An array is indexed with integers, while a hash 
+		can use any object as its index. Unlike arrays, 
+		hashes store two objects when they are populated--
+		the key (i.e., the index) and its value.
+
 2. When would you use an Array over a Hash and vice versa?
+
+		You would want to use an array if you wanted to 
+		store collections of objects that can be accessed 
+		through an integer index. If you found yourself 
+		writing a hash that used integers for its unique 
+		keys, you might be better off using an array instead.
+
+		You would want to use a hash when your collection requires 
+		more flexibility with the types of objects it can use for  
+		indexes (i.e., non-integers). If you wanted to associate a 
+		relationship between two strings, for example, a hash would 
+		probably be the most appropriate collection to use. Another 
+		major advantage is that Ruby will remember the order of the 
+		items added to your hash.
 
 3. What is a module? Enumerable is a built in Ruby module, what is it?
 
+		A module is "a way of grouping together methods, classes, 
+		and constants" (Pickaxe, p. 73, 4th ed). Although it isn't 
+		a class and can't have instances, you can use its Mixin 
+		functionality to lend its methods to other classes. 
+
+		Enumerable is a module that was created to provide collections 
+		(arrays and hashes) with methods that allow them to sort, 
+		search, and iterator through their elements. 
+
 4. Can you inherit more than one thing in Ruby? How could you get around this problem?
 
+		Ruby is a single-class inheritance language, but through the use 
+		of modules and mixins, it is possible to mimic multiple 
+		inheritance in a controlled environment.
+
 5. What is the difference between a Module and a Class?
+
+		A module cannot have instances, which means that it is not meant 
+		to help create objects like a class is--instead, it is meant to 
+		provide a set of specialized methods to another class.
