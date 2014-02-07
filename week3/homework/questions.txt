@@ -1,15 +1,57 @@
 Please Read: 
- - Chapter 6 Standard Types
- - Review Blocks
- - Chapter 7 Regular Expressions
- - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
+- Chapter 6 Standard Types
+- Review Blocks
+- Chapter 7 Regular Expressions
+- Chapter 22 The Ruby Language: basic types (symbols), variables and
+  constants
 
-1. What is a symbol?
+1. What is a symbol?  A symbol is a essentially a string that is
+prefixed with a colon (ex. :id). Symbols can be used to provide
+descriptive names but unlike strings, they persist in memory and each
+time they are called you are using the same instance. They are
+efficient way of having descriptive names while saving the space one
+would use to generate a string for each naming instance. Its less work
+for the memory allocator and the garbage collector. Symbols are good
+    for when you have a string identifier that appears often in the
+        code.
 
-2. What is the difference between a symbol and a string?
+2. What is the difference between a symbol and a string?  If you are
+using a string to refer to something more than once in the code, a
+symbol would be more efficient than a string. Two strings with the
+same contents are two different objects, but for any given name there
+is only one Symbol object. This can save both time and memory. Also
+symbols are usually short and comprised of a single word.
 
-3. What is a block and how do I call a block?
+3. What is a block and how do I call a block?  A block is a chunk of
+code between braces or between do- end that is treated as a single
+unit and that can be passed around the program almost as if they were
+parameters. In Ruby, the convention is to use the brances for short
+one line blocks and the do -end for multiline blocks, however the
+brances have a higher precedence. A method can call the associated
+block more than once using the yield statement. Methods are not
+required to call associated blocks. Blocks can even have their own
+arguments. 
 
 4. How do I pass a block to a method? What is the method signature?
+Blocks can be passed explicitly or implicitly. To pass a block
+implicitly to the method, we use the yield keyword. The block is
+defined outside of the method and the method signature does is not
+affected. To call the block, the method uses the yield keyword within
+the method body. Since it can be hard to tell if a block has been
+passed implicitly to a method, it is easy to make the mistake of
+calling yield in a method that was not passed a block, which will
+raise an exception. This can be avoided by doing a quick check before
+the yield and calling "yield block_given?". The other way to pass a
+block is to prefix the last argument in a method signature with and
+ampersand which creates a Proc object that can be executed within the
+method body to execute the block, this second approach can negatively
+impact performance since a proc object is instantiated on each use of
+the call method.  
 
-5. Where would you use regular expressions?
+5. Where would you use regular expressions?  Regular expressions or
+Regexp are automatically built into the Ruby language (unlike some
+other languages). A regular expression is used to match a pattern
+against strings and can be helpful in extracting specific portions of
+a string or testing to see if a pattern exists within the given
+string. It uses a sequence of control characters and letters to match
+various combinations.
