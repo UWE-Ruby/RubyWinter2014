@@ -2,6 +2,7 @@ Please Read:
 Chapter 11 Basic Input and Output
 The Rake Gem: http://rake.rubyforge.org/
 
+
 1. How does Ruby read files?
     To read Ruby files put '.gets' after the file name (i.e. file.gets).
 

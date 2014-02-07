@@ -4,4 +4,5 @@ class Worker
   def self.work
     yield
   end
+
 end
