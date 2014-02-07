@@ -1,27 +1,21 @@
 class Book
-  attr_accessor :title
-  attr_reader :page_count
 
-  @@book_count = 0
+  attr_accessor :pages, :title
 
-  def self.book_count
-    @@book_count
-  end
+  @@library_count = 0
 
-  def initialize title = "Not Set", page_count = 0
-    @@book_count += 1
-    @page_count = page_count
+  def initialize pages = 0, title="N/A"
+    @pages = pages
     @title = title
+    @@library_count += 1 
   end
 
-
-  def test
-    @test = "Hello!"
+  def self.library_count
+      @@library_count
   end
-
-  def out_put_test
-    puts @test
-    puts @@book_count
+ 
+  def happy
+    "There are #{@pages} happy pages in this book"
   end
 
 end
