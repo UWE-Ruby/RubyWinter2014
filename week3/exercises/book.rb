@@ -1,5 +1,6 @@
 class Book
 
+<<<<<<< HEAD
 	attr_accessor :pages, :title
 
 	@@library_count = 0
@@ -18,5 +19,10 @@ class Book
 		$global_hello = "hello"
 		"There are #{pages} happy pages in this book"
 	end
+=======
+  def pages
+    
+  end
+>>>>>>> f7862ea7a840b4f8235c899e2c56a93c586fbd2d
 
 end

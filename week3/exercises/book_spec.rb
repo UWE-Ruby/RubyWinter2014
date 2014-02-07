@@ -1,6 +1,7 @@
 require './book.rb'
 
 describe Book do
+<<<<<<< HEAD
 
   	before :each do
   		@book = Book.new 542, "Programming Ruby"
@@ -33,3 +34,12 @@ describe Book do
 
 end
 
+=======
+  
+  it "should have a pages" do
+    book = Book.new
+    book.should respond_to "pages"
+  end
+
+end
+>>>>>>> f7862ea7a840b4f8235c899e2c56a93c586fbd2d
