@@ -6,10 +6,39 @@ Please Read:
 
 1. What is a symbol?
 
+Symbol is a constant, that uniquely identifies string of characters (named thing). It is respresented as a colon followed by a string of characters.
+
 2. What is the difference between a symbol and a string?
+
+Since symbol is a constant its value/content can't be changed, where as a string content can be changed. Also a symbol is created only once irrespective of how many times we use it, where as a string is created multiple times if used at multiple places.
 
 3. What is a block and how do I call a block?
 
+Block is one or more lines of code enclosed in braces or keywords do and end. Block passed to a method can be invoked by using "yield" statement inside method definition.
+
 4. How do I pass a block to a method? What is the method signature?
 
+A block is passed to a method, by defining it immediately after the method invocation. If there are parameters to the method, then block should be defined after the parameters are specified.
+
+def method1
+...
+end
+
+method1 { "block that would be passed to method 1" } 
+
+def method2 (para1, para2)
+...
+end
+
+method2 (a, b) do 
+	"block that would" \
+		"be passed to method2"
+end 
+
 5. Where would you use regular expressions?
+
+Regular expression is a string of characters that defines a pattern. The patterns are used:
+
+ a. To test if a string or part of a string matches the pattern
+ b. To extract information from a string that matches the given pattern
+ c. To change (.i.e substitue/delete) sections within a string that matches the pattern

@@ -10,17 +10,23 @@
 describe String do
 	context "When a string is defined" do
 		before(:all) do
-			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
+			@myString = "JayaPrakash likes programming and mystery novels"
 		end
-		it "should be able to count the charaters"
-		it "should be able to split on the . charater" do
-			pending
-			result = #do something with @my_string here
-			result.should have(2).items	
+		it "should be able to count the charaters" do
+			(@myString.length).should eq 48
+		end
+		it "should be able to split on the ' ' charater" do
+			result = @myString.split(' ')
+			result.should have(6).items	
 		end
 		it "should be able to give the encoding of the string" do
-			pending 'helpful hint: should eq (Encoding.find("UTF-8"))'
+			(@myString.encoding).should_not eq nil
+			(@myString.encoding.to_s).should eq "UTF-8"
+			(@myString.encoding).should eq Encoding.find("UTF-8")
+			@myString = @myString.force_encoding(Encoding.find("ASCII-8BIT"))
+			(@myString.encoding).should eq Encoding.find("ASCII-8BIT")
+			(@myString.encoding).should_not eq Encoding.find("UTF-8")
+			(@myString.encoding == Encoding.find("UTF-8")).should eq false
 		end
 	end
 end
-
