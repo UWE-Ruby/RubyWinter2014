@@ -43,5 +43,10 @@ class Worker
     @result
   end
 
+#  # Renée's - she says to watch for the pattern that can be resolved down
+  #  to inject 
+#  def self.work t=1
+#    t.times.inject(nil) {yield}
+#  end
 end
 
