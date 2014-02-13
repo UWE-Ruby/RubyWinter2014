@@ -31,6 +31,14 @@ describe Calculator do
 		@calculator.multiply(2,2).should eq 4
 	end
 
+  	it "multiplies an array of length 1 by 1" do
+		@calculator.multiply([500]).should eq 500
+  	end
+
+  	it "multiplies floats " do
+		@calculator.multiply([1.1,2]).should eq 2.2
+  	end
+
   	it "multiplies an array of numbers" do
 		@calculator.multiply([2,2]).should eq 4
   	end
@@ -62,6 +70,8 @@ describe Calculator do
     it "computes the factorial of 10" do
     	@calculator.fac(10).should eq 3628800
     end
+    # How do you do error checking? I would like my fac() to complain
+    # about floats on input, without killing the program.
 
   end
 
