@@ -3,7 +3,7 @@ class Calculator
     numbers.inject 0, :+
   end
   def multiply *numbers
-    numbers.flatten.inject :*
+    numbers.flatten.inject 1, :*
   end
   def pow x, y
     x**y
