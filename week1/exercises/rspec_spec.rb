@@ -43,7 +43,7 @@ describe "The Rspec ruby gem" do
 
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      1.should eq 1
 
     end
 
@@ -80,7 +80,7 @@ describe "The Rspec ruby gem" do
       ((((1+2)-5)*6)/2).should eq -6
     end
     it "should count the characters in your name" do
-      "Tom".should have(3).characters
+      "Kody".should have(4).characters
     end
     
     it "should check basic math" do

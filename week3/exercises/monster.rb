@@ -11,4 +11,9 @@ class Monster
 		@dangers = dangers
 		@legs = legs
 	end
+	
+	def attack! human
+    puts "hi from Monster"
+  end
+  
 end	
