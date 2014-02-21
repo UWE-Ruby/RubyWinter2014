@@ -1,30 +1,42 @@
 
 class TicTacToe
   attr_accessor :player
-  attr_reader :player_symbol, :computer_symbol
+  attr_reader :player_symbol, :computer_symbol, :current_player
 
   SYMBOLS = [:X, :O]
 
-  def initialize(player = 'PLAYER 1')
-    @player = player
+  def initialize(player=:player, symbol=nil)
+    #if ! [:player, :comuter].include? player
+    #   @player = player
+    #end
+    if symbol
+      @player_symbol = symbol
+    else
+      @player_symbol = random_symbol
+    end
+    @computer_symbol = opposite_symbol @player_symbol
+
+    if @player_symbol == :X
+      @current_player == @player
+    else
+      @current_player == 'Computer'
+    end
+
   end
+
 
   def welcome_player
-    "Welcome #{player}"
+    "Welcome #{@player}"
   end
 
-  def current_player
-    return @current_p if @current_p
-    if rand > 0.5
-      @current_p = @player
-      @player_symbol = :X
-      @computer_symbol = :O
-    else
-      @current_p = "Computer"
-      @player_symbol = :O
-      @computer_symbol = :X
-    end
-    @current_p
+  def opposite_symbol s
+    raise TypeError('Invalid Symbol') unless SYMBOLS.index(s)
+    SYMBOLS[(SYMBOLS.index(s) + 1) % 2]
   end
+
+  def random_symbol
+    SYMBOLS[rand.round]
+  end
+
 
 end
