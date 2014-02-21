@@ -1,5 +1,6 @@
 require 'rspec/mocks/standalone'
 require 'rspec/expectations'
+require './tic_tac_toe'
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
 end
