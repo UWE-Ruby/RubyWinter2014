@@ -1,5 +1,5 @@
 class EvenNumber
-	include Comparable 
+	include Comparable
 	attr_reader :value
 
 	def self.new(value)
@@ -9,7 +9,7 @@ class EvenNumber
 
 	def initialize(value)
 		@value = value
-	end 
+	end
 
 	def succ
 		EvenNumber.new(@value + 2)
