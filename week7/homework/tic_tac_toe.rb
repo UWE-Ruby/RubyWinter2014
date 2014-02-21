@@ -6,10 +6,25 @@ class TicTacToe
   SYMBOLS = [:X, :O]
 
   def initialize(first_player=nil, symbol=nil)
-    @player_symbol = random_symbol
+    if symbol
+      @player_symbol = symbol
+    else
+      @player_symbol = random_symbol
+    end
     @computer_symbol = opposite_symbol @player_symbol
-    @curr_player = (rand.round > 0.5) ? :player : :computer
+    if first_player
+      @curr_player = first_player
+    else
+      @curr_player = (rand.round > 0.5) ? :player : :computer
+    end
 
+
+  end
+
+  def indicate_player_turn
+    if @curr_player == :player
+      puts "#{@player}'s move:"
+    end
   end
 
   def current_player
