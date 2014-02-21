@@ -5,13 +5,13 @@ Instructions for Mid-Term submission and Git Review (10pts):
  - Use .gitignore to ignore any files that are not relevant to the midterm
  - E-mail me your ssh public key
  - I will email you back with your repository name
- - Add a remote to your git repository: git@reneedv.com:RubyWinter2014/YOURREPOSITORYNAME.git
+ - Add a remote to your git repository: git@nird.us:RubyFall2013/YOURREPOSITORYNAME.git
  - Push your changes to the remote
- - After 6pm Thursday February 20th you will not be able to push to your remote repository (or clone).
-
+ - After 6pm Tuesday November 19th you will not be able to push to your remote repository (or clone).
+ 
  Questions (20pts):
  - What are the three uses of the curly brackets {} in Ruby?
- - What is a regular expression and what is a common use for them?
+ - What is a regular expression and what is a common use for them? 
  - What is the difference between how a String, a symbol, a FixNum, and a Float are stored in Ruby?
  - Are these two statements equivalent? Why or Why Not?
    1. x, y = "hello", "hello"
@@ -35,5 +35,5 @@ Instructions for Mid-Term submission and Git Review (10pts):
 
 Mid-Term Spec (50pts):
 - Make the tests pass.
-
-
+ 
+ 
