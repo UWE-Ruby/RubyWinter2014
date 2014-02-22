@@ -4,6 +4,9 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 Questions:
 1. What is method_missing and how can it be used?
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+
 3. When would you use DuckTypeing? How would you use it to improve your code?
+Instead of testing for a type, you just check for behavior, such as does if have X method? So if it has the << method to append, just use it.
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
 5. What is the difference between a singleton class and a singleton method?
