@@ -7,12 +7,14 @@ class PirateTranslator
 
   def translate
 
-    #FIXME ugly
+    #FIXME ugly, dumb trick from 
+    # http://rubyquicktips.com/post/4438542511/heredoc-and-indent
     @piratish = <<-END.gsub(/^ {6}/, '').chomp
       Ahoy Matey
        Shiber Me Timbers You Scurvey Dogs!!
     END
-    #FIXME also ugly
+
+    #FIXME also ugly and dumb.
     @piratish = 'Ahoy Matey' << "\n Shiber Me Timbers You Scurvey Dogs!!"
   end
 end
