@@ -29,7 +29,7 @@ class TicTacToe
   end
 
   def open_spots
-    board.map{|spot, v| spot if v.nil?}
+    board.select{|spot, v| spot if v.nil?}.map{|k,v| k}
   end
 
   #FIXME refactor these 2
@@ -57,9 +57,8 @@ class TicTacToe
   end
 
   def computer_move
-    choices = open_spots.length - 1
-    pos = open_spots[dien choices]
-    @board[pos] = @computer_symbol
+    pos = open_spots[dien open_spots.length - 1]
+    @board[pos] = @symbol[:computer]
     pos
   end
 
