@@ -13,10 +13,23 @@ class TicTacToe
       :player => s,
       :computer => SYMBOLS[(SYMBOLS.index s)^1]
     }
+    @board = {
+      :A1 => nil, :A2 => nil, :A3 => nil,
+      :B1 => nil, :B2 => nil, :B3 => nil,
+      :C1 => nil, :C2 => nil, :C3 => nil
+    }
   end
 
   def player= name
     @player = @name[:player] = name
+  end
+
+  def board
+    @board
+  end
+
+  def open_spots
+    board.map{|spot, v| spot if v.nil?}
   end
 
   #FIXME refactor these 2
@@ -44,9 +57,8 @@ class TicTacToe
   end
 
   def computer_move
-  end
-
-  def open_spots
+    n_open = open_spots.length
+    open_spots[rand(0...n_open)]
   end
 
   private
