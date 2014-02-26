@@ -39,6 +39,9 @@ class TicTacToe
     puts "#{@player}'s Move:"
   end
 
+  def get_player_move
+  end
+
   private
 
   def toggle_current_player
