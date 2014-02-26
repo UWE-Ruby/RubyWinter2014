@@ -6,8 +6,12 @@ class TicTacToe
 
   def initialize starts=PLAYERS[zor1], s=SYMBOLS[zor1]
     @name    = {:player => 'Player', :computer => 'Computer'} 
-    #@symbol_index = SYMBOLS.index s
     @whose_turn = PLAYERS.index starts
+    @whose_symb = SYMBOLS.index s
+    @symbol  = {
+      PLAYERS[@whose_turn]   => s,
+      PLAYERS[@whose_turn^1] => SYMBOLS[(SYMBOLS.index s)^1]
+    }
   end
 
   def player= name
@@ -15,11 +19,11 @@ class TicTacToe
   end
 
   def player_symbol
-    :X
+    @symbol[:player]
   end
 
   def computer_symbol
-    :O
+    @symbol[:computer]
   end
 
   def welcome_player
