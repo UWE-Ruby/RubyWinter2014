@@ -5,6 +5,7 @@ class TicTacToe
 
   SYMBOLS = [:X, :O]
 
+
   def initialize(first_player=nil, symbol=nil)
     if symbol
       @player_symbol = symbol
@@ -17,7 +18,9 @@ class TicTacToe
     else
       @curr_player = (rand.round > 0.5) ? :player : :computer
     end
-
+    #init board to nil
+    @board = {}
+    ('A'..'C').each {|a| ("#{a}1".."#{a}3").each {|b| @board[:"#{b}"] = nil;}}
 
   end
 
@@ -25,6 +28,11 @@ class TicTacToe
     if @curr_player == :player
       puts "Renee's Move:"
     end
+  end
+
+  def get_player_move
+    move = gets
+    move
   end
 
   def current_player
@@ -37,6 +45,29 @@ class TicTacToe
 
   def welcome_player
     "Welcome #{@player}"
+  end
+
+  def open_spots
+
+  end
+
+  def comptuer_move
+
+  end
+
+  def current_state
+
+  end
+
+  def determine_winner
+  end
+  def player_won?
+  end
+  def draw?
+  end
+  def over?
+  end
+  def spots_open?
   end
 
   def opposite_symbol s
