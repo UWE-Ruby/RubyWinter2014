@@ -1,3 +1,4 @@
+require 'pry'
 
 class TicTacToe
   attr_accessor :player, :board
@@ -52,21 +53,23 @@ class TicTacToe
     move
   end
 
+  def valid_move? move
+    open_spots.include? move.to_sym
+  end
+
+  def make_move location, symbol
+    @board[location.to_sym] = symbol
+  end
+
   def get_player_move
-    m = gets
-    move = m.to_sym
-    $stderr.puts 'get player move #{move}'
-    if open_spots.include? move
-      @board[move] = :player_symbol
-      return m
-    else
-      return nil
-    end
+    move = gets
+    make_move move, @player_symbol
+    m
   end
 
   def player_move
     puts "Your move #{@player}"
-    get_player_move.to_sym
+    get_player_move().to_sym
   end
 
 
