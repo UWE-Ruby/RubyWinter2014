@@ -18,6 +18,7 @@ class TicTacToe
     @player = @name[:player] = name
   end
 
+  #FIXME refactor these 2
   def player_symbol
     @symbol[:player]
   end
@@ -32,6 +33,10 @@ class TicTacToe
 
   def current_player
     @name[PLAYERS[@whose_turn]]
+  end
+
+  def indicate_palyer_turn
+    puts "#{@player}'s Move:"
   end
 
   private
