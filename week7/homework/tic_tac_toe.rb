@@ -20,7 +20,7 @@ class TicTacToe
     end
     #init board to nil
     @board = {}
-    ('A'..'C').each {|a| ("#{a}1".."#{a}3").each {|b| @board[:"#{b}"] = nil;}}
+    ('A'..'C').each {|a| ("#{a}1".."#{a}3").each {|b| @board[:"#{b}"] = ' ';}}
 
   end
 
@@ -43,7 +43,7 @@ class TicTacToe
   end
 
   def open_spots
-    @board.select {|location, piece| piece.nil?}.keys
+    @board.select {|location, piece| piece == ' '}.keys
   end
 
   def computer_move
@@ -71,7 +71,7 @@ class TicTacToe
 
 
   def current_state
-    b = @board.values.map {|piece| piece.nil? ? '.' : piece}.to_a
+    b = @board.values.map {|piece| piece == ' ' ? '.' : piece}.to_a
     [
       b[0..2].join(" | "),
       b[3..5].join(" | "),
