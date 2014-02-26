@@ -4,7 +4,7 @@ class TicTacToe
   attr_reader :player
   attr_accessor :player_symbol, :computer_symbol, :players, :whose_turn
 
-  def initialize starts=PLAYERS[zor1], s=SYMBOLS[zor1]
+  def initialize starts=PLAYERS[dien], s=SYMBOLS[dien]
     @name    = {:player => 'Player', :computer => 'Computer'} 
     @whose_turn = PLAYERS.index starts
     @whose_symb = SYMBOLS.index s
@@ -57,18 +57,23 @@ class TicTacToe
   end
 
   def computer_move
-    n_open = open_spots.length
-    open_spots[rand(0...n_open)]
+    choices = open_spots.length - 1
+    pos = open_spots[dien choices]
+    @board[pos] = @computer_symbol
+    pos
   end
 
+  def current_state
+    @board.map{|pos, state| state.to_s}
+  end
   private
 
   def toggle_current_player
     self.whose_turn = self.whose_turn^1
   end
 
-  def zor1
-    rand(0..1)
+  def dien n=1
+    rand(0..n)
   end
 
 end
