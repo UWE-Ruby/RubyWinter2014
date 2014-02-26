@@ -43,6 +43,12 @@ class TicTacToe
   def get_player_move
   end
 
+  def computer_move
+  end
+
+  def open_spots
+  end
+
   private
 
   def toggle_current_player
