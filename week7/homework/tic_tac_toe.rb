@@ -23,7 +23,7 @@ class TicTacToe
 
   def indicate_player_turn
     if @curr_player == :player
-      puts "#{@player}'s move:"
+      puts "Renee's Move:"
     end
   end
 
