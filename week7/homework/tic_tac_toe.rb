@@ -48,15 +48,22 @@ class TicTacToe
   end
 
   def open_spots
-
+    @board.select {|location, piece| piece.nil?}.keys
   end
 
-  def comptuer_move
-
+  def computer_move
+    move = open_spots.sample
+    @board[move] = computer_symbol
+    move
   end
 
   def current_state
-
+    b = @board.values.map {|piece| piece.nil? ? '.' : piece}.to_a
+    [
+      b[0..2].join(" | "),
+      b[3..5].join(" | "),
+      b[6..8].join(" | ")
+    ].join("\n")
   end
 
   def determine_winner
