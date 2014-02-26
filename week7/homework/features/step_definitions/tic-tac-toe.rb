@@ -2,12 +2,12 @@ class TicTacToe
   SYMBOLS = [:X, :O]
   PLAYERS = [:player, :computer]
   attr_reader :player
-  attr_accessor :player_symbol, :computer_symbol, :players, :player_index
+  attr_accessor :player_symbol, :computer_symbol, :players, :whose_turn
 
   def initialize starts=PLAYERS[zor1], s=SYMBOLS[zor1]
     @name    = {:player => 'Player', :computer => 'Computer'} 
-    @symbol_index = SYMBOLS.index s
-    @player_index = PLAYERS.index starts
+    #@symbol_index = SYMBOLS.index s
+    @whose_turn = PLAYERS.index starts
   end
 
   def player= name
@@ -15,9 +15,11 @@ class TicTacToe
   end
 
   def player_symbol
+    :X
   end
 
   def computer_symbol
+    :O
   end
 
   def welcome_player
@@ -25,13 +27,13 @@ class TicTacToe
   end
 
   def current_player
-    @name[PLAYERS[@player_index]]
+    @name[PLAYERS[@whose_turn]]
   end
 
   private
 
   def toggle_current_player
-    self.player_index = self.player_index^1
+    self.whose_turn = self.whose_turn^1
   end
 
   def zor1
