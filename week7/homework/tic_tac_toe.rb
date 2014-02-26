@@ -1,6 +1,6 @@
 
 class TicTacToe
-  attr_accessor :player
+  attr_accessor :player, :board
   attr_reader :player_symbol, :computer_symbol
 
   SYMBOLS = [:X, :O]
@@ -30,11 +30,6 @@ class TicTacToe
     end
   end
 
-  def get_player_move
-    move = gets
-    move
-  end
-
   def current_player
     if @curr_player == :player
       return @player
@@ -56,6 +51,24 @@ class TicTacToe
     @board[move] = computer_symbol
     move
   end
+
+  def get_player_move
+    m = gets
+    move = m.to_sym
+    $stderr.puts 'get player move #{move}'
+    if open_spots.include? move
+      @board[move] = :player_symbol
+      return m
+    else
+      return nil
+    end
+  end
+
+  def player_move
+    puts "Your move #{@player}"
+    get_player_move.to_sym
+  end
+
 
   def current_state
     b = @board.values.map {|piece| piece.nil? ? '.' : piece}.to_a
