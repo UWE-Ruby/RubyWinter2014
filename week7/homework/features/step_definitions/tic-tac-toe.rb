@@ -9,8 +9,9 @@ class TicTacToe
     @whose_turn = PLAYERS.index starts
     @whose_symb = SYMBOLS.index s
     @symbol  = {
-      PLAYERS[@whose_turn]   => s,
-      PLAYERS[@whose_turn^1] => SYMBOLS[(SYMBOLS.index s)^1]
+      #PLAYERS[@whose_turn]   => s,
+      :player => s,
+      :computer => SYMBOLS[(SYMBOLS.index s)^1]
     }
   end
 
