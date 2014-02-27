@@ -30,6 +30,13 @@ Eigenclass. (Though classes are a sort of object, so it seems to me that class
 methods should be viewed as the special case here.) 
 
 3. When would you use DuckTypeing? How would you use it to improve your code?
+
+I would use it implicitly everywhere in Ruby or Python. Consciously using it
+would improve my code by:
+  Removing superfluous code for checking types where it doesn't matter
+
+  Making my code extensible or modifiable by not wiring down types
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
 5. What is the difference between a singleton class and a singleton method?
 
