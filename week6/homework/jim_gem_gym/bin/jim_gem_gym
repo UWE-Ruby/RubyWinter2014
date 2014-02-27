@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'jim_gem_gym'
+
+puts Reality.new("benign").worldview

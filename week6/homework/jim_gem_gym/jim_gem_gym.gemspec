@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name         = 'jim_gem_gym'
-  s.version      = '0.0.0'
+  s.version      = '0.0.2'
   s.date         = '2014-02-27'
   s.summary      = "Creating a test gem"
   s.description  = "A gem to learn how to make gems."
@@ -9,4 +9,5 @@ Gem::Specification.new do |s|
   s.homepage     = 'http://rubygems.org/gems/jim_gem_gym'
   s.license      = 'MIT'
   s.files        = ["lib/jim_gem_gym.rb"]
+  s.executables  = ["jim_gem_gym"]
 end
