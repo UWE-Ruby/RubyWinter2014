@@ -3,10 +3,18 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+It is called by Ruby if it cannot find a method in the inheritance chain. If you want to create methods on the fly, you can use it to catch methods that you have not defined, but wish you did. For example, User.find_by_name_and_phone name, phone could be made up on the fly by the User class to search the in the way you want it to.
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+An Eigenclass is an anonomous class just below the class in question in the inheritance chain. Singleton methods live on that Eigenclass/singleton class, which is created when you define Singleton methods.
 
 3. When would you use DuckTypeing? How would you use it to improve your code?
-Instead of testing for a type, you just check for behavior, such as does if have X method? So if it has the << method to append, just use it.
+Instead of testing for a type, you just check for behavior, such as does it have X method? Then you can use X method! So if it has the << method to append, just use it. It doesnt matter if the object is an Array or a String as long as you can append to it. You just need to keep track of those things yourself.
 
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+A class method is on the Class object (actually a singleton class of Class created when you use the class keyword), and an instance method is on the object created by the constructor.
+So Cat.meow() will not work, but Cat.new.meow() will. Cat.legs == 4 will return true. This assuming that meow is a method for instances and legs is the general number related to the class of animal, excepting cats with missing legs.
+The difference between instance_eval and class_eval is what self is set to. In the former, self is set to the object, and the block will be called as though it were an instance method. If it is called on an ordinary object, this will just be like a method call. If it is called on a Class, then you will be definining class methods if you use the def keyword. In the latter, its set to the Class and things are just as they are when you are defining a class, so you will be defining instance methods if you def anything.
+
 5. What is the difference between a singleton class and a singleton method?
+A singleton method is a method slapped onto an object. A singleton class/Eigenclass is the class that ruby creates in order to accommodate your singleton method.
