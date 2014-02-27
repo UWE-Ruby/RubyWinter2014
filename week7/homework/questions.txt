@@ -17,7 +17,9 @@ Questions:
 
 3. When would you use DuckTypeing? How would you use it to improve your code?
 
+	If I understand correctly, I use duck typing everywhere as I don't specify the type of parameters or check for the type of variables passed into methods.
 
+	I would use it to make my code concise and readable. As the type of objects that can be handled is determined based upon what they can do, code I create would be generic. 
 
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
 
