@@ -38,6 +38,26 @@ would improve my code by:
   Making my code extensible or modifiable by not wiring down types
 
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+
+A class method is available to any instance of the class. (Singh says a class 
+method is a singleton method of the class, so they live in the Eigenclass of 
+the class.[2]) An instance method is available to instances of the class. So:
+  class Myclass
+    def self.my_class_method
+    end
+
+    def my_instance_method
+    end
+  end
+
+  Myclass.my_class_method
+  m = Myclass.new
+  m.my_instance_method
+
+#FIXME So what?
+
+#FIXME diff the evals
+
 5. What is the difference between a singleton class and a singleton method?
 
 
