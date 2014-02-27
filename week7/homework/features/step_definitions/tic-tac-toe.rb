@@ -14,9 +14,9 @@ class TicTacToe
       :computer => SYMBOLS[(SYMBOLS.index s)^1]
     }
     @board = {
-      :A1 => nil, :A2 => nil, :A3 => nil,
-      :B1 => nil, :B2 => nil, :B3 => nil,
-      :C1 => nil, :C2 => nil, :C3 => nil
+      :A1 => ' ', :A2 => ' ', :A3 => ' ',
+      :B1 => ' ', :B2 => ' ', :B3 => ' ',
+      :C1 => ' ', :C2 => ' ', :C3 => ' '
     }
   end
 
@@ -29,7 +29,7 @@ class TicTacToe
   end
 
   def open_spots
-    board.select{|spot, v| spot if v.nil?}.map{|k,v| k}
+    board.select{|spot, v| spot if v.is_a? String}.map{|k,v| k}
   end
 
   #FIXME refactor these 2
