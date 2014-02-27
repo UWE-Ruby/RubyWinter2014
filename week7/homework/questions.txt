@@ -54,9 +54,15 @@ class.[2]) An instance method is available to instances of the class. So:
   m = Myclass.new
   m.my_instance_method
 
-#FIXME So what?
+#FIXME I don't really understand where I should be using class methods.
 
-#FIXME diff the evals
+instance_eval sets self to the receiver and executes a block within that
+context.  It lets you peek at the receiver's instance variables, but also lets
+you run instance methods as barewords, like in the Pickaxe book turtle program.
+So defining a method with instance_eval will define a class methods.
+
+class_eval does the same, but at a module or class level. So defining a method
+with class_eval will define an instance method.
 
 5. What is the difference between a singleton class and a singleton method?
 
