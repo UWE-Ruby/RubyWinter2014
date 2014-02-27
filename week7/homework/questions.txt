@@ -3,7 +3,21 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+method_missing is a method of class Object which is called if no other method
+can be found by the name called. It raises an exception. It can be usefully 
+used by overriding it in your class, and:
+  Catching methods that match a regex, and generating them on the fly (passing
+  the mismatches on up the line to Object.method_missing). This is how the 
+  Rails find_by_.* is implemented. 
+  
+  (as per [1]:) Using it in a wrapper class to decide which methods can proceed
+  'even though we said no'. (I like Perrota's example, but am not sure I can
+  think of my own usage scenario yet.)
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
 3. When would you use DuckTypeing? How would you use it to improve your code?
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
 5. What is the difference between a singleton class and a singleton method?
+
+
+[1] http://rubylearning.com/blog/2010/10/07/do-you-know-rubys-chainsaw-method/
