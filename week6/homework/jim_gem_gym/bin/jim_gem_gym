@@ -2,4 +2,6 @@
 
 require 'jim_gem_gym'
 
-puts Reality.new("benign").worldview
+paradigm = ARGV.first || "benign"
+
+puts Reality.new(paradigm).worldview

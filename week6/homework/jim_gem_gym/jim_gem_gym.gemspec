@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name         = 'jim_gem_gym'
-  s.version      = '0.0.2'
+  s.version      = '0.0.3'
   s.date         = '2014-02-27'
   s.summary      = "Creating a test gem"
   s.description  = "A gem to learn how to make gems."
