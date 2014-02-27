@@ -7,11 +7,6 @@ class PirateTranslator
 		@result = arg
 	end
 
-	def split
-		
-	end
-
-	
 
 
 end
