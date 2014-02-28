@@ -4,7 +4,7 @@ class String
   end
 end
 
-class PirateTranslator
+ class PirateTranslator
   PIRATE_WORDS = {
     hello_friend: "Ahoy Matey"
   }
@@ -14,13 +14,13 @@ class PirateTranslator
   end
 
   def translate
-    pirate_lookup(@said) + "\n Shiber Me Timbers You Scurvey Dogs!!"
+    pirate_lookup + "\n Shiber Me Timbers You Scurvey Dogs!!"
   end
 
 private
 
-  def pirate_lookup said
-    key = said.to_pirate_symbol
+  def pirate_lookup
+    key = @said.to_pirate_symbol
     PIRATE_WORDS[key]
   end
-end
+ end
