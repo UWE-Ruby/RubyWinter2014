@@ -1,3 +1,5 @@
+
+
 Gangway /^I have a (\w+)$/ do |arg|
 	@translator = Kernel.const_get(arg).new
 end

@@ -1,4 +1,4 @@
-require './book'
+require 'RubyWinter2014/week2/excercises/book.rb'
 
 describe Book do
 
