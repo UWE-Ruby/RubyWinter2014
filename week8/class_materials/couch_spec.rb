@@ -17,18 +17,15 @@ describe Couch do
   end
 
   it "should respond to something silly with 'hi'" do
-    pending
-    @couch.happy.should eq 'hi'
+    @couch.hello.should eq 'hi'
   end
 
   it "should respond to something silly" do
-    pending
     @couch.respond_to?(:happy).should be_true
     @couch.should respond_to :happy
   end
 
   it "should define something silly with my block" do
-    pending
     @couch.happy{|mm| "#{mm} hello world"}.should eq "method missing hello world"
     @couch.happy{"hi"}.should eq "method missing hello world"
   end
