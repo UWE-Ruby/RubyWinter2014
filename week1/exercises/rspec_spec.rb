@@ -43,7 +43,7 @@ describe "The Rspec ruby gem" do
 
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      1.should eq 1
 
     end
 
@@ -53,10 +53,10 @@ describe "The Rspec ruby gem" do
 
       # The following expression is false.
       # However, this example PASSES because no expectation was created.
-      true == false
+      #true == false
 
       # The following line of code is correct, and would cause the example to fail:
-      # true.should == false
+      true.should == true
 
       # Lesson: It's easy to write bad tests.
 
@@ -73,6 +73,20 @@ describe "The Rspec ruby gem" do
   end
 
   context "Examples for in-class test exploration" do
+<<<<<<< HEAD
+  	it "should know order of operations" do
+  		# Fix the Failing Test
+  		# Order of Operations is Please Excuse My Dear Aunt Sally:
+  		# Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
+  		(1+2-5*6/2).should eq -12
+  	end
+  	it "should count the characters in your name" do
+      "Lynn".should have(4).characters
+    end
+  	
+  	it "should check basic math" do
+      (1+3).should eq 4
+=======
     it "should know order of operations" do
       # Fix the Failing Test
       # Order of Operations is Please Excuse My Dear Aunt Sally:
@@ -89,8 +103,12 @@ describe "The Rspec ruby gem" do
 
     it "should check basic spelling" do
       "Field".should include('ie')
+>>>>>>> 87da938bc91a43c7d3d96a799005e18887fb5dfb
     end
 
+  	it "should check basic spelling" do
+      "Lynn".should include ("nn")
+    end
   end
 
 end

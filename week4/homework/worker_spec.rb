@@ -33,4 +33,6 @@ describe Worker do
 		result.should == 8
 	end
 
+
+
 end
