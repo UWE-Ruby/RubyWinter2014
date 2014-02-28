@@ -40,5 +40,4 @@ class Couch
 	# 	self.send(method_name)
 	# end
 
-
 end
