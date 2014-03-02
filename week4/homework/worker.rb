@@ -4,7 +4,7 @@ class Worker
 	end 
 
 	def self.work x = 1
-		x.times.inject(nil){yield}
+		x.times.inject(nilworker){yield}
 	end
 end
 
