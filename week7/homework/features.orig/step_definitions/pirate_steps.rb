@@ -8,7 +8,6 @@ end
 
 Letgoandhaul /^I hit (\w+)$/ do |arg|
 	@result = @translator.send(arg)
-  puts "#{arg}"
 end
 
 Letgoandhaul /^it prints out '(.+)'$/ do |arg|
@@ -16,6 +15,5 @@ Letgoandhaul /^it prints out '(.+)'$/ do |arg|
 end
 
 Letgoandhaul /^it also prints '(.+)'$/ do |arg|
-  puts "#{arg}"
 	@result.split("\n ").last.should == arg
 end
