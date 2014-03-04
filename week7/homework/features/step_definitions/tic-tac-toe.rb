@@ -5,10 +5,14 @@ class TicTacToe
     SYMBOLS = [:X, :O]
 
 
-    def initialize
+    def initialize(starting_player=(starting_player_set = true; nil))
         @player = player
         @comp = "Computer"
-        @current_player = [@player, @comp].sample
+        if starting_player_set
+            @current_player = starting_player
+        else
+            @current_player = [@player, @comp].sample
+        end
         random_assign_symbols
     end
 
