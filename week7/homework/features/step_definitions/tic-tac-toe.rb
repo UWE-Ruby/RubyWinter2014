@@ -1,12 +1,10 @@
 class TicTacToe
 
-    attr_accessor :player, :player_symbol, :computer_symbol, :players, :current_player, :board, :open
+    attr_accessor :player, :player_symbol, :computer_symbol, :players, :current_player, :board
 
     SYMBOLS = [:X, :O]
     PAIRS = {:X => :O, :O => :X}
-    BOARD = {"A1" => nil, "A2" => nil, "A3" => nil,
-        "B1" => nil, "B2" => nil, "B3" => nil,
-        "C1" => nil, "C2" => nil, "C3" => nil}
+    BOARD = {:A1 => "", :A2 => "", :A3 => "", :B1 => "", :B2 => "", :B3 => "", :C1 => "", :C2 => "", :C3 => ""}
 
 
     def initialize(starting_player=nil, starting_symbol=nil)
@@ -38,19 +36,14 @@ class TicTacToe
     end
 
     def open_spots
-        @open = []
-        @board.each do |spot|
-            if @board[spot].nil?
-                @open << spot
-            end
-        end
-        @open
+        @board.select{|spot,value| value==""}.map{|spot,value| spot} 
     end
 
     def computer_move
-        move = @open.sample
-        @board[move] = get_current_player_symbol
-        @open
+        move = open_spots.sample
+        @board[move] = @computer_symbol
+        @current_player = @players[@player]
+        move
     end
 
     private
