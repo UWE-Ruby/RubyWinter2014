@@ -86,7 +86,6 @@ class TicTacToe
 
   def determine_winner
     winning_symbol = XorO @board
-    puts "winnier: #{winning_symbol}"
     @winner = :player if winning_symbol == player_symbol
     @winner = :computer if winning_symbol == computer_symbol
   end
@@ -132,7 +131,6 @@ class TicTacToe
     !spots_open? and !@winner
   end
   def over?
-    puts "wiinerere: #{@winner}"
     !spots_open? or @winner
   end
   def spots_open?
