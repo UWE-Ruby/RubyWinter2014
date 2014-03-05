@@ -86,8 +86,9 @@ class TicTacToe
 
   def determine_winner
     winning_symbol = XorO @board
-    @winner = :player if winning_symbol == :player_symbol
-    @winner = :computer if winning_symbol == :computer_symbol
+    puts "winnier: #{winning_symbol}"
+    @winner = :player if winning_symbol == player_symbol
+    @winner = :computer if winning_symbol == computer_symbol
   end
 
   def XorO board
@@ -118,11 +119,24 @@ class TicTacToe
       return false
     end
   end
+
+  def computer_won?
+    if :computer == @winner
+      return true
+    else
+      return false
+    end
+  end
+
   def draw?
+    !spots_open? and !@winner
   end
   def over?
+    puts "wiinerere: #{@winner}"
+    !spots_open? or @winner
   end
   def spots_open?
+    @board.values.select{|spots| spots == ' '}.length > 0
   end
 
   def opposite_symbol s
