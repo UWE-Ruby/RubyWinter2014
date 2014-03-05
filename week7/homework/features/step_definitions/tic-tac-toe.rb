@@ -10,14 +10,14 @@ class TicTacToe
         @players = {:player => "Renee", :computer => "Computer"}
         @current_player = @players[starting_player] || @players.values.sample
 
-        if (defined? starting_symbol)
+        if starting_symbol.nil?
             random_assign_symbols
         else
             if @players[starting_player] == "Computer"     
                 @computer_symbol = starting_symbol
                 @player_symbol = PAIRS[starting_symbol]
             else
-                @computer_sumbol = PAIRS[starting_symbol]
+                @computer_symbol = PAIRS[starting_symbol]
                 @player_symbol = starting_symbol
             end
         end
@@ -38,7 +38,7 @@ class TicTacToe
     private
     def random_assign_symbols
         symbols = SYMBOLS.shuffle # mix it up
-        @player_symbol = symbols.pop
-        @computer_symbol = symbols.pop
+        @player_symbol = symbols[0]
+        @computer_symbol = symbols[1]
     end
 end
