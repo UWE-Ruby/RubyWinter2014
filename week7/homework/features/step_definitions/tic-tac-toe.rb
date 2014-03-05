@@ -3,7 +3,7 @@ class TicTacToe
     attr_accessor :player, :player_symbol, :computer_symbol, :players, :current_player, :board
     
     SYMBOLS = [:X, :O]
-    PAIRS = {:X => :O, :O => :X}
+    OPPOSITE_SYM = {:X => :O, :O => :X}
     BOARD = {:A1 => " ", :A2 => " ", :A3 => " ", 
         :B1 => " ", :B2 => " ", :B3 => " ", 
         :C1 => " ", :C2 => " ", :C3 => " "}
@@ -21,7 +21,7 @@ class TicTacToe
         if starting_symbol.nil?
             random_assign_symbols
         else
-            @computer_symbol = PAIRS[starting_symbol]
+            @computer_symbol = OPPOSITE_SYM[starting_symbol]
             @player_symbol = starting_symbol
         end
         @board = BOARD
