@@ -63,14 +63,20 @@ class TicTacToe
 
   def get_player_move
     move = gets
-    return gets.chop if move   # if not nil, chop it
+    if move                    # if not nil, chop
+      move.chop!
+    end
     move                       # else it is nil, just pass it through
   end
 
   def player_move
     puts "Your move #{@player}"
-    move = get_player_move().to_sym
-    return player_move if !valid_move? move  # repeat if not valid
+    m = get_player_move()
+    if !valid_move? m
+      puts "Invalid move: #{m}"
+      return player_move
+    end
+    move = m.to_sym
     make_move move, @player_symbol
     @curr_player = :computer
     move
