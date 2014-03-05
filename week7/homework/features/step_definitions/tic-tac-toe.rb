@@ -1,12 +1,17 @@
 class TicTacToe
 
     attr_accessor :player, :player_symbol, :computer_symbol, :players, :current_player, :board
-
+    
     SYMBOLS = [:X, :O]
     PAIRS = {:X => :O, :O => :X}
     BOARD = {:A1 => " ", :A2 => " ", :A3 => " ", 
         :B1 => " ", :B2 => " ", :B3 => " ", 
         :C1 => " ", :C2 => " ", :C3 => " "}
+    
+    WINNING_MOVES= {1 => [:A1,:A2,:A3], 2 => [:B1,:B2,:B3], 3 => [:C1,:C2,:C3], 
+    4 => [:A1,:B1,:C1], 5 =>[:A2,:B2,:C2], 6 => [:A3,:B3,:C3], 7 =>[:C1, :B2, :A3],
+    8 =>[:A1,:B2,:C3]}
+
 
 
     def initialize(starting_player=nil, starting_symbol=nil)
@@ -20,6 +25,7 @@ class TicTacToe
             @player_symbol = starting_symbol
         end
         @board = BOARD
+        @winning_moves = WINNING_MOVES
     end
 
     def welcome_player
@@ -54,6 +60,41 @@ class TicTacToe
         move.to_sym
     end
 
+    def determine_winner
+        player_moves = collect_moves @player_symbol
+        comp_moves = collect_moves @computer_symbol
+        
+        @winning_moves.each do |key, value|
+            if value.include?(player_moves)
+                player_won?
+                over?
+            elsif value.include?(comp_moves)
+                computer_won?
+                over?
+            else
+                draw?
+            end
+        end
+        end
+    def player_won?
+        true
+        over?
+    end
+
+    def computer_won?
+        true
+        over?
+    end
+
+    def over?
+        true
+    end
+
+    def draw?
+        true
+    end
+
+    
     def current_state
         state = ""
         @board.each do |value|
@@ -68,6 +109,12 @@ class TicTacToe
         else
             @player_symbol
         end
+    end
+
+    private
+
+    def collect_moves player_sym
+        @board.select{|k,v| v==player_sym}.keys
     end
 
     def random_assign_symbols
