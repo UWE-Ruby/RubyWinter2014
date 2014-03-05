@@ -4,7 +4,9 @@ class TicTacToe
 
     SYMBOLS = [:X, :O]
     PAIRS = {:X => :O, :O => :X}
-    BOARD = {:A1 => "", :A2 => "", :A3 => "", :B1 => "", :B2 => "", :B3 => "", :C1 => "", :C2 => "", :C3 => ""}
+    BOARD = {:A1 => " ", :A2 => " ", :A3 => " ", 
+        :B1 => " ", :B2 => " ", :B3 => " ", 
+        :C1 => " ", :C2 => " ", :C3 => " "}
 
 
     def initialize(starting_player=nil, starting_symbol=nil)
@@ -30,13 +32,10 @@ class TicTacToe
 
     def get_player_move move=gets
         move = gets
-        if @board[move].nil?
-            @board[move] = get_current_player_symbol
-        end
     end
 
     def open_spots
-        @board.select{|spot,value| value==""}.map{|spot,value| spot} 
+        @board.select{|k,v| v==" "}.map{|k,v| k} 
     end
 
     def computer_move
@@ -46,7 +45,22 @@ class TicTacToe
         move
     end
 
-    private
+    def player_move
+        move = get_player_move.to_sym
+        if @board[move] != " "
+            move = get_player_move.to_sym
+        end
+        @board[move] = get_current_player_symbol
+        move.to_sym
+    end
+
+    def current_state
+        state = ""
+        @board.each do |value|
+            state << "|#{value}|"
+        end
+        state
+    end
 
     def get_current_player_symbol
         if @current_player == "Computer"
