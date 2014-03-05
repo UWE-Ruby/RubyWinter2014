@@ -10,7 +10,7 @@ class TicTacToe
         @players = {:player => "Renee", :computer => "Computer"}
         @current_player = @players[starting_player] || @players.values.sample
 
-        if defined? starting_symbol
+        if (defined? starting_symbol)
             random_assign_symbols
         else
             if @players[starting_player] == "Computer"     
