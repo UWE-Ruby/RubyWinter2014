@@ -1,23 +1,29 @@
 class TicTacToe
 
-    attr_accessor :player, :comp, :current_player, :player_symbol, :computer_symbol
+    attr_accessor :player, :player_symbol, :computer_symbol
 
     SYMBOLS = [:X, :O]
 
 
-    def initialize(starting_player=(starting_player_set = true; nil))
-        @player = player
-        @comp = "Computer"
-        if starting_player_set
-            @current_player = starting_player
-        else
-            @current_player = [@player, @comp].sample
-        end
+    def initialize(starting_player=nil)
+        @current_player = starting_player || [:player, :computer].sample
         random_assign_symbols
     end
 
     def welcome_player
         "Welcome #{@player}"
+    end
+
+    def current_player
+        {:player => @player, :computer => "Computer"}[@current_player]
+    end
+
+    def indicate_player_turn
+        "#{@current_player}'s move"
+    end
+
+    def get_player_move
+        move = gets
     end
 
     private
