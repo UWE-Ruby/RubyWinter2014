@@ -93,7 +93,10 @@ class TicTacToe
     def draw?
         true
     end
-
+    
+    def spots_open?
+        open_spots.any?
+    end
     
     def current_state
         state = ""
