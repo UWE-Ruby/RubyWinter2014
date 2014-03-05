@@ -3,7 +3,7 @@ class TicTacToe
     attr_accessor :player, :player_symbol, :computer_symbol, :players, :current_player
 
     SYMBOLS = [:X, :O]
-    PAIRS = [:X => :O, :O => :X]
+    PAIRS = {:X => :O, :O => :X}
 
 
     def initialize(starting_player=nil, starting_symbol=nil)
