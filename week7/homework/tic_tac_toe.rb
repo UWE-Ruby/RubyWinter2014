@@ -19,15 +19,14 @@ class TicTacToe
     else
       @curr_player = (rand.round > 0.5) ? :player : :computer
     end
-    #init board to nil
+    #init board to ' '
     @board = {}
     ('A'..'C').each {|a| ("#{a}1".."#{a}3").each {|b| @board[:"#{b}"] = ' ';}}
-
   end
 
   def indicate_player_turn
     if @curr_player == :player
-      puts "Renee's Move:"
+      puts "#{@player}'s Move:"
     end
   end
 
@@ -50,6 +49,7 @@ class TicTacToe
   def computer_move
     move = open_spots.sample
     @board[move] = computer_symbol
+    @curr_player = :player
     move
   end
 
@@ -62,14 +62,16 @@ class TicTacToe
   end
 
   def get_player_move
-    move = gets
+    move = gets.chop
     make_move move, @player_symbol
-    m
+    move
   end
 
   def player_move
     puts "Your move #{@player}"
-    get_player_move().to_sym
+    move = get_player_move().to_sym
+    @curr_player = :computer
+    move
   end
 
 
@@ -83,8 +85,38 @@ class TicTacToe
   end
 
   def determine_winner
+    winning_symbol = XorO @board
+    @winner = :player if winning_symbol == :player_symbol
+    @winner = :computer if winning_symbol == :computer_symbol
   end
+
+  def XorO board
+    winning_combos = [
+      [:A1, :A2, :A3],
+      [:B1, :B2, :B3],
+      [:C1, :C2, :C3],
+      [:A1, :B1, :C1],
+      [:A2, :B2, :C2],
+      [:A3, :B3, :C3],
+      [:A1, :B2, :C3],
+      [:A3, :B2, :C1],
+    ]
+    winning_combos.each do |combo|
+      line_moves = combo.map {|index| board[index]}
+      x = line_moves.select {|elm| elm == :X}
+      return :X if x.length == 3
+      y = line_moves.select {|elm| elm == :O}
+      return :O if y.length == 3
+    end
+    return nil
+  end
+
   def player_won?
+    if :player == @winner
+      return true
+    else
+      return false
+    end
   end
   def draw?
   end
