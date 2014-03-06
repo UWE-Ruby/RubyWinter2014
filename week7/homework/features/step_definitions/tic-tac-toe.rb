@@ -91,20 +91,26 @@ class TicTacToe
     end
 
     def player_won?
-        if @winner = :player
+        if @winner == :player
             true
+        else
+            false
         end
     end
 
     def computer_won?
-        if @winner = :computer
+        if @winner == :computer
             true
+        else
+            false
         end
     end
 
     def draw?
         if @winner.nil? && !spots_open?
             true
+        else
+            false
         end
     end
 
