@@ -22,13 +22,11 @@ end
 
 Given /^I have a started Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
-  puts "In test.  Current_player = #{@game.current_player}"
   @game.player = "Renee"
-  puts "Current_player is now #{@game.current_player}"
 end
 
 Given /^it is my turn$/ do
-  @game.current_player.should eq "Renee"
+  @game.current_player = "Renee"
 end
 
 Given /^the computer knows my name is Renee$/ do
@@ -37,7 +35,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
@@ -45,9 +43,9 @@ Then /^waits for my input of "(.*?)"$/ do |arg1|
   @game.get_player_move
 end
 
-Given /^it is the computer's turn$/ do
-  @game = TicTacToe.new(:computer, :O)
-  @game.current_player.should eq "Computer"
+Given /^it is the computers turn$/ do
+  @game = TicTacToe.new  #(:computer, :O)
+  @game.current_player = "Computer"
 end
 
 Then /^the computer randomly chooses an open position for its move$/ do
@@ -57,16 +55,16 @@ Then /^the computer randomly chooses an open position for its move$/ do
 end
 
 Given /^the computer is playing X$/ do
-  @game.computer_symbol.should eq :X
+  @game.computer_symbol = :X
 end
 
 Then /^the board should have an X on it$/ do
-  @game.current_state.should include 'X'
+  @game.current_state.values.should include :X
 end
 
 Given /^I am playing X$/ do
-  @game = TicTacToe.new(:computer, :X)
-  @game.player_symbol.should eq :X
+  @game = TicTacToe.new
+  @game.player_symbol = :X
 end
 
 When /^I enter a position "(.*?)" on the board$/ do |arg1|

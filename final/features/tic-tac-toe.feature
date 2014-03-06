@@ -19,7 +19,7 @@ Scenario: My Turn
 
 Scenario: Computer's Turn
 	Given I have a started Tic-Tac-Toe game
-		And it is the computer's turn
+		And it is the computers turn
 		And the computer is playing X
 	Then the computer randomly chooses an open position for its move 
 		And the board should have an X on it
