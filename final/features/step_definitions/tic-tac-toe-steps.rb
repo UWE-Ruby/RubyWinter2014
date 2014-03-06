@@ -21,8 +21,10 @@ Then /^who is X and who is O$/ do
 end
 
 Given /^I have a started Tic\-Tac\-Toe game$/ do
-  @game = TicTacToe.new(:player)
+  @game = TicTacToe.new
+  puts "In test.  Current_player = #{@game.current_player}"
   @game.player = "Renee"
+  puts "Current_player is now #{@game.current_player}"
 end
 
 Given /^it is my turn$/ do
