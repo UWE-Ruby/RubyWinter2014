@@ -19,7 +19,8 @@ class TicTacToe
         @board = {
             :A1 => ' ', :A2 => ' ', :A3 => ' ',
             :B1 => ' ', :B2 => ' ', :B3 => ' ',
-            :C1 => ' ', :C2 => ' ', :C3 => ' '}
+            :C1 => ' ', :C2 => ' ', :C3 => ' '
+        }
         @winner = nil
     end
 
@@ -41,7 +42,9 @@ class TicTacToe
     end
 
     def get_player_move
-        gets.chomp
+        move = gets.chomp
+        move.capitalize!
+        move
     end
 
     def player_move
@@ -58,6 +61,14 @@ class TicTacToe
         @board[move] = @computer_symbol
         @current_player = :player
         move
+    end
+
+    def current_state
+        state = ""
+        @board.values.map { |value| value.to_s }.each_slice(3) { |row|
+            state << "#{row.to_s.gsub(",", "|")}\n"
+        }
+        state
     end
 
     def over?
