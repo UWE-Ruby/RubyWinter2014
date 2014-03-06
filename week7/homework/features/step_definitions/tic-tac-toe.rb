@@ -14,18 +14,25 @@ class TicTacToe
 
 
 
-    def initialize(starting_player=nil, starting_symbol=nil)
-        @players = {:player => "Renee", :computer => "Computer"}
-        @current_player = @players[starting_player] || @players.values.sample
-
-        if starting_symbol.nil?
-            random_assign_symbols
+    def initialize(current_player=nil, human_player_symbol=nil)
+       @current_player = current_player || [:player, :computer].sample
+        if human_player_symbol == :X
+            @player_symbol = :X
+            @computer_symbol = :O
+        elsif human_player_symbol == :O
+            @player_symbol = :O
+            @computer_symbol = :X
         else
-            @computer_symbol = OPPOSITE_SYM[starting_symbol]
-            @player_symbol = starting_symbol
+            random_assign_symbols
         end
+        
         @board = BOARD
         @winning_moves = WINNING_MOVES
+    end
+
+    def current_player
+        @players = {:player => @player, :computer => "Computer"}
+        @players[@current_player]
     end
 
     def welcome_player
