@@ -1,6 +1,6 @@
 class TicTacToe
     
-    attr_accessor :player
+    attr_accessor :player, :player_symbol, :computer_symbol, :winner
     SYMBOLS = [:X, :O]
     
     def initialize(current_player=nil, human_player_symbol=nil)
@@ -16,6 +16,7 @@ class TicTacToe
             @player_symbol = random_sym[0]
             @computer_symbol = random_sym[1]
         end
+        @winner = nil
     end
 
     def current_player
@@ -25,6 +26,11 @@ class TicTacToe
 
     def welcome_player
         "Welcome #{@player}"
+    end
+
+    def over?
+        #game is NOT over if @winner.nil and there are spots open
+        #game is over if draw?, computer_won? or player_won? is true
     end
 
 end
