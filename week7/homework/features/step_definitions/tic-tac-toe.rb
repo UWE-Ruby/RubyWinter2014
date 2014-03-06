@@ -52,7 +52,6 @@ class TicTacToe
             indicate_player_turn
         end
         @board[move] = @player_symbol
-        determine_winner
         @current_player = :computer
         move
     end
@@ -61,7 +60,6 @@ class TicTacToe
         move = open_spots.sample
         indicate_player_turn
         @board[move] = @computer_symbol
-        determine_winner
         @current_player = :player
         move
     end
@@ -76,18 +74,24 @@ class TicTacToe
 
     def determine_winner
         # get each player's moves
-        computer_plays = @board.map{ |k,v| v==@computer_symbol ? k : nil }.compact
-        player_plays = @board.map{ |k,v| v==@player_symbol ? k : nil }.compact
-
         winning_matches = {1 => [:A1, :A2, :A3], 2 => [:B1, :B2, :B3], 3 => [:C1, :C2, :C3], 4 => [:A1, :B1, :C1], 
             5 => [:A2, :B2, :C2], 6 => [:A3, :B3, :C3], 7 => [:A1, :B2, :C3], 8 => [:A3, :B2, :C1]}
-        if winning_matches.has_key?(computer_plays)
-            @winner = :computer
 
-        elsif winning_matches.has_key?(player_plays)
-            @winner = :player
+        winning_matches.each do |match, v|
+
+            if @board[v[0]] == @board[v[1]] && @board[v[0]] == @board[v[3]]
+                #its a match! now get the winning symbol
+                p @board[v[0]]
+                if @board[v[0]] == @player_symbol
+                    @winner = :player
+                elsif @board[v[0]] == @computer_symbol
+                    @winnder = :computer
+                else
+                    draw?
+                end
+            end
+            over?
         end
-        over?
     end
 
     def player_won?
@@ -107,11 +111,10 @@ class TicTacToe
     end
 
     def draw?
-        if @winner.nil? && !spots_open?
+        if !computer_won? && !player_won? && !spots_open?
             true
-        else
-            false
         end
+        
     end
 
     def spots_open?
@@ -119,15 +122,12 @@ class TicTacToe
     end
 
     def over?
-        #game is NOT over if @winner.nil and there are spots open
-
         #game is over if draw?, computer_won? or player_won? is true
         if draw? || computer_won? || player_won?
             true
         else
             false
         end
-    
     end
 
 end
