@@ -59,6 +59,14 @@ Week 10
 * Interesting Stuff
 
 
+Gem Project Requirements
+* Make a Gem!
+* Source on Github
+* Gem Released on RubyGems.org
+* Full Documentation and Tests
+* OSS License of your choice
+* Tested on Travis CI (Bonus: Code Climate!)
+* Ready to demo the last day of class
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/UWE-Ruby/rubywinter2014/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
