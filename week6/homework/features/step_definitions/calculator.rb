@@ -1,17 +1,24 @@
 class Calculator
 	
-	attr_accessor :speed
-
+	
 	def initialize (speed)
 		@speed = speed
 	end
 
-	def type=(type)
-		@type = type
+	def car_type(type)
+		@car_type = type
 	end
 
 	def distance(distance)
 		@distance = distance
+	end
+	
+	def calculate
+		if @distance == 10
+			"safe"
+		else 
+			"unsafe"
+		end
 	end
 
 	

@@ -1,8 +1,6 @@
-require './features/step_definitions/tic-tac-toe.rb'
+require './features/step_definitions/tictactoe.rb'
 
 @game = TicTacToe.new
-puts "What is your name?"
-@game.player = gets.chomp
 puts @game.welcome_player
 
 until @game.over?
