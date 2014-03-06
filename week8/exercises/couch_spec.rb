@@ -8,11 +8,11 @@ describe Couch do
     @couch.pillow_colors.should eq ["red", "red", "black", "black"]
   end
 
-  it "should tell me the cushions colors" do
-    @couch.cushions_colors.should eq ["grey", "grey"]
+  it "should tell me the cushion colors" do
+    @couch.cushion_colors.should eq ["grey", "grey"]
   end
 
-  it "should tell me the dogs names" do
+  it "should tell me the dog names" do
     @couch.dog_names.should eq ["Bradley", "Sticks"]
   end
 

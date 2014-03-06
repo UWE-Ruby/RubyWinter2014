@@ -11,6 +11,8 @@ An array is an list indexed by position in the array. A hash can be indexed usin
 3. What is a module? Enumerable is a built in Ruby module, what is it?
 A module is a name space for holding methods and constants for use by other classes and methods. The Enumerable method is built into Ruby and has about 20 iteration and counting methods which can be reused.
 
-4. Can you inherit more than one thing in Ruby? How could you get around this problem? No, but you can use modules as mixins to get around this limitation.
+4. Can you inherit more than one thing in Ruby? How could you get around this problem?
+No, multiple inheritance is not allowed in Ruby. You can include multiple modules if you wanted to mix-in different functionality into your code. Code that is related with a hierarchical nature should be subclassed (inherited). A class can only have 1 direct parent, but can have lots of ancestors.
 
-5. What is the difference between a Module and a Class? A module cannot have objects created from it as a class can.
+5. What is the difference between a Module and a Class?
+A class can be instantiated into an object, a module cannot. A module is code that can be used across many classes.

@@ -7,7 +7,7 @@ Instructions for Mid-Term submission and Git Review (10pts):
  - I will email you back with your repository name
  - Add a remote to your git repository: git@reneedv.com:RubyWinter2014/YOURREPOSITORYNAME.git
  - Push your changes to the remote
- - After 6pm Thursday February 20th you will not be able to push to your remote repository (or clone).
+ - After 6pm Tuesday November 19th you will not be able to push to your remote repository (or clone).
 
  Questions (20pts):
  - What are the three uses of the curly brackets {} in Ruby?

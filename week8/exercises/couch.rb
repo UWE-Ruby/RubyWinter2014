@@ -11,19 +11,16 @@ class Couch
 		end
 	end
 
+  def pillow_colors
+    @pillows.map &:to_s
+  end
 
+  def cushions_colors
+    @cushions.map &:to_s
+  end
 
-
-  # def pillow_colors
-  #   @pillows.map &:to_s
-  # end
-
-  # def cushions_colors
-  #   @cushions.map &:to_s
-  # end
-
-  # def dog_names
-  #   @dogs.map &:to_s
-  # end
+  def dog_names
+    @dogs.map &:to_s
+  end
 
 end
