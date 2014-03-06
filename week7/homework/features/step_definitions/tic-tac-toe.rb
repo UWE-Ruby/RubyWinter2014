@@ -1,10 +1,10 @@
 class TicTacToe
-    
+
     attr_accessor :player, :player_symbol, :computer_symbol, :winner
     SYMBOLS = [:X, :O]
-    
+
     def initialize(current_player=nil, human_player_symbol=nil)
-       @current_player = current_player || [:player, :computer].sample
+        @current_player = current_player || [:player, :computer].sample
         if human_player_symbol == :X
             @player_symbol = :X
             @computer_symbol = :O
@@ -26,6 +26,10 @@ class TicTacToe
 
     def welcome_player
         "Welcome #{@player}"
+    end
+
+    def indicate_player_turn
+        puts "#{player}'s Move:"
     end
 
     def over?
