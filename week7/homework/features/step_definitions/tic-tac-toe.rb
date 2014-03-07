@@ -5,23 +5,37 @@ class TicTacToe
 
     def initialize(current_player=nil, human_player_symbol=nil)
         @current_player = current_player || [:player, :computer].sample
+        if human_player_symbol == nil
+            random_assign_sym
+        else
+            assign_sym human_player_symbol
+        end
+        @winner = nil
+        @wins = {1 => [:A1, :A2, :A3], 2 => [:B1, :B2, :B3], 3 => [:C1, :C2, :C3], 
+            4 => [:A1, :B1, :C1], 5 => [:A2, :B2, :C2], 6 => [:A3, :B3, :C3], 
+            7 => [:A1, :B2, :C3], 8 => [:A3, :B2, :C1]
+        }
+
+        @board = {:A1 => ' ', :A2 => ' ', :A3 => ' ', 
+            :B1 => ' ', :B2 => ' ', :B3 => ' ', 
+            :C1 => ' ', :C2 => ' ', :C3 => ' '
+        }
+    end
+
+    def random_assign_sym
+        random_sym = SYMBOLS.shuffle
+        @player_symbol = random_sym[0]
+        @computer_symbol = random_sym[1]
+    end
+
+    def assign_sym human_player_symbol
         if human_player_symbol == :X
             @player_symbol = :X
             @computer_symbol = :O
         elsif human_player_symbol == :O
             @player_symbol = :O
             @computer_symbol = :X
-        else
-            random_sym = SYMBOLS.shuffle
-            @player_symbol = random_sym[0]
-            @computer_symbol = random_sym[1]
         end
-        @board = {
-            :A1 => ' ', :A2 => ' ', :A3 => ' ',
-            :B1 => ' ', :B2 => ' ', :B3 => ' ',
-            :C1 => ' ', :C2 => ' ', :C3 => ' '
-        }
-        @winner = nil
     end
 
     def current_player
@@ -42,7 +56,9 @@ class TicTacToe
     end
 
     def get_player_move
-        move = (gets.chomp).capitalize!
+        move = (gets.chomp)
+        move.capitalize!
+        move
     end
 
     def player_move
@@ -71,13 +87,7 @@ class TicTacToe
     end
 
     def determine_winner
-        winning_matches = {1 => [:A1, :A2, :A3], 2 => [:B1, :B2, :B3], 
-            3 => [:C1, :C2, :C3], 4 => [:A1, :B1, :C1], 5 => [:A2, :B2, :C2], 
-            6 => [:A3, :B3, :C3], 7 => [:A1, :B2, :C3], 8 => [:A3, :B2, :C1]
-        }
-
-        winning_matches.each do |match, v|
-
+        @wins.each do |match, v|
             first = (@board[v[0]].to_s).to_sym unless nil? 
             second = (@board[v[1]].to_s).to_sym unless nil?
             third = (@board[v[2]].to_s).to_sym unless nil?
