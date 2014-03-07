@@ -63,7 +63,7 @@ class TicTacToe
 
     def player_move
         until open_spots.include?(move = get_player_move.to_sym)
-            indicate_player_turn
+            "\n#{indicate_player_turn}"
         end
         @board[move] = @player_symbol
         @current_player = :computer
@@ -72,18 +72,18 @@ class TicTacToe
 
     def computer_move
         move = open_spots.sample
-        indicate_player_turn
+        "\n#{indicate_player_turn}"
         @board[move] = @computer_symbol
         @current_player = :player
-        move
+        p move
     end
 
     def current_state
-        state = ""
+        state = "\n"
         @board.values.map { |value| value.to_s }.each_slice(3) { |row|
             state << "\n#{row.to_s.gsub!(',', '|')}\n"
         }
-        state
+        state << "\n"
     end
 
     def determine_winner
