@@ -68,18 +68,19 @@ Given /^I am playing X$/ do
 end
 
 When /^I enter a position "(.*?)" on the board$/ do |arg1|
-  @old_pos = @game.board[arg1.to_sym]
-  @game.should_receive(:get_player_move).and_return(arg1)
-  @game.player_move.should eq arg1.to_sym
+  @old_pos = @game.current_state[arg1.to_sym]
+  # @game.should_receive(:get_player_move).and_return(arg1.to_sym)
+  @game.get_player_move.should eq :A1
 end
 
 When /^"(.*?)" is not taken$/ do |arg1|
-  @old_pos.should eq " "
+  @old_pos.should eq nil
 end
 
-Then /^it is now the computer's turn$/ do
+Then /^it is now the computers turn$/ do
   @game.current_player.should eq "Computer"
 end
+
 
 When /^there are three X's in a row$/ do
   @game = TicTacToe.new(:computer, :X)

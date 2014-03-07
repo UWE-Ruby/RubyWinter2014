@@ -11,7 +11,7 @@ until @game.over?
 		@game.computer_move
 	when @game.player
 		@game.indicate_player_turn
-		@game.player_move
+		@game.get_player_move
 	end
 	puts @game.current_state
 	@game.determine_winner
