@@ -23,7 +23,7 @@ Then /^the result returned should be safe$/ do
 end
 
 Then /^the result returned should be unsafe$/ do
-  @calculator.calculate == "safe"
+  @calculator.calculate == "unsafe"
 end
 
 
