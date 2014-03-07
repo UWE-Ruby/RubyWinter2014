@@ -79,12 +79,20 @@ class TicTacToe
 
         winning_matches.each do |match, v|
 
-            if @board[v[0]] == @board[v[1]] && @board[v[0]] == @board[v[3]]
+            first = @board[v[0]].to_s 
+            second = @board[v[1]].to_s
+            third = @board[v[2]].to_s
+            p "first #{first}, second #{second}, third #{third}"
+            first = first.to_sym unless nil?
+            second = second.to_sym unless nil?
+            third = third.to_sym unless nil?
+
+            p "first #{first}, second #{second}, third #{third}"
+                if first == second && second == third
                 #its a match! now get the winning symbol
-                p @board[v[0]]
-                if @board[v[0]] == @player_symbol
+                if first == @player_symbol
                     @winner = :player
-                elsif @board[v[0]] == @computer_symbol
+                elsif first == @computer_symbol
                     @winnder = :computer
                 else
                     draw?
@@ -118,7 +126,8 @@ class TicTacToe
     end
 
     def spots_open?
-        open_spots.any?
+        spots = open_spots
+        spots.any?
     end
 
     def over?
