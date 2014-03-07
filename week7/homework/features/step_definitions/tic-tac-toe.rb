@@ -38,13 +38,11 @@ class TicTacToe
     end
 
     def open_spots
-        @open_spots = @board.select{|k, v| v == " "}.keys
+        @board.select{|k, v| v == " "}.keys
     end
 
     def get_player_move
-        move = gets.chomp
-        move.capitalize!
-        move
+        move = (gets.chomp).capitalize!
     end
 
     def player_move
@@ -73,22 +71,18 @@ class TicTacToe
     end
 
     def determine_winner
-        # get each player's moves
-        winning_matches = {1 => [:A1, :A2, :A3], 2 => [:B1, :B2, :B3], 3 => [:C1, :C2, :C3], 4 => [:A1, :B1, :C1], 
-            5 => [:A2, :B2, :C2], 6 => [:A3, :B3, :C3], 7 => [:A1, :B2, :C3], 8 => [:A3, :B2, :C1]}
+        winning_matches = {1 => [:A1, :A2, :A3], 2 => [:B1, :B2, :B3], 
+            3 => [:C1, :C2, :C3], 4 => [:A1, :B1, :C1], 5 => [:A2, :B2, :C2], 
+            6 => [:A3, :B3, :C3], 7 => [:A1, :B2, :C3], 8 => [:A3, :B2, :C1]
+        }
 
         winning_matches.each do |match, v|
 
-            first = @board[v[0]].to_s 
-            second = @board[v[1]].to_s
-            third = @board[v[2]].to_s
-            p "first #{first}, second #{second}, third #{third}"
-            first = first.to_sym unless nil?
-            second = second.to_sym unless nil?
-            third = third.to_sym unless nil?
+            first = (@board[v[0]].to_s).to_sym unless nil? 
+            second = (@board[v[1]].to_s).to_sym unless nil?
+            third = (@board[v[2]].to_s).to_sym unless nil?
 
-            p "first #{first}, second #{second}, third #{third}"
-                if first == second && second == third
+            if first == second && second == third
                 #its a match! now get the winning symbol
                 if first == @player_symbol
                     @winner = :player
@@ -103,40 +97,23 @@ class TicTacToe
     end
 
     def player_won?
-        if @winner == :player
-            true
-        else
-            false
-        end
+        true if @winner == :player
     end
 
     def computer_won?
-        if @winner == :computer
-            true
-        else
-            false
-        end
+        true if @winner == :computer
     end
 
     def draw?
-        if !computer_won? && !player_won? && !spots_open?
-            true
-        end
-        
+        true if !computer_won? && !player_won? && !spots_open?
     end
 
     def spots_open?
-        spots = open_spots
-        spots.any?
+        spots = (open_spots).any?
     end
 
     def over?
-        #game is over if draw?, computer_won? or player_won? is true
-        if draw? || computer_won? || player_won?
-            true
-        else
-            false
-        end
+        true if draw? || computer_won? || player_won?
     end
 
 end
