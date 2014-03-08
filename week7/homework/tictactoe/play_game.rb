@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require './features/step_definitions/tic-tac-toe.rb'
 
 @game = TicTacToe.new
@@ -8,9 +9,10 @@ puts @game.welcome_player
 until @game.over?
 	case @game.current_player
 	when "Computer"
-		@game.computer_move
+		puts "Computer's Move:"
+		puts @game.computer_move
 	when @game.player
-		@game.indicate_palyer_turn
+		@game.indicate_player_turn
 		@game.player_move
 	end
 	puts @game.current_state
