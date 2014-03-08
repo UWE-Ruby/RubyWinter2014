@@ -9,7 +9,7 @@ describe Couch do
   end
 
   it "should tell me the cushions colors" do
-    @couch.cushions_colors.should eq ["grey", "grey"]
+    @couch.cushion_colors.should eq ["grey", "grey"]
   end
 
   it "should tell me the dogs names" do
