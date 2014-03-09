@@ -1,8 +1,14 @@
+#
+# MadLib class
+# 
+# Author:: Lynn Conway
+# 
+
 class MadLib
 
 	def initialize
 		@word_array = []
-		@madlib_types = ["Pirate", "Student", "Vacation"]
+		@madlib_types = ["Pirate", "LooneyTune", "Space", "Penguin"]
 		puts "Which MadLib would you like to play?"
 		n = @madlib_types.length
 		for i in 0...(n-1)
@@ -29,7 +35,7 @@ class MadLib
 		@word_array.each do |h|
 			h.each do |key, value|
 				@word = "@@@" << key
-				puts "replace #{@word} with #{value}"
+				#puts "replace #{@word} with #{value}"
 				@story.sub!(/#{Regexp.quote(@word)}/, value)
 				#@story.sub!(/@@@\w*\b/, value)
 			end
@@ -49,10 +55,10 @@ class MadLib
 			end
 		end
 		#puts @word_array
-		@word_array.each do |h|
-			h.each {|k, v| puts "key is #{k}    value is #{v}"}
-		end
-		puts "exit collect_word_types"
+		# @word_array.each do |h|
+		# 	h.each {|k, v| puts "key is #{k}    value is #{v}"}
+		# end
+		# puts "exit collect_word_types"
 	end
 
 	def user_input
@@ -68,12 +74,15 @@ class MadLib
 		# 	h.each {|k, v| puts "key is #{k}    value is #{v}"}
 		# end
 	end
+	def play
+		self.get_madlib_type
+		self.read_madlib
+		self.collect_word_types
+		self.user_input
+		self.print_madlib	
+	end
 
 end
 
-m = MadLib.new
-m.get_madlib_type
-m.read_madlib
-m.collect_word_types
-m.user_input
-m.print_madlib
+madlib = MadLib.new
+madlib.play
