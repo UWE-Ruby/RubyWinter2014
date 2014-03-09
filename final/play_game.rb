@@ -13,6 +13,7 @@ until @game.over?
 		@game.indicate_player_turn
 		@game.get_player_move
 	end
+
 	puts @game.current_state
 	@game.determine_winner
 end

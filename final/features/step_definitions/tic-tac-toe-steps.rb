@@ -39,8 +39,9 @@ Then /^the computer prints "(.*?)"$/ do |arg1|
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
+  @game.should_receive(:puts).with("Enter your move in form (Row A-C)(Col 1-3)")
   @game.should_receive(:gets).and_return(arg1)
-  @game.get_player_move
+  @game.get_good_move #was player
 end
 
 Given /^it is the computers turn$/ do
@@ -50,7 +51,7 @@ end
 
 Then /^the computer randomly chooses an open position for its move$/ do
   open_spots = @game.open_spots
-  @com_move = @game.computer_move
+  @com_move = @game.process_computer_turn
   open_spots.should include(@com_move)
 end
 
@@ -69,20 +70,33 @@ end
 
 When /^I enter a position "(.*?)" on the board$/ do |arg1|
   @old_pos = @game.current_state[arg1.to_sym]
-  # @game.should_receive(:get_player_move).and_return(arg1.to_sym)
-  @game.get_player_move.should eq :A1
+  @game.should_receive(:get_player_move).and_return(arg1.to_sym)
+  @game.process_player_turn
+
 end
 
 When /^"(.*?)" is not taken$/ do |arg1|
   @old_pos.should eq nil
 end
 
+When /^"(.*?)" is taken$/ do |arg1|
+  @game.current_state[arg1.to_sym] = :O
+  @taken_spot = arg1.to_sym
+end
+
+Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
+  @game.board[arg1.to_sym] = nil
+  @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
+  @game.player_move.should eq arg1.to_sym
+end
+
+
 Then /^it is now the computers turn$/ do
   @game.current_player.should eq "Computer"
 end
 
 
-When /^there are three X's in a row$/ do
+When /^there are three Xs in a row$/ do
   @game = TicTacToe.new(:computer, :X)
   @game.board[:C1] = @game.board[:B2] = @game.board[:A3] = :X
 end
@@ -113,13 +127,4 @@ Then /^the game is declared a draw$/ do
   @game.draw?.should be_true
 end
 
-When /^"(.*?)" is taken$/ do |arg1|
-  @game.board[arg1.to_sym] = :O
-  @taken_spot = arg1.to_sym
-end
 
-Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
-  @game.board[arg1.to_sym] = ' '
-  @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
-  @game.player_move.should eq arg1.to_sym
-end

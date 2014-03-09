@@ -37,15 +37,16 @@ Scenario: Making Bad Moves
 	Given I have a started Tic-Tac-Toe game
 		And it is my turn
 		And I am playing X
-	When I enter a position "A1" on the board
 		And "A1" is taken
+	When I enter a position "A1" on the board
+		
 	Then computer should ask me for another position "B2"
 		And it is now the computers turn
 
 Scenario: Winning the Game
 	Given I have a started Tic-Tac-Toe game
 		And I am playing X
-	When there are three X's in a row
+	When there are three Xs in a row
 	Then I am declared the winner
 		And the game ends
 
