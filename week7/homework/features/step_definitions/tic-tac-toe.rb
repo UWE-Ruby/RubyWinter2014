@@ -1,12 +1,12 @@
 class TicTacToe
 
-	SYMBOLS = 
-	
-	def player= player
-		@player = player
+	SYMBOLS = {}
+
+	def player=(name)
+		@player = name
 	end
 
-	def welcome_player
+	def welcome_player 
 		"Welcome #{@player}"
 	end
 
@@ -14,19 +14,11 @@ class TicTacToe
 
 	end
 
-	def current_player
-
-	end
-
 	def player_symbol
 
 	end
 
-	def computer_symbol
-
-	end
-
-	def include?
+	def current_player
 
 	end
 
