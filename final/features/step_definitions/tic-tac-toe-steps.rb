@@ -45,11 +45,11 @@ end
 Then /^waits for my input of "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with("Enter your move in form (Row A-C)(Col 1-3)")
   @game.should_receive(:gets).and_return(arg1)
-  @game.get_good_move #was player
+  @game.get_good_move
 end
 
 Given /^it is the computers turn$/ do
-  @game = TicTacToe.new  #(:computer, :O)
+  @game = TicTacToe.new
   @game.current_player = "Computer"
 end
 
@@ -61,6 +61,7 @@ end
 
 Given /^the computer is playing X$/ do
   @game.computer_symbol = :X
+  @game.player_symbol = :O
 end
 
 Then /^the board should have an X on it$/ do
@@ -68,7 +69,6 @@ Then /^the board should have an X on it$/ do
 end
 
 Given /^I am playing X$/ do
-  @game = TicTacToe.new
   @game.player_symbol = :X
   @game.computer_symbol = :O
 end
@@ -86,15 +86,18 @@ end
 
 When /^"(.*?)" is taken$/ do |arg1|
   @game.current_state[arg1.to_sym] = :O
+  p "in is taken"
+  p arg1
   @taken_spot = arg1.to_sym
+  p @taken_spot
 end
 
 Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
-  @game.current_state[arg1.to_sym] = nil
-  @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
+  p @taken_spot
+  p arg1
+  # @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
   p "calling GGM"
   @game.get_good_move.should eq arg1.to_sym
-  #.should eq arg1.to_sym
   p "outa GGM"
 end
 

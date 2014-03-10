@@ -14,7 +14,8 @@ Scenario: My Turn
 	Given I have a started Tic-Tac-Toe game
 		And it is my turn
 		And the computer knows my name is Renee
-	Then the computer prints "Renee's Move:"
+		And I am playing X
+	Then the computer prints "Renee's Move, playing X:"
 		And waits for my input of "B2"
 
 Scenario: Computer's Turn
@@ -37,10 +38,9 @@ Scenario: Making Bad Moves
 	Given I have a started Tic-Tac-Toe game
 		And it is my turn
 		And I am playing X
-		And "A1" is taken
-	When I enter a position "A1" on the board
-		
-	Then computer should ask me for another position "B2"
+		And "B2" is taken
+	When I enter a position "B2" on the board
+	Then computer should ask me for another position "C3"
 		And it is now the computers turn
 
 Scenario: Winning the Game

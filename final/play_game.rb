@@ -13,7 +13,10 @@ until @game.over
 		@game.process_player_turn
 	end
 
-	puts @game.current_state
+  puts "#{sprintf("%3s", @game.current_state[:A1])}  |#{sprintf("%3s", @game.current_state[:A2])}  |#{sprintf("%3s", @game.current_state[:A3])}"
+  puts "#{sprintf("%3s", @game.current_state[:B1])}  |#{sprintf("%3s", @game.current_state[:B2])}  |#{sprintf("%3s", @game.current_state[:B3])}"
+  puts "#{sprintf("%3s", @game.current_state[:C1])}  |#{sprintf("%3s", @game.current_state[:C2])}  |#{sprintf("%3s", @game.current_state[:C3])}"
+
 	winner = @game.determine_winner
 end
 

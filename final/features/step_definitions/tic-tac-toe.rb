@@ -33,7 +33,6 @@ class TicTacToe
 	def process_player_turn
 		self.current_player = "Computer"
 		indicate_player_turn
-		player_good_move = ""
 		player_good_move= self.get_good_move
 		change_state(player_symbol, player_good_move)
 		player_good_move
@@ -54,6 +53,7 @@ class TicTacToe
 	end
 
 	def get_good_move
+		p "In GGM"
     loop do
 		  @player_move = self.get_player_move
       break if @current_state[@player_move].nil?
@@ -75,21 +75,14 @@ class TicTacToe
   end
 
   def get_computer_move
-  	computer_move = ""
   	open_spots = self.open_spots
   	i = rand(0..open_spots.count-1)
   	open_spots[i].to_sym
   end
 
   def open_spots
-  	trans_state = Hash.new
-  	new_state = Hash.new
-    @current_state.each do |key, value|
-    	trans_state[key] = value
-    end
-  	new_state=trans_state.keep_if do | key, value|
-  		value.nil?
-  	end
+  	trans_state = @current_state.clone
+  	new_state = trans_state.keep_if {| key, value | value.nil?}
     new_state.keys
   end
 
