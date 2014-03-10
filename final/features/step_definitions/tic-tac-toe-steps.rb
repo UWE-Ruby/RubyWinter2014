@@ -70,12 +70,13 @@ end
 Given /^I am playing X$/ do
   @game = TicTacToe.new
   @game.player_symbol = :X
+  @game.computer_symbol = :O
 end
 
 When /^I enter a position "(.*?)" on the board$/ do |arg1|
   @old_pos = @game.current_state[arg1.to_sym]
   @game.should_receive(:get_good_move).and_return(arg1.to_sym)
-  @game.process_player_turn
+  @game.process_player_turn.should eq arg1.to_sym
 
 end
 
@@ -92,7 +93,7 @@ Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
   @game.current_state[arg1.to_sym] = nil
   @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
   p "calling GGM"
-  @game.get_good_move
+  @game.get_good_move.should eq arg1.to_sym
   #.should eq arg1.to_sym
   p "outa GGM"
 end
@@ -102,36 +103,34 @@ Then /^it is now the computers turn$/ do
   @game.current_player.should eq "Computer"
 end
 
-
 When /^there are three Xs in a row$/ do
-  @game = TicTacToe.new(:computer, :X)
-  @game.board[:C1] = @game.board[:B2] = @game.board[:A3] = :X
+  @game.current_state[:C1] = @game.current_state[:B2] = @game.current_state[:A3] = :X
 end
 
 Then /^I am declared the winner$/ do
-  @game.determine_winner
-  @game.player_won?.should be_true
+  @game.won?(@game.player_symbol)
+  @game.determine_winner.should eq "Player"
 end
 
 Then /^the game ends$/ do
-  @game.over?.should be_true
+  @game.over.should be_true
 end
 
 Given /^there are not three symbols in a row$/ do
-  @game.board = {
+  @game.current_state = {
       :A1 => :X, :A2 => :O, :A3 => :X,
       :B1 => :X, :B2 => :O, :B3 => :X,
       :C1 => :O, :C2 => :X, :C3 => :O
     }
-    @game.determine_winner
+    @game.determine_winner.should eq "Draw"
 end
 
 When /^there are no open spaces left on the board$/ do
-  @game.spots_open?.should be_false
+  @game.open_spots.count == 0
 end
 
 Then /^the game is declared a draw$/ do
-  @game.draw?.should be_true
+  @game.determine_winner.should eq "Draw"
 end
 
 

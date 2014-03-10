@@ -10,10 +10,13 @@ class TicTacToe
 
 	BOARD = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]
 
-	attr_accessor :player, :current_player, :player_symbol, :computer_symbol, :open_spots, :current_state
+	attr_accessor :player, :current_player, :player_symbol, :computer_symbol, :open_spots, :current_state, :over
 
 	def initialize
-		@current_state = {A1: nil, A2: nil, A3: nil, B1: nil, B2: nil, B3: nil, C1: nil, C2: nil, C3: nil}
+		@current_state = {:A1 => nil, :A2 => nil, :A3 => nil,
+		                  :B1 => nil, :B2 => nil, :B3 => nil, 
+		                  :C1 => nil, :C2 => nil, :C3 => nil}
+    @over = false
   end
 
 	def welcome_player
@@ -24,25 +27,23 @@ class TicTacToe
 			self.current_player = player
 			self.player_symbol, self.computer_symbol = SYMBOLS
 		end
-  	puts "Welcome #{player}"
+  	"Welcome #{player}"
 	end
 
 	def process_player_turn
-		p "In PPT"
 		self.current_player = "Computer"
 		indicate_player_turn
 		player_good_move = ""
 		player_good_move= self.get_good_move
-		p player_good_move
 		change_state(player_symbol, player_good_move)
+		player_good_move
 	end
 
 	def indicate_player_turn
-		puts "#{player}'s Move:"
+		puts "#{player}'s Move, playing #{player_symbol}:"
 	end
 
 	def get_player_move
-		p "In GPM"
 		player_input = ""
 		loop do
   		puts "Enter your move in form (Row A-C)(Col 1-3)"
@@ -53,15 +54,11 @@ class TicTacToe
 	end
 
 	def get_good_move
-		p "in GGM"
     loop do
-    	p "Calling GPM"
 		  @player_move = self.get_player_move
       break if @current_state[@player_move].nil?
       puts "That position is taken.  Try another."
     end
-    p "Returning:"
-    p @player_move
     @player_move
    end
 
@@ -71,6 +68,7 @@ class TicTacToe
 
   def process_computer_turn
   	self.current_player = @player
+  	puts "My Move, playing #{computer_symbol}"
   	computer_move = self.get_computer_move
   	change_state(computer_symbol,computer_move)
   	computer_move
@@ -84,10 +82,70 @@ class TicTacToe
   end
 
   def open_spots
-  	new_state = @current_state.keep_if do | key, value|
+  	trans_state = Hash.new
+  	new_state = Hash.new
+    @current_state.each do |key, value|
+    	trans_state[key] = value
+    end
+  	new_state=trans_state.keep_if do | key, value|
   		value.nil?
   	end
     new_state.keys
+  end
+
+  def determine_winner
+  	if self.won?(@player_symbol) then
+  		@over = true
+     	return "Player" 
+   	end
+   	if self.won?(@computer_symbol) then
+   		@over = true
+   	  return "Computer" 
+   	end
+   	if self.open_spots.count == 0 then
+   		@over = true
+   		return "Draw"
+   	end
+    return "" 
+  end
+
+  def won?(check_symbol)
+  	row_winner?(check_symbol) || 
+  	  col_winner?(check_symbol) ||
+  	  diag_winner?(check_symbol)
+  end
+
+  def row_winner?(check_symbol)
+  	(@current_state[:A1] == check_symbol &&
+  		@current_state[:A2] == check_symbol &&
+  		@current_state[:A3] == check_symbol) ||
+  	(@current_state[:B1] == check_symbol &&
+  		@current_state[:B2] == check_symbol && 
+  		@current_state[:B3] == check_symbol) ||
+  	(@current_state[:C1] == check_symbol &&
+  		@current_state[:C2] == check_symbol &&
+  		@current_state[:C3] == check_symbol)
+  end
+
+  def col_winner?(check_symbol)
+  	(@current_state[:A1] == check_symbol &&
+  		@current_state[:B1] == check_symbol &&
+  		@current_state[:C1] == check_symbol) ||
+  	(@current_state[:A2] == check_symbol &&
+  		@current_state[:B2] == check_symbol && 
+  		@current_state[:C2] == check_symbol) ||
+  	(@current_state[:A3] == check_symbol &&
+  		@current_state[:B3] == check_symbol &&
+  		@current_state[:C3] == check_symbol)
+  end
+
+  def diag_winner?(check_symbol)
+  	(@current_state[:A1] == check_symbol &&
+  		@current_state[:B2] == check_symbol &&
+  		@current_state[:C3] == check_symbol) ||
+  	(@current_state[:A3] == check_symbol &&
+  		@current_state[:B2] == check_symbol && 
+  		@current_state[:C1] == check_symbol) 
   end
 
 end

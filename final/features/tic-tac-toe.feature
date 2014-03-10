@@ -52,6 +52,7 @@ Scenario: Winning the Game
 
 Scenario: Game is a draw
 	Given I have a started Tic-Tac-Toe game
+	    And I am playing X
 		And there are not three symbols in a row
 	When there are no open spaces left on the board
 	Then the game is declared a draw 
