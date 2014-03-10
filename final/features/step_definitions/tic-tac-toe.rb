@@ -8,7 +8,7 @@ class TicTacToe
 
 	SYMBOLS = [:X, :O]
 
-	BOARD = [:A1, :A2, :A3, :B1, :B2, :B3, :C1, :C2, :C3]
+	BOARD = ["A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3"]
 
 	attr_accessor :player, :current_player, :player_symbol, :computer_symbol, :open_spots, :current_state
 
@@ -17,58 +17,52 @@ class TicTacToe
   end
 
 	def welcome_player
-
 		if rand < 0.5 then
 			self.current_player = "Computer"
 			self.computer_symbol, self.player_symbol = SYMBOLS
-			puts current_player
 		else
 			self.current_player = player
-			puts player
 			self.player_symbol, self.computer_symbol = SYMBOLS
-      puts current_player
 		end
-
-  	"Welcome #{player}"
+  	puts "Welcome #{player}"
 	end
 
 	def process_player_turn
+		p "In PPT"
 		self.current_player = "Computer"
 		indicate_player_turn
-		player_move = self.get_good_move do
-			player_move = ""
-		  loop do
-  		  puts "Enter your move in form (Row A-C)(Col 1-3)"
-    	  player_move = gets
-    	  break if BOARD.include?(player_move.to_sym)
-  	  end
-		  player_move.to_sym
-		end
-		change_state(player_symbol, player_move)
+		player_good_move = ""
+		player_good_move= self.get_good_move
+		p player_good_move
+		change_state(player_symbol, player_good_move)
 	end
 
 	def indicate_player_turn
 		puts "#{player}'s Move:"
 	end
 
-	# def get_player_move
-	# 	player_move = ""
-	# 	loop do
- #  		puts "Enter your move in form (Row A-C)(Col 1-3)"
- #    	player_move = gets
- #    	break if BOARD.include?(player_move.to_sym)
- #  	end
-
-	# 	player_move.to_sym
-	# end
+	def get_player_move
+		p "In GPM"
+		player_input = ""
+		loop do
+  		puts "Enter your move in form (Row A-C)(Col 1-3)"
+    	player_input = gets.chomp
+    	break if BOARD.include?(player_input)
+  	end
+		player_input.to_sym
+	end
 
 	def get_good_move
+		p "in GGM"
     loop do
-		  player_move = yield
-      break if @current_state[player_move].nil?
+    	p "Calling GPM"
+		  @player_move = self.get_player_move
+      break if @current_state[@player_move].nil?
       puts "That position is taken.  Try another."
     end
-    player_move
+    p "Returning:"
+    p @player_move
+    @player_move
    end
 
 	def change_state(contestant_symbol, contestant_move)

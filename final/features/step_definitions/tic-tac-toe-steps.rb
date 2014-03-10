@@ -1,8 +1,12 @@
 require 'rspec/mocks/standalone'
 require 'rspec/expectations'
+require_relative 'tic-tac-toe.rb'
+
+
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
 end
+
 
 When /^I enter my name (\w+)$/ do |name|
   @game.player = name
@@ -70,7 +74,7 @@ end
 
 When /^I enter a position "(.*?)" on the board$/ do |arg1|
   @old_pos = @game.current_state[arg1.to_sym]
-  @game.should_receive(:get_player_move).and_return(arg1.to_sym)
+  @game.should_receive(:get_good_move).and_return(arg1.to_sym)
   @game.process_player_turn
 
 end
@@ -85,9 +89,12 @@ When /^"(.*?)" is taken$/ do |arg1|
 end
 
 Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
-  @game.board[arg1.to_sym] = nil
+  @game.current_state[arg1.to_sym] = nil
   @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
-  @game.player_move.should eq arg1.to_sym
+  p "calling GGM"
+  @game.get_good_move
+  #.should eq arg1.to_sym
+  p "outa GGM"
 end
 
 

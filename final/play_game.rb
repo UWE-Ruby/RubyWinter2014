@@ -5,18 +5,18 @@ puts "What is your name?"
 @game.player = gets.chomp
 puts @game.welcome_player
 
-until @game.over?
+#until @game.over?
 	case @game.current_player
 	when "Computer"
-		@game.computer_move
+		puts "Computer's turn"
+		@game.process_computer_turn
 	when @game.player
-		@game.indicate_player_turn
-		@game.get_player_move
+		@game.process_player_turn
 	end
 
 	puts @game.current_state
 	@game.determine_winner
-end
+#end
 
 puts "You Won!" if @game.player_won?
 puts "I Won!" if @game.computer_won?
