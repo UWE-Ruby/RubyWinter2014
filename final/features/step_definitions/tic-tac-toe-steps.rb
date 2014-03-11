@@ -86,20 +86,17 @@ end
 
 When /^"(.*?)" is taken$/ do |arg1|
   @game.current_state[arg1.to_sym] = :O
-  p "in is taken"
-  p arg1
   @taken_spot = arg1.to_sym
-  p @taken_spot
 end
 
 Then /^computer should ask me for another position "(.*?)"$/ do |arg1|
-  p @taken_spot
-  p arg1
   # @game.should_receive(:get_player_move).twice.and_return(@taken_spot, arg1)
-  p "calling GGM"
   @game.get_good_move.should eq arg1.to_sym
-  p "outa GGM"
 end
+  # Note:  I cannot get this step to complete successfully, even though I've verified that the 
+  # code works.  For some reason, it won't actually call #get_good_move (verified through p statements).
+  # As the code checks good, I'll spend the time working on my ruby gem.
+  #
 
 
 Then /^it is now the computers turn$/ do
