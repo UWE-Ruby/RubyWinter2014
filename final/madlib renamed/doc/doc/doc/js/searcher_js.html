@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>searcher.js - RDoc Documentation</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../MadLib_html.html">MadLib.html</a>
+  
+    <li><a href="../../doc/MadLib_html_html.html">MadLib_html.html</a>
+  
+    <li><a href="../../doc/fonts_css.html">fonts.css</a>
+  
+    <li><a href="../../doc/fonts_css_html.html">fonts_css.html</a>
+  
+    <li><a href="../../doc/index_html.html">index.html</a>
+  
+    <li><a href="../../doc/index_html_html.html">index_html.html</a>
+  
+    <li><a href="../../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li><a href="../../doc/js/darkfish_js_html.html">darkfish_js.html</a>
+  
+    <li><a href="../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../doc/js/jquery_js_html.html">jquery_js.html</a>
+  
+    <li><a href="../../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li><a href="../../doc/js/navigation_js_html.html">navigation_js.html</a>
+  
+    <li><a href="../../doc/js/search_js.html">search.js</a>
+  
+    <li><a href="../../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li><a href="../../doc/js/search_index_js_html.html">search_index_js.html</a>
+  
+    <li><a href="../../doc/js/search_js_html.html">search_js.html</a>
+  
+    <li><a href="../../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li><a href="../../doc/js/searcher_js_html.html">searcher_js.html</a>
+  
+    <li><a href="../../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li><a href="../../doc/rdoc_css_html.html">rdoc_css.html</a>
+  
+    <li><a href="../../doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+    <li><a href="../../doc/table_of_contents_html_html.html">table_of_contents_html.html</a>
+  
+    <li><a href="../../fonts_css.html">fonts.css</a>
+  
+    <li><a href="../../index_html.html">index.html</a>
+  
+    <li><a href="../../js/darkfish_js.html">darkfish.js</a>
+  
+    <li><a href="../../js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../js/navigation_js.html">navigation.js</a>
+  
+    <li><a href="../../js/search_js.html">search.js</a>
+  
+    <li><a href="../../js/search_index_js.html">search_index.js</a>
+  
+    <li><a href="../../js/searcher_js.html">searcher.js</a>
+  
+    <li><a href="../../rdoc_css.html">rdoc.css</a>
+  
+    <li><a href="../../table_of_contents_html.html">table_of_contents.html</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/js/searcher.js">
+
+<p>Searcher = function(data) {</p>
+
+<pre>this.data = data;
+this.handlers = [];</pre>
+
+<p>}</p>
+
+<p>Searcher.prototype = new function() {</p>
+
+<pre>// search is performed in chunks of 1000 for non-blocking user input
+var CHUNK_SIZE = 1000;
+// do not try to find more than 100 results
+var MAX_RESULTS = 100;
+var huid = 1;
+var suid = 1;
+var runs = 0;
+
+this.find = function(query) {
+  var queries = splitQuery(query);
+  var regexps = buildRegexps(queries);
+  var highlighters = buildHilighters(queries);
+  var state = { from: 0, pass: 0, limit: MAX_RESULTS, n: suid++};
+  var _this = this;
+
+  this.currentSuid = state.n;
+
+  if (!query) return;
+
+  var run = function() {
+    // stop current search thread if new search started
+    if (state.n != _this.currentSuid) return;
+
+    var results =
+      performSearch(_this.data, regexps, queries, highlighters, state);
+    var hasMore = (state.limit &gt; 0 &amp;&amp; state.pass &lt; 4);
+
+    triggerResults.call(_this, results, !hasMore);
+    if (hasMore) {
+      setTimeout(run, 2);
+    }
+    runs++;
+  };
+  runs = 0;
+
+  // start search thread
+  run();
+}
+
+    ----- Events ------    
+this.ready = function(fn) {
+  fn.huid = huid;
+  this.handlers.push(fn);
+}
+
+    ----- Utilities ------    
+function splitQuery(query) {
+  return jQuery.grep(query.split(/(\s+|::?|\(\)?)/), function(string) {
+    return string.match(/\S/)
+  });
+}
+
+function buildRegexps(queries) {
+  return jQuery.map(queries, function(query) {
+    return new RegExp(query.replace(/(.)/g, '([$1])([^$1]*?)'), 'i')
+  });
+}
+
+function buildHilighters(queries) {
+  return jQuery.map(queries, function(query) {
+    return jQuery.map(query.split(''), function(l, i) {
+      return '\u0001$' + (i*2+1) + '\u0002$' + (i*2+2);
+    }).join('');
+  });
+}
+
+// function longMatchRegexp(index, longIndex, regexps) {
+//     for (var i = regexps.length - 1; i &gt;= 0; i--){
+//         if (!index.match(regexps[i]) &amp;&amp; !longIndex.match(regexps[i])) return false;
+//     };
+//     return true;
+// }
+
+/*  ----- Mathchers ------  */
+
+/*
+   This record matches if the index starts with queries[0] and the record
+   matches all of the regexps
+  /
+function matchPassBeginning(index, longIndex, queries, regexps) {
+  if (index.indexOf(queries[0]) != 0) return false;
+  for (var i=1, l = regexps.length; i &lt; l; i++) {
+    if (!index.match(regexps[i]) &amp;&amp; !longIndex.match(regexps[i]))
+      return false;
+  };
+  return true;
+}
+
+/*
+   This record matches if the longIndex starts with queries[0] and the
+   longIndex matches all of the regexps
+  /
+function matchPassLongIndex(index, longIndex, queries, regexps) {
+  if (longIndex.indexOf(queries[0]) != 0) return false;
+  for (var i=1, l = regexps.length; i &lt; l; i++) {
+    if (!longIndex.match(regexps[i]))
+      return false;
+  };
+  return true;
+}
+
+/*
+   This record matches if the index contains queries[0] and the record
+   matches all of the regexps
+  /
+function matchPassContains(index, longIndex, queries, regexps) {
+  if (index.indexOf(queries[0]) == -1) return false;
+  for (var i=1, l = regexps.length; i &lt; l; i++) {
+    if (!index.match(regexps[i]) &amp;&amp; !longIndex.match(regexps[i]))
+      return false;
+  };
+  return true;
+}
+
+/*
+   This record matches if regexps[0] matches the index and the record
+   matches all of the regexps
+  /
+function matchPassRegexp(index, longIndex, queries, regexps) {
+  if (!index.match(regexps[0])) return false;
+  for (var i=1, l = regexps.length; i &lt; l; i++) {
+    if (!index.match(regexps[i]) &amp;&amp; !longIndex.match(regexps[i]))
+      return false;
+  };
+  return true;
+}
+
+/*  ----- Highlighters ------  */
+function highlightRegexp(info, queries, regexps, highlighters) {
+  var result = createResult(info);
+  for (var i=0, l = regexps.length; i &lt; l; i++) {
+    result.title = result.title.replace(regexps[i], highlighters[i]);
+    result.namespace = result.namespace.replace(regexps[i], highlighters[i]);
+  };
+  return result;
+}
+
+function hltSubstring(string, pos, length) {
+  return string.substring(0, pos) + '\u0001' + string.substring(pos, pos + length) + '\u0002' + string.substring(pos + length);
+}
+
+function highlightQuery(info, queries, regexps, highlighters) {
+  var result = createResult(info);
+  var pos = 0;
+  var lcTitle = result.title.toLowerCase();
+
+  pos = lcTitle.indexOf(queries[0]);
+  if (pos != -1) {
+    result.title = hltSubstring(result.title, pos, queries[0].length);
+  }
+
+  result.namespace = result.namespace.replace(regexps[0], highlighters[0]);
+  for (var i=1, l = regexps.length; i &lt; l; i++) {
+    result.title = result.title.replace(regexps[i], highlighters[i]);
+    result.namespace = result.namespace.replace(regexps[i], highlighters[i]);
+  };
+  return result;
+}
+
+function createResult(info) {
+  var result = {};
+  result.title = info[0];
+  result.namespace = info[1];
+  result.path = info[2];
+  result.params = info[3];
+  result.snippet = info[4];
+  return result;
+}
+
+/*  ----- Searching ------  */
+function performSearch(data, regexps, queries, highlighters, state) {
+  var searchIndex = data.searchIndex;
+  var longSearchIndex = data.longSearchIndex;
+  var info = data.info;
+  var result = [];
+  var i = state.from;
+  var l = searchIndex.length;
+  var togo = CHUNK_SIZE;
+  var matchFunc, hltFunc;
+
+  while (state.pass &lt; 4 &amp;&amp; state.limit &gt; 0 &amp;&amp; togo &gt; 0) {
+    if (state.pass == 0) {
+      matchFunc = matchPassBeginning;
+      hltFunc = highlightQuery;
+    } else if (state.pass == 1) {
+      matchFunc = matchPassLongIndex;
+      hltFunc = highlightQuery;
+    } else if (state.pass == 2) {
+      matchFunc = matchPassContains;
+      hltFunc = highlightQuery;
+    } else if (state.pass == 3) {
+      matchFunc = matchPassRegexp;
+      hltFunc = highlightRegexp;
+    }
+
+    for (; togo &gt; 0 &amp;&amp; i &lt; l &amp;&amp; state.limit &gt; 0; i++, togo--) {
+      if (info[i].n == state.n) continue;
+      if (matchFunc(searchIndex[i], longSearchIndex[i], queries, regexps)) {
+        info[i].n = state.n;
+        result.push(hltFunc(info[i], queries, regexps, highlighters));
+        state.limit--;
+      }
+    };
+    if (searchIndex.length &lt;= i) {
+      state.pass++;
+      i = state.from = 0;
+    } else {
+      state.from = i;
+    }
+  }
+  return result;
+}
+
+function triggerResults(results, isLast) {
+  jQuery.each(this.handlers, function(i, fn) {
+    fn.call(this, results, isLast)
+  })
+}</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

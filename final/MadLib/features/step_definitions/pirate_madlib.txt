@@ -1,13 +1,13 @@
-Pirates love to sing blue dogs called limericks. Here are two favorites, usually on the tip of every pirate's nose:
+Pirates love to sing @@@Adjective @@@NounPlural called limericks. Here are two favorites, usually on the tip of every pirate's @@@BodyPart:
 
-A pretty, hard pirate named Alice 
-Broke into the king's loud palace.
-She caused a/an tall scene,
+A pretty, @@@Adjective pirate named Alice 
+Broke into the king's @@@Adjective palace.
+She caused a/an @@@Adjective scene,
 But she soon became queen--
-That pretty, round pirate of malice.
+That pretty, @@@Adjective pirate of malice.
 
-There once was a/an calendar named Billy.
-His planet-mates considered him quite silly.
-He's laugh up the mast
+There once was a/an @@@Noun named Billy.
+His @@@Noun mates considered him quite silly.
+He's @@@Verb up the mast
 While shouting, "Avast!"
-As the ship running up to Philly.
+As the ship @@@VerbPassTense up to Philly.
