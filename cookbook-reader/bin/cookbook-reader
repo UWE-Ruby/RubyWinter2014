@@ -1,0 +1,5 @@
+#! /usr/bin/ruby
+require 'cookbook-reader/parser'
+parser = CookbookReader::Parser.new(ARGV)
+parser.parse
+parser.display_data

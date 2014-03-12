@@ -12,11 +12,11 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/homework@tic_tac_toe__homework.coverage" NAME="tic-tac-toe: homework Coverage Results" MODIFIED="1394603341255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="homework" />
     <SUITE FILE_PATH="coverage/homework@tic_tac_toe.coverage" NAME="tic-tac-toe Coverage Results" MODIFIED="1394576962332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/step_definitions" MODULE_NAME="homework" />
-    <SUITE FILE_PATH="coverage/homework@tic_tac_toe__homework.coverage" NAME="tic-tac-toe: homework Coverage Results" MODIFIED="1394581003608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="homework" />
     <SUITE FILE_PATH="coverage/homework@pirate__homework.coverage" NAME="pirate: homework Coverage Results" MODIFIED="1394169411448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="homework" />
     <SUITE FILE_PATH="coverage/homework@tic_tac_toe_steps.coverage" NAME="tic-tac-toe-steps Coverage Results" MODIFIED="1394580638390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/features/step_definitions" MODULE_NAME="homework" />
-    <SUITE FILE_PATH="coverage/homework@play_game.coverage" NAME="play_game Coverage Results" MODIFIED="1394600598355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="homework" />
+    <SUITE FILE_PATH="coverage/homework@play_game.coverage" NAME="play_game Coverage Results" MODIFIED="1394604435733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="homework" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -30,37 +30,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tic-tac-toe.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="tic-tac-toe.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/step_definitions/tic-tac-toe.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="18" selection-start="713" selection-end="713" vertical-scroll-proportion="0.25575447" vertical-offset="470" max-vertical-offset="1980">
+            <state line="84" column="8" selection-start="2240" selection-end="2240" vertical-scroll-proportion="-8.615385" vertical-offset="1036" max-vertical-offset="2055">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="play_game.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/play_game.rb">
+      <file leaf-file-name="pirate.feature" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/pirate.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="420">
+            <state line="10" column="39" selection-start="324" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tic-tac-toe-steps.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="tic-tac-toe-steps.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/step_definitions/tic-tac-toe-steps.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="3" selection-start="3043" selection-end="3043" vertical-scroll-proportion="-7.7954545" vertical-offset="1502" max-vertical-offset="1935">
+            <state line="47" column="20" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-1.0911528" vertical-offset="1112" max-vertical-offset="1935">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tic-tac-toe.feature" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/features/tic-tac-toe.feature">
+      <file leaf-file-name="pirate_steps.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/step_definitions/pirate_steps.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="326" max-vertical-offset="945">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
@@ -132,8 +132,8 @@
       <list>
         <option value="$PROJECT_DIR$/features/step_definitions/pirate_steps.rb" />
         <option value="$PROJECT_DIR$/pirate.rb" />
-        <option value="$PROJECT_DIR$/play_game.rb" />
         <option value="$PROJECT_DIR$/features/step_definitions/tic-tac-toe-steps.rb" />
+        <option value="$PROJECT_DIR$/play_game.rb" />
         <option value="$PROJECT_DIR$/features/step_definitions/tic-tac-toe.rb" />
       </list>
     </option>
@@ -225,7 +225,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../cookbook-reader" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
@@ -488,7 +488,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="830" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -496,7 +496,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4053367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4053367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278272" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -528,11 +528,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/features/step_definitions/tic-tac-toe.rb</url>
-          <line>47</line>
-          <option name="timeStamp" value="42" />
+          <line>67</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="43" />
+      <option name="time" value="46" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -622,19 +622,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/features/pirate.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="324" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="255" />
+        <state line="10" column="39" selection-start="324" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="255">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/step_definitions/tic-tac-toe-steps.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/step_definitions/pirate_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
@@ -649,14 +644,6 @@
     <entry file="file://$USER_HOME$/.rbenv/versions/2.1.0/lib/ruby/2.1.0/monitor.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="187" column="0" selection-start="4412" selection-end="4412" vertical-scroll-proportion="0.0" vertical-offset="2528" max-vertical-offset="4590" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/play_game.rb.orig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.1.0/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb">
@@ -770,42 +757,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/pirate.feature">
+    <entry file="file://$PROJECT_DIR$/play_game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="324" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/ruby-debug-ide-0.4.22/lib/ruby-debug-ide.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="0" selection-start="2049" selection-end="2049" vertical-scroll-proportion="0.0" vertical-offset="1128" max-vertical-offset="2220">
+        <state line="21" column="0" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="420">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/play_game.rb">
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/ruby-debug-ide-0.4.22/lib/ruby-debug-ide.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+        <state line="86" column="0" selection-start="2049" selection-end="2049" vertical-scroll-proportion="0.33333334" vertical-offset="1151" max-vertical-offset="2220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/pirate.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="324" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/step_definitions/pirate_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/tic-tac-toe.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/step_definitions/tic-tac-toe-steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="3" selection-start="3043" selection-end="3043" vertical-scroll-proportion="-7.7954545" vertical-offset="1502" max-vertical-offset="1935">
+        <state line="28" column="0" selection-start="850" selection-end="850" vertical-scroll-proportion="0.9448441" vertical-offset="26" max-vertical-offset="945">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/step_definitions/tic-tac-toe.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="18" selection-start="713" selection-end="713" vertical-scroll-proportion="0.25575447" vertical-offset="470" max-vertical-offset="1980">
+        <state line="84" column="8" selection-start="2240" selection-end="2240" vertical-scroll-proportion="-8.615385" vertical-offset="1036" max-vertical-offset="2055">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/step_definitions/tic-tac-toe-steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="20" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-1.0911528" vertical-offset="1112" max-vertical-offset="1935">
           <folding />
         </state>
       </provider>
