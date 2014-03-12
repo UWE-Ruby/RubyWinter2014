@@ -26,7 +26,7 @@ class TicTacToe
 
   def over?
     false if spots_open?
-    true if player_won?
+    true if player_won? || computer_won?
   end
 
   def computer_move
@@ -38,7 +38,6 @@ class TicTacToe
 
   def indicate_palyer_turn
     puts "#{@player}'s Move:"
-    #get_player_move
   end
 
   def player_move
@@ -64,32 +63,38 @@ class TicTacToe
   end
 
   def determine_winner
-    true unless spots_open?
+    #return false if spots_open?
 
-    if @board[:A1] == @board[:B1] && @board[:B1]  == @board[:C1]
+    if @board[:A1] == @board[:B1] && @board[:B1]  == @board[:C1]  && @board[:A1] != " "
       @winner = @board[:A1]
-    elsif @board[:A2] == @board[:B2] && @board[:B2] == @board[:C2]
+    elsif @board[:A2] == @board[:B2] && @board[:B2] == @board[:C2] && @board[:A2] != " "
       @winner = @board[:A2]
-    elsif @board[:A1] == @board[:B1] && @board[:B1] == @board[:C1]
+    elsif @board[:A3] == @board[:B3] && @board[:B3] == @board[:C3] && @board[:A3] != " "
+      @winner = @board[:A3]
+    elsif @board[:A1] == @board[:A2] && @board[:A2] == @board[:A3] && @board[:A1] != " "
+      @winner = @board[:A1]
+    elsif @board[:B1] == @board[:B2] && @board[:B2] == @board[:B3] && @board[:B1] != " "
+      @winner = @board[:B1]
+    elsif @board[:C1] == @board[:C2] && @board[:C2] == @board[:C3] && @board[:C1] != " "
       @winner = @board[:C1]
-    elsif @board[:A1] == @board[:A2] && @board[:A2] == @board[:A3]
-      @winner = @board[:C1]
-    elsif @board[:B1] == @board[:B2] && @board[:B2] == @board[:B3]
-      @winner = @board[:C1]
-    elsif @board[:C1] == @board[:C2] && @board[:C2] == @board[:C3]
-      @winner = @board[:C1]
-    else
-      draw?
+    #else
+    #  @winner = "draw"
     end
+    #return false if spots_open?
     over?
+    true
   end
 
   def player_won?
-    true if @winner = @player_symbol[:player]
+    true if @winner == @player_symbol[:player]
   end
 
   def draw?
-    true
+    true unless player_won? || computer_won?
+  end
+
+  def computer_won?
+    @winner == @player_symbol[:computer]
   end
 
   def player_symbol
