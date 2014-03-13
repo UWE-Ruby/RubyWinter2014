@@ -10,4 +10,4 @@ Scenario: Bill always loses the game.
  Given "Bill" is logged in
  When he clicks move
  Then he loses the game
-   And he sees the text "You Lose!"
+   And he sees the text "You Lose!" 

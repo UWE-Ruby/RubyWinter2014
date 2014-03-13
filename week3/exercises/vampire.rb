@@ -4,6 +4,10 @@ class Vampire < Monster
 		super(noc,legs,name,vul,dangers)
 	end
 
+	def attack! human
+		puts "hi from Vampire"
+	end
+
 
 protected # only instances of this class and subclasses (check definition)
 

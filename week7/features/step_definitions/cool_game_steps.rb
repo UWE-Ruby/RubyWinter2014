@@ -1,4 +1,4 @@
-Given(/^"(.*?)" is logged in$/) do |name|
+Given(/^"(.*?)" is logged in$/) do |name| 
   @game = CoolGame.new(name)
 end
 

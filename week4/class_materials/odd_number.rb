@@ -21,3 +21,7 @@ class OddNumber
 	end
 end
 
+a = OddNumber.new(5)
+b = (OddNumber.new(1)..OddNumber.new(31)).to_a
+puts b
+

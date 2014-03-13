@@ -35,6 +35,7 @@ class Calculator
   end
 end
 
+# for testing a bit...
 c = Calculator.new
 puts c.multiply(2,6)
 puts c.multiply([2,3,4])

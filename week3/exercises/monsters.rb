@@ -41,9 +41,12 @@ class Someclass
   def runthis
     p $monsters.count{|m| m[:nocturnal]}
     p $monsters.select{|m| m[:nocturnal]}.map{|m| m[:name]}
-    $monsters.map{|m| m[:legs]}.inject(:+)
+    p $monsters.map{|m| m[:legs]}.inject(:+)
   end
 end
+
+s = Someclass.new
+s.runthis
 
 
 

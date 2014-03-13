@@ -1,9 +1,16 @@
+# no "include" means class and not module
+# create a "class level method" which uses "self." Does not rely on a particular instance.
+
 class Worker
+  # define a class level method
   
-  def work
+  def self.work t = 1
+    # this works but use inject
+    #r = nil
+  	#t.times { r = yield }
+    #r
+
+    t.times.inject(nil) { yield }
   end
 
 end
-
-# I tried several different ways of getting started on this but it did not work out for me so I need
-# to get a much better understanding of how blocks work.

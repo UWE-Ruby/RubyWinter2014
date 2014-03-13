@@ -1,5 +1,6 @@
-class CoolGame 
-	def initialize name
+class CoolGame  
+	
+  def initialize name
     @player = name
   end
 

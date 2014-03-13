@@ -2,6 +2,12 @@ require "#{File.dirname(__FILE__)}/worker"
 
 describe Worker do
 
+  # this is how you get each instance to work without "self"
+   #before :each do
+  	#  worker = Worker.new
+   #end
+  # and then Worker.work just becomes work?
+
 	it "executes a block and returns a string" do
 		result = Worker.work do
 			"hello"
