@@ -17,7 +17,7 @@ Then /^randomly chooses who goes first$/ do
 end
 
 Then /^who is X and who is O$/ do
-  TicTacToe::SYMBOLS.should include @game.player_symbol, @game.computer_symbol # This does not seem right, wouldn't that be referencing a module?
+  TicTacToe::SYMBOLS.should include @game.player_symbol, @game.computer_symbol
 end
 
 Given /^I have a started Tic\-Tac\-Toe game$/ do
@@ -44,7 +44,7 @@ Then /^waits for my input of "(.*?)"$/ do |arg1|
 end
 
 Given /^it is the computer's turn$/ do
-  @game = TicTacToe.new(:computer, :O)
+  @game = TicTacToe.new(:computer, :X)
   @game.current_player.should eq "Computer"
 end
 
@@ -59,11 +59,11 @@ Given /^the computer is playing X$/ do
 end
 
 Then /^the board should have an X on it$/ do
-  @game.current_state.should include 'X'
+  @game.current_state.has_value?("X").should eq true
 end
 
 Given /^I am playing X$/ do
-  @game = TicTacToe.new(:computer, :X)
+  @game = TicTacToe.new(:player, :X) # why would this be :computer, :x if the player is playing X?
   @game.player_symbol.should eq :X
 end
 
