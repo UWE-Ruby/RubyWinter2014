@@ -1,0 +1,28 @@
+Given(/^I have entered (\d+) into the converter$/) do |arg1|
+<<<<<<< HEAD
+  @converter = Converter.new(arg1)
+=======
+  @converter = Converter.new arg1
+>>>>>>> 9438bd77063c16f253d2a0b3692ccf1a278f3a40
+end
+
+Given(/^I set the type to "(.*?)"$/) do |type|
+  @converter.type = type
+end
+
+When(/^I press convert$/) do
+<<<<<<< HEAD
+ @result = @converter.convert
+=======
+  @result = @converter.convert
+>>>>>>> 9438bd77063c16f253d2a0b3692ccf1a278f3a40
+end
+
+Then(/^the result returned should be (\d+)\.(\d+)$/) do |arg1, arg2|
+  @result.should eq "#{arg1}.#{arg2}".to_f
+<<<<<<< HEAD
+end
+
+=======
+>>>>>>> 9438bd77063c16f253d2a0b3692ccf1a278f3a40
+end

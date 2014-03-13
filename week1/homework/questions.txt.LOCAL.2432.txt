@@ -1,0 +1,24 @@
+Please read: 
+Chapter 3 Classes, Objects, and Variables 
+p.86-90 Strings (Strings section in Chapter 6 Standard Types)
+
+1. What is an object? 
+An object is an instantiantion or instance of a class. 
+
+2. What is a variable?
+A variable is a pointer or reference to an object. Example: Variable -> dan = "Dan"
+
+3. What is the difference between an object and a class?
+A class is the blueprint for the object. 
+
+4. What is a String?
+A string is one or more characters. Methods can be called on a string object.
+
+5. What are three messages that I can send to a string object? Hint: think methods
+capitolize, length, to_i
+
+6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+	1. "String Literal" used in interpolation with the #{interpolation of some type} 
+	2. 'String literal' can't use interpolation.
+
+7. 

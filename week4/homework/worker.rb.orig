@@ -1,0 +1,14 @@
+class Worker
+<<<<<<< HEAD
+	
+	def self.work(n=1)
+		n.times.inject(nil){yield}
+	end
+		
+end
+=======
+  def self.work t=1
+    t.times.inject(nil){yield}
+  end
+end
+>>>>>>> 9438bd77063c16f253d2a0b3692ccf1a278f3a40
