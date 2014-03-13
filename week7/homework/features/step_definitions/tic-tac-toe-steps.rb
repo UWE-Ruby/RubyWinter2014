@@ -17,20 +17,20 @@ Then /^randomly chooses who goes first$/ do
 end
 
 Then /^who is X and who is O$/ do
-  TicTacToe::SYMBOLS.should include @game.player_symbol, @game.computer_symbol
+  TicTacToe::SYMBOLS.should include @game.player_symbol, @game.computer_symbol # This does not seem right, wouldn't that be referencing a module?
 end
 
 Given /^I have a started Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new(:player)
-  @game.player = "Renee"
+  @game.player = "Kody"
 end
 
 Given /^it is my turn$/ do
-  @game.current_player.should eq "Renee"
+  @game.current_player.should eq "Kody"
 end
 
-Given /^the computer knows my name is Renee$/ do
-  @game.player.should eq "Renee"
+Given /^the computer knows my name is Kody$/ do
+  @game.player.should eq "Kody"
 end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
