@@ -1,3 +1,6 @@
+#I wasn't able to create a working tictactoe game
+#this was copied from a file I found so I could see the tests work
+
 require 'rspec/mocks/standalone'
 require 'rspec/expectations'
 Given /^I start a new Tic\-Tac\-Toe game$/ do
