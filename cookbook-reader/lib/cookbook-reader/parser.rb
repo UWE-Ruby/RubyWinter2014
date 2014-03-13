@@ -17,8 +17,12 @@ module CookbookReader
       @top_list.each do |element|
         puts  "Cookbook: #{element['name']}\n"
         puts "  Dependancies:"
-        element['depends'].each do |name, version|
-          puts "    #{name}, #{version}\n"
+        if element['depends']
+          element['depends'].each do |name, version|
+            puts "    #{name}, #{version}\n"
+          end
+        else
+          puts "    None\n"
         end
         puts "\n"
       end
@@ -32,8 +36,9 @@ module CookbookReader
       File.open(filename) do |fp|
         fp.each do |line|
           key, value = line.chomp.split(" ")
-          key.strip!
-          value.strip!
+          next if key.nil? || value.nil?
+          key.strip! unless key.nil?
+          value.strip! unless value.nil?
           key = key.chomp('"').reverse.chomp('"').reverse
           value = value.chomp('"').reverse.chomp('"').reverse
 
