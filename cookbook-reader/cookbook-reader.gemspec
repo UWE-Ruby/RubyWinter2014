@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'cookbook-reader'
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.date        = '2014-03-12'
   s.summary     = "cookbook version parser"
   s.description = "A gem that parses cookbook metadata"
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.homepage    = 'http://rubygems.org/gems/cookbook-reader'
+  s.homepage    = 'https://github.com/keviny22/cookbook-reader'
   s.license       = 'MIT'
 
   s.add_development_dependency "fakefs", "~> 0.4.2"
