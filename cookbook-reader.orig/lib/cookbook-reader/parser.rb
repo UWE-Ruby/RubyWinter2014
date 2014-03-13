@@ -6,14 +6,30 @@ module CookbookReader
       @top_list = []
     end
     
+    def run
+      finder = Finder.from_file(@options.dictionary)
+      @options.words_to_find.each do |word|
+         anagrams = finder.lookup(word)
+         if anagrams
+           puts "Anagrams of #{word}: #{anagrams.join(', ')}"
+         else
+           puts "No anagrams of #{word} in #{@options.dictionary}"
+         end
+      end
+    end
+
     def parse
       @metadata_list = Array.new
       Dir.glob("#{@options.path_to_search}/**/metadata.rb") do |filename|
         @metadata_list.push read_file filename
+
+
       end
     end
 
     def display_data
+      #pp @top_list
+
       @top_list.each do |element|
         puts  "Cookbook: #{element['name']}\n"
         puts "  Dependancies:"
