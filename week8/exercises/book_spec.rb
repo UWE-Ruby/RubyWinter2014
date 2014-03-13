@@ -1,4 +1,4 @@
-require './books.rb'
+require_relative 'books.rb'
 describe Printer do
 	context "#printing" do
 		it "should print out the right thing for Fiction" do

@@ -4,12 +4,12 @@ Please Read:
  - Chapter 7 Regular Expressions
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
-1. What is a symbol?
+1. What is a symbol? Symbol objects represent names and some strings inside the Ruby interpreter. They are generated using the :name and :"string" literals syntax.
 
-2. What is the difference between a symbol and a string?
+2. What is the difference between a symbol and a string? Symbols are immutable and strings are mutable. Mutable objects can be changed after assignment while immutable objects can only be overwritten.
 
-3. What is a block and how do I call a block?
+3. What is a block and how do I call a block? a block is an unnamed method. Either {} or do end form blocks. Blocks can be called using the yield key word or nameing the block using &somename
 
-4. How do I pass a block to a method? What is the method signature?
+4. How do I pass a block to a method? What is the method signature? You would use a method that takes a block like each then use a variable to hold whatever the block does in pipes foo.each {|n| dan.3}. The method signiture is the method name.
 
-5. Where would you use regular expressions?
+5. Where would you use regular expressions? When I need to match a pattern of characters.
