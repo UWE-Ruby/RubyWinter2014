@@ -1,1 +1,4 @@
 .DS_Store
+cookbooks
+cookbook-reader.orig
+cookbook-reader
