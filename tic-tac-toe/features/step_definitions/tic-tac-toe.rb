@@ -1,3 +1,11 @@
+# Did not have a chance to get too far on this.
+# I went off on my own and not following the tests because they weren't passing anyways
+# So far the program can do this:
+# - Start game
+# - Computer picks who goes first and who is X/O
+# - User can fill up the board with their marker
+# - User cannot add invalid input or use taken cell
+
 class TicTacToe 
 
   attr_accessor :player
@@ -46,8 +54,6 @@ class TicTacToe
   	else
   		@computer_symbol = "X"
   	end
-    puts @player_symbol
-    puts @computer_symbol
   end
 
   def player_symbol
@@ -61,15 +67,13 @@ class TicTacToe
   def current_player
   	if @current_player_var == "Computer"
       puts "Computer goes."
-      computer_move
   		@current_player_var = @name
+      @player = @name
   	elsif @current_player_var == @name
-      player_move
   		@current_player_var = "Computer"
   	else
   		 @current_player_var = [@name, "Computer"].sample
   	end
-    draw_board
   end
 
   def draw_board
@@ -89,7 +93,6 @@ class TicTacToe
     drawC3 = @cell_status["C3"] ? "| #{@cell_owner["C3"]}" : "|"
     puts "#{drawC1}#{drawC2}#{drawC3}"
     puts "\n======================= NEXT TURN ==========================="
-    player_won?
   end
 
   def over?
@@ -102,8 +105,8 @@ class TicTacToe
 
   def player_won?
     if @cell_owner["A1"] == @player_marker
-      puts @cell_owner["A1"]
-      true
+      #puts @cell_owner["A1"]
+      #true
     end
   end
 
@@ -111,16 +114,15 @@ class TicTacToe
   end
 
   def draw?
-  	true
+    if @cell_status.has_value?(false)
+  	  true
+    else
+      false
+    end
   end
 
   def player_move
-    indicate_player_turn
-  end
-
-  def indicate_player_turn
     proper_move = false
-    print "#{@name}'s move: "
     while proper_move == false
       input = gets.chomp
       if input !~ /[A-C][1-3]/ 
@@ -134,14 +136,19 @@ class TicTacToe
     @cell_status[input] = true
     @cell_owner[input] = @player_symbol
 
-    p @cell_status
-    p @cell_owner
+    p @cell_status # for testing
+    p @cell_owner  # for testing
+  end
+
+  def indicate_player_turn
+    print "#{@name}'s move: "
   end
 
   def computer_move
   end
 
   def current_state
+    draw_board
   end
 
   def determine_winner
