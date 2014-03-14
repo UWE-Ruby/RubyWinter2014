@@ -1,4 +1,11 @@
+require "../../bearror/lib/bearror.rb"
+include Bearror
+include Kernal
+
 require "#{File.dirname(__FILE__)}/worker"
+
+
+
 
 describe Worker do
 
