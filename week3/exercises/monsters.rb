@@ -35,3 +35,18 @@ $monsters << {
 	:vulnerabilities => ['CO2', 'ice', 'cold'],
 	:legs => 0
 }
+
+# in class work here
+class Someclass
+  def runthis
+    p $monsters.count{|m| m[:nocturnal]}
+    p $monsters.select{|m| m[:nocturnal]}.map{|m| m[:name]}
+    p $monsters.map{|m| m[:legs]}.inject(:+)
+  end
+end
+
+s = Someclass.new
+s.runthis
+
+
+

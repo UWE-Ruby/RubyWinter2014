@@ -1,3 +1,4 @@
+
 require_relative 'couch.rb'
 
 describe Couch do

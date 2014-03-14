@@ -1,4 +1,4 @@
-require 'rspec/mocks/standalone'
+require 'rspec/mocks/standalone' 
 require 'rspec/expectations'
 Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new

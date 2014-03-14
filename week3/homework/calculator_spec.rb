@@ -1,4 +1,5 @@
-require "#{File.dirname(__FILE__)}/calculator"
+#require "#{File.dirname(__FILE__)}/calculator"
+require "./calculator"
 
 describe Calculator do
   

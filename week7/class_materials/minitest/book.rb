@@ -1,5 +1,29 @@
 class Book
+  attr_accessor :pages, :title, :author
+
+  def initialize title = "", author = "", pages = ""
+    @title = title
+    @author = author
+    @pages = pages
+  end
+
+  def characters 
+    @pages.inject(0){|sum, page| sum += page.length}
+  end
+
+  def page_count
+    @pages
+  end
+
+  def pretty_print
+    "#{title} - #{author} pages: #{page_count}"
+  end
+
 end
+
+b = Book.new('test', "Mr. Test", 4)
+p b.pages.length
+
 
 require 'minitest/autorun'
 
@@ -25,7 +49,7 @@ describe Book do
 
   describe "when counting characters" do
     it "should count the characters on every page" do
-      @book.characters.must_equal 29
+      @book.characters.must_equal 76
     end
   end
 end

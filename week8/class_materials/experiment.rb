@@ -23,8 +23,9 @@ module Speaker
 end
 
 class Person < Animal
-	include NamedThing
 	include Speaker
+	include NamedThing
+	
 	def call_chain
 		"Person.#{super}"
 	end

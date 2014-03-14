@@ -43,7 +43,7 @@ describe "The Rspec ruby gem" do
 
       # When this example fails,
       # it will show "expected" as 2, and "actual" as 1
-      1.should eq 2
+      1.should_not eq 2
 
     end
 
@@ -66,13 +66,6 @@ describe "The Rspec ruby gem" do
       "Renée".should have(5).characters
     end
 
-    it "should check how to spell my name" do
-      "Renée".should include("ée") 
-    end
-
-  end
-
-  context "Examples for in-class test exploration" do
     it "should know order of operations" do
       # Fix the Failing Test
       # Order of Operations is Please Excuse My Dear Aunt Sally:
@@ -91,6 +84,9 @@ describe "The Rspec ruby gem" do
       "Field".should include('ie')
     end
 
+  	it "should check basic spelling" do
+      "Field".should include('ie')
+    end
   end
 
 end

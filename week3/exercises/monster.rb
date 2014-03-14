@@ -7,8 +7,13 @@ class Monster
 	def initialize(noc, legs, name="Monster", vul = [], dangers = [])
 		super(name)
 		@nocturnal = noc
-		@vlunerabilities = vul
+		@vulnerabilities = vul
 		@dangers = dangers
 		@legs = legs
+	end
+
+	def attack! human
+		puts "hi from Monster"
+		super
 	end
 end	
