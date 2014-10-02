@@ -3,13 +3,34 @@ Chapter 3 Classes, Objects, and Variables
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
+Object is an instance of a class having:
+a. Unique internal state
+b. Attributes that expose internal state to external world
+c. Methods using which one can interact with Object and read/change the internal state.
 
 2. What is a variable?
+variable is a placeholder/identifier of data.
 
 3. What is the difference between an object and a class?
+class defines an object/class of objects.
+When I create an object, I create an instance of a class that defines the object.
 
 4. What is a String?
 
+String is a sequence of characters represented as a single entity. 
+
 5. What are three messages that I can send to a string object? Hint: think methods
 
+a. String.eql?(another_string) : Tests the equality of two strings.
+b. String.clear : Empties the string
+c. String.length : Returns the length of the string
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+
+A String literal can be defined in the following ways:
+
+a. Using single-quote .i.e singleQuotedStr = 'This is a single quoted string'. This can also be done like singleQuotedStr = %q{This is a single quoted string}
+b. Using double-quote .i.e doubleQuotedStr = "This is a double quoted string". This can also be done like doubleQuotedStr = %Q{This is a double quoted string}
+
+Double-quoted string allows variables to be inserted into it and interpretd at run time. This is not possible with single-quoted strings.
+
