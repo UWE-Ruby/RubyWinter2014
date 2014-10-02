@@ -23,21 +23,18 @@ class Couch
 		@dogs.count
 	end
 
-	# def respond_to?(method_name)
-	# 	true
-	# end
+	def method_missing method_name, *args, &block
+		if dynamic_method_logic method_name
+			self.class.class_eval do
+				define_method method_name  do |*args|
+					return yield "method missing" if block_given?
+					"you called #{method_name}"
+				end
+			end
 
-	# def method_missing(method_name, *args, &block)
-	# 	#puts "You called #{method_name} with #{args.join(' ')}"
-	# 	#puts "#{self}"
-	# 	self.class.class_eval do
-	# 		define_method(method_name) do
-	# 			#puts "hi"
-	# 			"hi"
-	# 		end
-	# 	end
-
-	# 	self.send(method_name)
-	# end
-
+			self.send method_name
+		else
+			super
+		end
+	end
 end
