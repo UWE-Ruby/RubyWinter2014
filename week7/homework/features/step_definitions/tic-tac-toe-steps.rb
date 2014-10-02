@@ -100,8 +100,8 @@ Given /^there are not three symbols in a row$/ do
       :A1 => :X, :A2 => :O, :A3 => :X,
       :B1 => :X, :B2 => :O, :B3 => :X,
       :C1 => :O, :C2 => :X, :C3 => :O
-    }
-    @game.determine_winner
+  }
+  @game.determine_winner
 end
 
 When /^there are no open spaces left on the board$/ do

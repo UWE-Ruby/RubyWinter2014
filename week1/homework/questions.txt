@@ -3,13 +3,60 @@ Chapter 3 Classes, Objects, and Variables
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
+In Ruby, objects are instances of the class which can be created using the
+special method constructor called new.
 
 2. What is a variable?
+In Ruby, a variable is a name that is associated with a particular object; a
+reference to an object
+There are four types of variables, global, instance, local and constant
 
 3. What is the difference between an object and a class?
+Some may say they are the same thing, on object is just an instance of a
+class.
 
 4. What is a String?
+Verbatim, “Ruby strings are simply sequences of characters. They normally hold
+printable characters, but that is not a requirement; a string can also hold
+binary data. Strings are objects of class String.“
 
-5. What are three messages that I can send to a string object? Hint: think methods
+5. What are three messages that I can send to a string object? Hint: think
+methods
+You could use chop, delete, empty 
 
-6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+2.1.0 :010 > car="Ford F-150"
+ => "Ford F-150" 
+2.1.0 :011 > puts car.chop   
+Ford F-15
+ => nil 
+2.1.0 :012 > 
+2.1.0 :013 > puts car.delete "150"
+Ford F-
+ => nil 
+2.1.0 :014 > 
+2.1.0 :014 > puts car.empty?
+false
+ => nil
+
+
+6. What are two ways of defining a String literal? Bonus: What is the
+difference between them?
+
+%q (single-quoted string) and %Q (double-quoted string)
+
+single-quoted string literals undergo the least substitution of the two, for
+example.
+
+
+2.1.0 :017 > car="ford"
+ => "ford" 
+2.1.0 :018 > model="f-150"
+ => "f-150" 
+2.1.0 :021 > puts %q{I drive an #{car}, #{model}}
+I drive an #{car}, #{model}
+ => nil 
+2.1.0 :022 > puts %Q{I drive an #{car}, #{model}} 
+I drive an ford, f-150
+ => nil 
+2.1.0 :023 >
+

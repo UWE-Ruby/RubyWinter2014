@@ -1,0 +1,71 @@
+ - What are the three uses of the curly brackets {} in Ruby?
+1. For string interpolation, ex
+  irb(main):001:0> name="fred"
+  => "fred"
+  irb(main):002:0> puts "Hello #{name}"
+  Hello fred
+  => nil
+  irb(main):003:0>
+
+2. They are the literal constructor for constructing a hash, ex.
+   irb(main):003:0> hash={"ford" => "mustang","dodge" => "charger"}
+   => {"ford"=>"mustang", "dodge"=>"charger"}
+   irb(main):004:0> puts hash
+   {"ford"=>"mustang", "dodge"=>"charger"}
+   => nil
+   irb(main):005:0>
+
+3. You can put a code block in curly braces to deliminate instead of using do/end
+  irb(main):006:0> array = [1,10,100]
+  => [1, 10, 100]
+  irb(main):008:0> puts array.map{|n|n+1}
+  2
+  11
+  101
+  => nil
+  irb(main):009:0> 
+
+ - What is a regular expression and what is a common use for them?
+ Regular Expressions can be used in Ruby to do pattern matching, substitution, pretty much any type of string manipulation.
+
+ - What is the difference between how a String, a symbol, a FixNum, and a Float are stored in Ruby?
+   A symbol is a string that is stored as unique identifiers in memeory,meaning it is only stored once.
+   A string on the other hand can be changed so it is stored many times, making look ups take longer
+   A FixNum is stored as the value itself, in ruby 2.0 a float behaves like a FixNum
+
+ - Are these two statements equivalent? Why or Why Not?
+   1. x, y = "hello", "hello"
+   2. x = y = "hello"
+   
+   Yes, in the sense that x = "hello" and y = "hello" in both cases.
+
+- What is the difference between a Range and an Array?
+  A range is sequential: a,b,c,d 1,2,3,4 etc
+  An array is a collection a,1,b,4,car,baby 
+
+- Why would I use a Hash instead of an Array?
+  if you care about the relationship between a key and value a hash should be used.
+  if you just want to store a collection of things, an array should be used.  
+
+- What is your favorite thing about Ruby so far?
+  It isn't strict on syntax, you dont have to declare everything
+
+- What is your least favorite thing about Ruby so far?
+  So many ways to do something, it turns into an artform especially when working in groups. it makes it more important to agree style.
+
+ Programming Problems (10pts each):
+ - Write a passing rspec file called even_number_spec.rb that tests a class called EvenNumber.
+    - The EvenNumber class should:
+       - Only allow even numbers
+       - Get the next even number
+       - Compare even numbers
+       - Generate a range of even numbers
+- Make the rspec tests in wish_list_spec.rb pass by writing a WishList class
+   - The WishList class should:
+      - Mixin Enumerable
+      - Define each so it returns wishes as strings with their index as part of the string
+
+Mid-Term Spec (50pts):
+- Make the tests pass.
+
+
