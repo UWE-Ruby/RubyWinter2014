@@ -3,13 +3,22 @@ Chapter 3 Classes, Objects, and Variables
 p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
+Objects are specific things that are known. For example, the title of a book. Classes are then created to categorize those known things into groups which share similar characteristics.
 
 2. What is a variable?
+A variable is a reference to an object, but it is not an object itself.
 
 3. What is the difference between an object and a class?
+All classes function as objects in Ruby, but not all objects are classes. Classes classify groups of things based on similar characertistics. In the assigned reading's bookstore example, certain genres (such as thrillers, romance, literary fiction, etc.) could represent classes that contain books (things/objects). A specific book within one of those classes would be an instance of that class. For example, the book "The Hunger Games" is categorized as Young Adult at bookstores, so this particular book (an object) would be an instance of the class YoungAdult.
 
 4. What is a String?
 
+A string is an object of class String that can hold sequences of printable characters or binary data. 
+
 5. What are three messages that I can send to a string object? Hint: think methods
 
+Squeeze, chomp, and split. Squeeze trims runs of repeated characters, which makes it good for removing extra spaces in a string. Chomp removes white space that occurs before or after a specified string. Split separates a string into two or more pieces. 
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+
+Single quotes (' ') and double quotes (" ") can both be used to define String literals. Single quote strings support two escape sequences: double backslash (\\), which prints a backslash within a string (\), and a backslash followed by a single quote (\'), which prints a single quote/apostrophe within the string ('I\'m going to the store today' => I'm going to the store today). Double quotes support even more escape sequences, including newline character (\n), which can be used to signify the end of a line.
