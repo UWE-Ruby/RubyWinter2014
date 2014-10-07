@@ -1,15 +1,45 @@
+# Rukia Fahim
+# Week 1 Homework
+
+
 Please read: 
-Chapter 3 Classes, Objects, and Variables 
-p.86-90 Strings (Strings section in Chapter 6 Standard Types)
+	Chapter 3 Classes, Objects, and Variables 
+	p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
-1. What is an object?
+	1. What is an object?
+	An object is an instance or a member of a class. In Ruby, every object has a unique identifier 
+	(object ID). You can have multiple objects of the same type or class. An object has data or state 
+	(stored in instance variables), these can help to differentiate two objects of the same class. An 
+	object also has defined behavior (these are the instance methods that can operate on the object's 
+	state - usually how the object's state can be altered).
 
-2. What is a variable?
+	2. What is a variable?
+	A variable is just a name or a label that holds a reference or pointer to an object in memory. 
+	The name of the variable should (hopefully) hint at what it refers to. Variables are used to access 
+	objects and manipulate them. Unlike some other languges, in Ruby, you don't need to declare a variable 
+	before you can use it, you can assign it a value and start using it immediately. In addition to this, 
+	variables in Ruby do not have a type meaning they can be used to point to any type of objects and can 
+	be reassigned to point to different types of objects. Variables have scope (where they can be accessed 
+	in a program) and a "lifetime" when they are no longer available for access.
 
-3. What is the difference between an object and a class?
+	3. What is the difference between an object and a class?
+	Typically we model real world concepts using classes. We define a class to represent a real world "thing"
+	or category. A class is just a blueprint or a template for defining that category. The class defines the 
+	object's properties/characteristics (the object will store these in instance variables) and the behavior 
+	of the object (instance methods). When we use the class blueprint to create an actual instance this is 
+	what we call an object or an instance of a class. 
 
-4. What is a String?
+	4. What is a String?
+	A String is an object that is typically used to represent characters of arbitrary length and sequence. 
+	In Ruby, String objects can be created in several ways and one of the ways is using string literals which 
+	are a sequence of characters between delimiters such as single or double quotes.
 
-5. What are three messages that I can send to a string object? Hint: think methods
+	5. What are three messages that I can send to a string object? Hint: think methods
+	String.length  (returns an integer - the number of characters in the string)
+	String.capitalize (returns a copy of the string with first character capitalized and rest to lowercase)
+	String.empty? (returns true if string has length of zero) 
 
-6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+	6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+	Two ways you can define a String literal is within single quotes or double quotes. The type of delimiter 
+	determines what kind of escape sequences are supported. Double quotes support a lot more types of 
+	substitution and escape sequences including string interpolation (ex. #{expression}). 

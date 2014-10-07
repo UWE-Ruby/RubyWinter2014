@@ -3,7 +3,44 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
-2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+When we call a method on a class, if that method is not found it will
+call the method_missing method. By default this will throw a
+NoMethodError, but you can override this to do something more useful.
+Overriding method_missing gives you a way to intercept unanswerable 
+messages and handle them gracefully.
+
+2. What is an Eigenclass and what is it used for? Where Do Singleton methods live?
+An Eigenclass or a Singleton class (also called virtual classes or
+object-specific class), is an anonymous class that are created when
+you create a method that only exists for a single object (not for a
+class of objects). When you add a method to a specific object, Ruby
+will insert a new anonymous class in the inheritance hierarchy as a
+container to hold these methods. 
+
 3. When would you use DuckTypeing? How would you use it to improve your code?
-4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+When following the Duck Typing philosophy - we need to remember one
+thing: an object's type is determined by what it can do, not by its
+class. We won't really gain much value in worrying about or testing
+the class of an object for example. Instead we focus on the objects
+capabilities. We can improve the code using Duck Typing by writing
+code that is flexible (no need to check for types but be able to
+handle a string vs. an array, etc.).
+
+4. What is the difference between a class method and an instance method? What is the 
+difference between instance_eval and class_eval?
+class methods are called on a class (no instance needs to exist in
+order for them to be called) - Java these would be similar to "static
+methods", instance methods are called on an instance of a class, in
+most cases these would fall under setters or getters. Instance_eval
+evaluates the code within the context of the receiver object.
+We can use instance_eval on any object, even class objects. if it's used 
+on an instance of an object then it evals on that instance creating an instance
+method. And if it's used on a class object then, it evals on the class creating 
+a class method. On the other hand class_eval can only be called on classes or modules
+and it evals on the instances of the class/module creating instance
+methods.
+
 5. What is the difference between a singleton class and a singleton method?
+A singleton class is a class which defines a single object. A
+singleton method is a method which belongs to a single object (instead
+of an entire class or other objects). 
