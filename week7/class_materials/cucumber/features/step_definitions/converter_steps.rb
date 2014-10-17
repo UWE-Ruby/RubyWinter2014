@@ -2,7 +2,7 @@ Given /^I have entered (\d+) into the converter$/ do |arg1|
 	@converter = Converter.new(arg1)
 end
 
-Given /^I select Celsius$/ do
+Given /^I select (Celsius)$/ do
 	@converter.type = "Celsius"
 end
 

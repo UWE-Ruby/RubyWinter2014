@@ -1,14 +1,32 @@
 Please Read: 
 Chapter 10 Basic Input and Output
+# This is chapter 11 in the 4th Edition
 The Rake Gem: http://rake.rubyforge.org/
 
 1. How does Ruby read files?
 
+Using the File object.
+
 2. How would you output "Hello World!" to a file called my_output.txt?
+
+This works:
+
+File.open("my_output.txt", "w") { |file| file.puts "Hello World!" }
+
+I like this a bit more:
+
+File.open("my_output.txt", "w") { |f| f.write "Hello World!" }
+
+I tried, without success, to string the write to the File.open without using a block and then realized that the block was probably the best method because the file would still be closed even if the block raised an exception.
 
 3. What is the Directory class and what is it used for?
 
+I found a Dir class, not a Directory class. The File class contains a directory? method that returns true if the named file is a directory. The Dir class provides a variety of ways to list directories and their contents.
+
 4. What is an IO object?
+
+A bidirectional channel between a Ruby program and some external resource.
 
 5. What is rake and what is it used for? What is a rake task?
 
+Rake is a build tool, similar to make. In general, built tools are used to automate tedious and repetitive tasks. A rake task is a task method invocation.
