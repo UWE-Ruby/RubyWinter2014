@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'jim_gem_gym'
+
+paradigm = ARGV.first || "benign"
+
+puts Reality.new(paradigm).worldview

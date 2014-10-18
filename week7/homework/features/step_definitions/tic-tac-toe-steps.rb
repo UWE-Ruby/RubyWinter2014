@@ -22,20 +22,20 @@ end
 
 Given /^I have a started Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new(:player)
-  @game.player = "Renee"
+  @game.player = "Kody"
 end
 
 Given /^it is my turn$/ do
-  @game.current_player.should eq "Renee"
+  @game.current_player.should eq "Kody"
 end
 
-Given /^the computer knows my name is Renee$/ do
-  @game.player.should eq "Renee"
+Given /^the computer knows my name is Kody$/ do
+  @game.player.should eq "Kody"
 end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|
@@ -44,7 +44,7 @@ Then /^waits for my input of "(.*?)"$/ do |arg1|
 end
 
 Given /^it is the computer's turn$/ do
-  @game = TicTacToe.new(:computer, :O)
+  @game = TicTacToe.new(:computer, :X)
   @game.current_player.should eq "Computer"
 end
 
@@ -59,11 +59,11 @@ Given /^the computer is playing X$/ do
 end
 
 Then /^the board should have an X on it$/ do
-  @game.current_state.should include 'X'
+  @game.current_state.has_value?("X").should eq true
 end
 
 Given /^I am playing X$/ do
-  @game = TicTacToe.new(:computer, :X)
+  @game = TicTacToe.new(:player, :X) # why would this be :computer, :x if the player is playing X?
   @game.player_symbol.should eq :X
 end
 
