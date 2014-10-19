@@ -4,11 +4,20 @@ The Rake Gem: http://rake.rubyforge.org/
 
 1. How does Ruby read files?
 
+-->Ruby reads files sequentially, by line or by character/byte.
+
 2. How would you output "Hello World!" to a file called my_output.txt?
+
+File.open("my_output.txt", "w") {|file| file.puts "Hello World!"}
 
 3. What is the Directory class and what is it used for?
 
+-->The "Dir" class (I assume that is the question) is a collection of directory streams representing directories in the underlying file structure.  They are used to list and manipulate directories and their contents.
+
 4. What is an IO object?
+
+-->An IO object is a bidirectional channel between a Ruby program and some external resource.
 
 5. What is rake and what is it used for? What is a rake task?
 
+-->Rake stands for "Ruby Make", a simple build program used for Ruby programs.  A rake task is the main unit of work in a Rakefile.  It has a name, a list of preconditions, and a list of actions to take.

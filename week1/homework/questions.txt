@@ -4,12 +4,24 @@ p.86-90 Strings (Strings section in Chapter 6 Standard Types)
 
 1. What is an object?
 
+# An opject is a "thing" that needs to be represented in code.  It is a particular instance of a Class, it contains state and it exhibits behavior.
+
 2. What is a variable?
+
+# A variable is a string of charactgers that is a reference to an object, but is not an object.
 
 3. What is the difference between an object and a class?
 
+#  An object is a particular instance of a class.  A class is a collection of related objects.
+
 4. What is a String?
+
+#  A string is a sequence of characters -- both printable and not -- that is an instance of the String class.
 
 5. What are three messages that I can send to a string object? Hint: think methods
 
+#  Change to lowercase (".downcase"),  remove the last character (".chop"), or split upon a defined character (".split").  In all cases, return the resulting object.
+
 6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+
+#  You can use an set of defined delimiters such as quotes or %Q, or you can use a "here document".  A here document can be multiline.

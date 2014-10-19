@@ -1,7 +1,6 @@
 class Book
 
-  def pages
-    
-  end
+	attr_accessor :pages
+	attr_accessor :title
 
 end
