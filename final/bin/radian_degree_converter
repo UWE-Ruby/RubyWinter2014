@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'radian_degree_converter'
+
+@converter = RadianDegreeConverter.new
+puts "Select one of the following options:"
+puts "\t1. To convert radians to decimal degrees"
+puts "\t2. To convert decimal degrees to radians"
+print "\nEnter 1 or 2: "
+
+option = gets.chomp
+if option == '1'
+	print "Enter radians value: "
+	r_value = gets
+	result = @converter.convert_radians_to_degrees(r_value)
+	if (!result.nil?)
+		puts "The decimal degrees equivalent is #{result}"	
+	end	
+elsif option == '2'
+	print "Enter decimal degrees value: "
+	d_value = gets
+	result = @converter.convert_degrees_to_radians(d_value)
+	if (!result.nil?)
+		puts "The radians equivalent is #{result}"
+	end
+else
+	puts "Invalid selection"
+end
