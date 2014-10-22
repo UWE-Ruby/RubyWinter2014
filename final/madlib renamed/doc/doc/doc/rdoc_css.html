@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>rdoc.css - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../MadLib_html.html">MadLib.html</a>
+  
+    <li><a href="../doc/MadLib_html_html.html">MadLib_html.html</a>
+  
+    <li><a href="../doc/fonts_css.html">fonts.css</a>
+  
+    <li><a href="../doc/fonts_css_html.html">fonts_css.html</a>
+  
+    <li><a href="../doc/index_html.html">index.html</a>
+  
+    <li><a href="../doc/index_html_html.html">index_html.html</a>
+  
+    <li><a href="../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li><a href="../doc/js/darkfish_js_html.html">darkfish_js.html</a>
+  
+    <li><a href="../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../doc/js/jquery_js_html.html">jquery_js.html</a>
+  
+    <li><a href="../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li><a href="../doc/js/navigation_js_html.html">navigation_js.html</a>
+  
+    <li><a href="../doc/js/search_js.html">search.js</a>
+  
+    <li><a href="../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li><a href="../doc/js/search_index_js_html.html">search_index_js.html</a>
+  
+    <li><a href="../doc/js/search_js_html.html">search_js.html</a>
+  
+    <li><a href="../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li><a href="../doc/js/searcher_js_html.html">searcher_js.html</a>
+  
+    <li><a href="../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li><a href="../doc/rdoc_css_html.html">rdoc_css.html</a>
+  
+    <li><a href="../doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+    <li><a href="../doc/table_of_contents_html_html.html">table_of_contents_html.html</a>
+  
+    <li><a href="../fonts_css.html">fonts.css</a>
+  
+    <li><a href="../index_html.html">index.html</a>
+  
+    <li><a href="../js/darkfish_js.html">darkfish.js</a>
+  
+    <li><a href="../js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../js/navigation_js.html">navigation.js</a>
+  
+    <li><a href="../js/search_js.html">search.js</a>
+  
+    <li><a href="../js/search_index_js.html">search_index.js</a>
+  
+    <li><a href="../js/searcher_js.html">searcher.js</a>
+  
+    <li><a href="../rdoc_css.html">rdoc.css</a>
+  
+    <li><a href="../table_of_contents_html.html">table_of_contents.html</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/rdoc.css">
+
+<pre>&quot;Darkfish&quot; Rdoc CSS
+$Id: rdoc.css 54 2009-01-27 01:09:48Z deveiant $
+
+Author: Michael Granger &lt;ged@FaerieMUD.org&gt;
+
+vim: ft=css et sw=2 ts=2 sts=2</pre>
+
+<p>/* Base Green is: #6C8C22 */</p>
+
+<pre>{ padding: 0; margin: 0; }</pre>
+
+<p>body {</p>
+
+<pre>background: #fafafa;
+font-family: Lato, sans-serif;
+font-weight: 300;</pre>
+
+<p>}</p>
+
+<p>h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {</p>
+
+<pre>display: none;
+padding-left: 1em;
+font-size: 10px;
+vertical-align: super;</pre>
+
+<p>}</p>
+
+<p>h1:hover span, h2:hover span, h3:hover span, h4:hover span, h5:hover span,
+h6:hover span {</p>
+
+<pre>display: inline;</pre>
+
+<p>}</p>
+
+<p>:link, :visited {</p>
+
+<pre>color: #6C8C22;
+text-decoration: none;</pre>
+
+<p>}</p>
+
+<p>:link: hover, :visited: hover {</p>
+
+<pre>border-bottom: 1px dotted #6C8C22;</pre>
+
+<p>}</p>
+
+<p>code, pre {</p>
+
+<pre>font-family: &quot;Source Code Pro&quot;, Monaco, monospace;</pre>
+
+<p>}</p>
+
+<p>/* @group Generic Classes */</p>
+
+<p>.initially-hidden {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>search-field {</p>
+
+<pre>width: 98%;
+background: white;
+border: none;
+height: 1.5em;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+text-align: left;</pre>
+
+<p>} search-field:focus {</p>
+
+<pre>background: #f1edba;</pre>
+
+<p>} search-field:-moz-placeholder, search-field::-webkit-input-placeholder {</p>
+
+<pre>font-weight: bold;
+color: #666;</pre>
+
+<p>}</p>
+
+<p>.missing-docs {</p>
+
+<pre>font-size: 120%;
+background: white url(images/wrench_orange.png) no-repeat 4px center;
+color: #ccc;
+line-height: 2em;
+border: 1px solid #d00;
+opacity: 1;
+padding-left: 20px;
+text-indent: 24px;
+letter-spacing: 3px;
+font-weight: bold;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;</pre>
+
+<p>}</p>
+
+<p>.target-section {</p>
+
+<pre>border: 2px solid #dcce90;
+border-left-width: 8px;
+padding: 0 1em;
+background: #fff3c2;</pre>
+
+<p>}</p>
+
+<p>/* @end */</p>
+
+<p>/* @group Index Page, Standalone file pages */ .table-of-contents ul {</p>
+
+<pre>margin: 1em;
+list-style: none;</pre>
+
+<p>}</p>
+
+<p>.table-of-contents ul ul {</p>
+
+<pre>margin-top: 0.25em;</pre>
+
+<p>}</p>
+
+<p>.table-of-contents ul :link, .table-of-contents ul :visited {</p>
+
+<pre>font-size: 16px;</pre>
+
+<p>}</p>
+
+<p>.table-of-contents li {</p>
+
+<pre>margin-bottom: 0.25em;</pre>
+
+<p>}</p>
+
+<p>.table-of-contents li .toc-toggle {</p>
+
+<pre>width: 16px;
+height: 16px;
+background: url(images/add.png) no-repeat;</pre>
+
+<p>}</p>
+
+<p>.table-of-contents li .toc-toggle.open {</p>
+
+<pre>background: url(images/delete.png) no-repeat;</pre>
+
+<p>}</p>
+
+<p>/* @end */</p>
+
+<p>/* @group Top-Level Structure */</p>
+
+<p>nav {</p>
+
+<pre>float: left;
+width: 260px;
+font-family: Helvetica, sans-serif;
+font-size: 14px;</pre>
+
+<p>}</p>
+
+<p>main {</p>
+
+<pre>display: block;
+margin: 0 2em 5em 260px;
+padding-left: 20px;
+min-width: 340px;
+font-size: 16px;</pre>
+
+<p>}</p>
+
+<p>main h1, main h2, main h3, main h4, main h5, main h6 {</p>
+
+<pre>font-family: Helvetica, sans-serif;</pre>
+
+<p>}</p>
+
+<p>.table-of-contents main {</p>
+
+<pre>margin-left: 2em;</pre>
+
+<p>}</p>
+
+<p>validator-badges {</p>
+
+<pre>clear: both;
+margin: 1em 1em 2em;
+font-size: smaller;</pre>
+
+<p>}</p>
+
+<p>/* @end */</p>
+
+<p>/* @group navigation */ nav {</p>
+
+<pre>margin-bottom: 1em;</pre>
+
+<p>}</p>
+
+<p>nav .nav-section {</p>
+
+<pre>margin-top: 2em;
+border-top: 2px solid #aaa;
+font-size: 90%;
+overflow: hidden;</pre>
+
+<p>}</p>
+
+<p>nav h2 {</p>
+
+<pre>margin: 0;
+padding: 2px 8px 2px 8px;
+background-color: #e8e8e8;
+color: #555;
+font-size: 125%;
+text-align: center;</pre>
+
+<p>}</p>
+
+<p>nav h3, table-of-contents-navigation {</p>
+
+<pre>margin: 0;
+padding: 2px 8px 2px 8px;
+text-align: right;
+background-color: #e8e8e8;
+color: #555;</pre>
+
+<p>}</p>
+
+<p>nav ul, nav dl, nav p {</p>
+
+<pre>padding: 4px 8px 0;
+list-style: none;</pre>
+
+<p>}</p>
+
+<p>project-navigation .nav-section {</p>
+
+<pre>margin: 0;
+border-top: 0;</pre>
+
+<p>}</p>
+
+<p>home-section h2 {</p>
+
+<pre>text-align: center;</pre>
+
+<p>}</p>
+
+<p>table-of-contents-navigation {</p>
+
+<pre>font-size: 1.2em;
+font-weight: bold;
+text-align: center;</pre>
+
+<p>}</p>
+
+<p>search-section {</p>
+
+<pre>margin-top: 0;
+border-top: 0;</pre>
+
+<p>}</p>
+
+<p>search-field-wrapper {</p>
+
+<pre>border-top: 1px solid #aaa;
+border-bottom: 1px solid #aaa;
+padding: 3px 8px;
+background-color: #e8e8e8;
+color: #555;</pre>
+
+<p>}</p>
+
+<p>ul.link-list li {</p>
+
+<pre>white-space: nowrap;
+line-height: 1.4em;</pre>
+
+<p>}</p>
+
+<p>ul.link-list .type {</p>
+
+<pre>font-size: 8px;
+text-transform: uppercase;
+color: white;
+background: #969696;
+padding: 2px 4px;
+-webkit-border-radius: 5px;</pre>
+
+<p>}</p>
+
+<p>.calls-super {</p>
+
+<pre>background: url(images/arrow_up.png) no-repeat right center;</pre>
+
+<p>}</p>
+
+<p>/* @end */</p>
+
+<p>/* @group Documentation Section */ main {</p>
+
+<pre>color: #333;</pre>
+
+<p>}</p>
+
+<p>main &gt; h1:first-child, main &gt; h2:first-child, main &gt;
+h3:first-child, main &gt; h4:first-child, main &gt; h5:first-child, main
+&gt; h6:first-child {</p>
+
+<pre>margin-top: 0px;</pre>
+
+<p>}</p>
+
+<p>main sup {</p>
+
+<pre>vertical-align: super;
+font-size: 0.8em;</pre>
+
+<p>}</p>
+
+<p>/* The heading with the class name */ main <a href="class">h1</a> {</p>
+
+<pre>margin-top: 0;
+margin-bottom: 1em;
+font-size: 2em;
+color: #6C8C22;</pre>
+
+<p>}</p>
+
+<p>main h1 {</p>
+
+<pre>margin: 2em 0 0.5em;
+font-size: 1.7em;</pre>
+
+<p>}</p>
+
+<p>main h2 {</p>
+
+<pre>margin: 2em 0 0.5em;
+font-size: 1.5em;</pre>
+
+<p>}</p>
+
+<p>main h3 {</p>
+
+<pre>margin: 2em 0 0.5em;
+font-size: 1.2em;</pre>
+
+<p>}</p>
+
+<p>main h4 {</p>
+
+<pre>margin: 2em 0 0.5em;
+font-size: 1.1em;</pre>
+
+<p>}</p>
+
+<p>main h5 {</p>
+
+<pre>margin: 2em 0 0.5em;
+font-size: 1em;</pre>
+
+<p>}</p>
+
+<p>main h6 {</p>
+
+<pre>margin: 2em 0 0.5em;
+font-size: 1em;</pre>
+
+<p>}</p>
+
+<p>main p {</p>
+
+<pre>margin: 0 0 0.5em;
+line-height: 1.4em;</pre>
+
+<p>}</p>
+
+<p>main pre {</p>
+
+<pre>margin: 1.2em 0.5em;
+padding: 1em;
+font-size: 0.8em;</pre>
+
+<p>}</p>
+
+<p>main hr {</p>
+
+<pre>margin: 1.5em 1em;
+border: 2px solid #ddd;</pre>
+
+<p>}</p>
+
+<p>main blockquote {</p>
+
+<pre>margin: 0 2em 1.2em 1.2em;
+padding-left: 0.5em;
+border-left: 2px solid #ddd;</pre>
+
+<p>}</p>
+
+<p>main ol, main ul {</p>
+
+<pre>margin: 1em 2em;</pre>
+
+<p>}</p>
+
+<p>main li &gt; p {</p>
+
+<pre>margin-bottom: 0.5em;</pre>
+
+<p>}</p>
+
+<p>main dl {</p>
+
+<pre>margin: 1em 0.5em;</pre>
+
+<p>}</p>
+
+<p>main dt {</p>
+
+<pre>margin-bottom: 0.5em;
+font-weight: bold;</pre>
+
+<p>}</p>
+
+<p>main dd {</p>
+
+<pre>margin: 0 1em 1em 0.5em;</pre>
+
+<p>}</p>
+
+<p>main header h2 {</p>
+
+<pre>margin-top: 2em;
+border-width: 0;
+border-top: 4px solid #bbb;
+font-size: 130%;</pre>
+
+<p>}</p>
+
+<p>main header h3 {</p>
+
+<pre>margin: 2em 0 1.5em;
+border-width: 0;
+border-top: 3px solid #bbb;
+font-size: 120%;</pre>
+
+<p>}</p>
+
+<p>.documentation-section-title {</p>
+
+<pre>position: relative;</pre>
+
+<p>} .documentation-section-title .section-click-top {</p>
+
+<pre>position: absolute;
+top: 6px;
+left: 12px;
+font-size: 10px;
+color: #9b9877;
+visibility: hidden;
+padding-left: 0.5px;</pre>
+
+<p>}</p>
+
+<p>.documentation-section-title:hover .section-click-top {</p>
+
+<pre>visibility: visible;</pre>
+
+<p>}</p>
+
+<p>.constants-list &gt; dl {</p>
+
+<pre>margin: 1em 0 2em;
+border: 0;</pre>
+
+<p>}</p>
+
+<p>.constants-list &gt; dl dt {</p>
+
+<pre>margin-bottom: 0.75em;
+padding-left: 0;
+font-family: &quot;Source Code Pro&quot;, Monaco, monospace;
+font-size: 110%;</pre>
+
+<p>}</p>
+
+<p>.constants-list &gt; dl dt a {</p>
+
+<pre>color: inherit;</pre>
+
+<p>}</p>
+
+<p>.constants-list &gt; dl dd {</p>
+
+<pre>margin: 0 0 2em 0;
+padding: 0;
+color: #666;</pre>
+
+<p>}</p>
+
+<p>.documentation-section h2 {</p>
+
+<pre>position: relative;</pre>
+
+<p>}</p>
+
+<p>.documentation-section h2 a {</p>
+
+<pre>position: absolute;
+top: 8px;
+right: 10px;
+font-size: 12px;
+color: #9b9877;
+visibility: hidden;</pre>
+
+<p>}</p>
+
+<p>.documentation-section h2:hover a {</p>
+
+<pre>visibility: visible;</pre>
+
+<p>}</p>
+
+<p>/* @group Method Details */</p>
+
+<p>main .method-source-code {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>main .method-description .method-calls-super {</p>
+
+<pre>color: #333;
+font-weight: bold;</pre>
+
+<p>}</p>
+
+<p>main .method-detail {</p>
+
+<pre>margin-bottom: 2.5em;
+cursor: pointer;</pre>
+
+<p>}</p>
+
+<p>main .method-detail:target {</p>
+
+<pre>margin-left: -10px;
+border-left: 10px solid #f1edba;</pre>
+
+<p>}</p>
+
+<p>main .method-heading {</p>
+
+<pre>position: relative;
+font-family: &quot;Source Code Pro&quot;, Monaco, monospace;
+font-size: 110%;
+font-weight: bold;
+color: #333;</pre>
+
+<p>} main .method-heading :link, main .method-heading :visited {</p>
+
+<pre>color: inherit;</pre>
+
+<p>} main .method-click-advice {</p>
+
+<pre>position: absolute;
+top: 2px;
+right: 5px;
+font-size: 12px;
+color: #9b9877;
+visibility: hidden;
+padding-right: 20px;
+line-height: 20px;
+background: url(images/zoom.png) no-repeat right top;</pre>
+
+<p>} main .method-heading:hover .method-click-advice {</p>
+
+<pre>visibility: visible;</pre>
+
+<p>}</p>
+
+<p>main .method-alias .method-heading {</p>
+
+<pre>color: #666;</pre>
+
+<p>}</p>
+
+<p>main .method-description, main .aliases {</p>
+
+<pre>margin-top: 0.75em;
+color: #333;</pre>
+
+<p>}</p>
+
+<p>main .aliases {</p>
+
+<pre>padding-top: 4px;
+font-style: italic;
+cursor: default;</pre>
+
+<p>} main .method-description ul {</p>
+
+<pre>margin-left: 1.5em;</pre>
+
+<p>}</p>
+
+<p>main attribute-method-details .method-detail:hover {</p>
+
+<pre>background-color: transparent;
+cursor: default;</pre>
+
+<p>} main .attribute-access-type {</p>
+
+<pre>text-transform: uppercase;
+padding: 0 1em;</pre>
+
+<p>} /* @end */</p>
+
+<p>/* @end */</p>
+
+<p>/* @group Source Code */</p>
+
+<p>pre {</p>
+
+<pre>margin: 0.5em 0;
+border: 1px dashed #999;
+padding: 0.5em;
+background: #262626;
+color: white;
+overflow: auto;</pre>
+
+<p>}</p>
+
+<p>.ruby-constant   { color: #7fffd4; background: transparent; } .ruby-keyword
+{ color: #00ffff; background: transparent; } .ruby-ivar       { color:
+eedd82; background: transparent; } .ruby-operator   { color: #00ffee;
+background: transparent; } .ruby-identifier { color: ffdead; background:
+transparent; } .ruby-node       { color: ffa07a; background: transparent; }
+.ruby-comment    { color: dc0000; background: transparent; } .ruby-regexp  
+{ color: ffa07a; background: transparent; } .ruby-value      { color:
+#7fffd4; background: transparent; }</p>
+
+<p>/* @end */</p>
+
+<p>/* @group search results */ search-results {</p>
+
+<pre>font-family: Lato, sans-serif;
+font-weight: 300;</pre>
+
+<p>}</p>
+
+<p>search-results .search-match {</p>
+
+<pre>font-family: Helvetica, sans-serif;
+font-weight: normal;</pre>
+
+<p>}</p>
+
+<p>search-results .search-selected {</p>
+
+<pre>background: #e8e8e8;
+border-bottom: 1px solid transparent;</pre>
+
+<p>}</p>
+
+<p>search-results li {</p>
+
+<pre>list-style: none;
+border-bottom: 1px solid #aaa;
+margin-bottom: 0.5em;</pre>
+
+<p>}</p>
+
+<p>search-results li:last-child {</p>
+
+<pre>border-bottom: none;
+margin-bottom: 0;</pre>
+
+<p>}</p>
+
+<p>search-results li p {</p>
+
+<pre>padding: 0;
+margin: 0.5em;</pre>
+
+<p>}</p>
+
+<p>search-results .search-namespace {</p>
+
+<pre>font-weight: bold;</pre>
+
+<p>}</p>
+
+<p>search-results li em {</p>
+
+<pre>background: yellow;
+font-style: normal;</pre>
+
+<p>}</p>
+
+<p>search-results pre {</p>
+
+<pre>margin: 0.5em;
+font-family: &quot;Source Code Pro&quot;, Monaco, monospace;</pre>
+
+<p>}</p>
+
+<p>/* @end */</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

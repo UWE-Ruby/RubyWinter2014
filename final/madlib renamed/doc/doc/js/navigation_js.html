@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>navigation.js - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../MadLib_html.html">MadLib.html</a>
+  
+    <li><a href="../doc/MadLib_html_html.html">MadLib_html.html</a>
+  
+    <li><a href="../doc/fonts_css.html">fonts.css</a>
+  
+    <li><a href="../doc/fonts_css_html.html">fonts_css.html</a>
+  
+    <li><a href="../doc/index_html.html">index.html</a>
+  
+    <li><a href="../doc/index_html_html.html">index_html.html</a>
+  
+    <li><a href="../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li><a href="../doc/js/darkfish_js_html.html">darkfish_js.html</a>
+  
+    <li><a href="../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../doc/js/jquery_js_html.html">jquery_js.html</a>
+  
+    <li><a href="../doc/js/navigation_js.html">navigation.js</a>
+  
+    <li><a href="../doc/js/navigation_js_html.html">navigation_js.html</a>
+  
+    <li><a href="../doc/js/search_js.html">search.js</a>
+  
+    <li><a href="../doc/js/search_index_js.html">search_index.js</a>
+  
+    <li><a href="../doc/js/search_index_js_html.html">search_index_js.html</a>
+  
+    <li><a href="../doc/js/search_js_html.html">search_js.html</a>
+  
+    <li><a href="../doc/js/searcher_js.html">searcher.js</a>
+  
+    <li><a href="../doc/js/searcher_js_html.html">searcher_js.html</a>
+  
+    <li><a href="../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li><a href="../doc/rdoc_css_html.html">rdoc_css.html</a>
+  
+    <li><a href="../doc/table_of_contents_html.html">table_of_contents.html</a>
+  
+    <li><a href="../doc/table_of_contents_html_html.html">table_of_contents_html.html</a>
+  
+    <li><a href="../fonts_css.html">fonts.css</a>
+  
+    <li><a href="../index_html.html">index.html</a>
+  
+    <li><a href="../js/darkfish_js.html">darkfish.js</a>
+  
+    <li><a href="../js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../js/navigation_js.html">navigation.js</a>
+  
+    <li><a href="../js/search_js.html">search.js</a>
+  
+    <li><a href="../js/search_index_js.html">search_index.js</a>
+  
+    <li><a href="../js/searcher_js.html">searcher.js</a>
+  
+    <li><a href="../rdoc_css.html">rdoc.css</a>
+  
+    <li><a href="../table_of_contents_html.html">table_of_contents.html</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page js/navigation.js">
+
+<pre>Navigation allows movement using the arrow keys through the search results.
+
+When using this library you will need to set scrollIntoView to the
+appropriate function for your layout.  Use scrollInWindow if the container
+is not scrollable and scrollInElement if the container is a separate
+scrolling region.</pre>
+
+<p>Navigation = new function() {</p>
+
+<pre>this.initNavigation = function() {
+  var _this = this;
+
+  $(document).keydown(function(e) {
+    _this.onkeydown(e);
+  }).keyup(function(e) {
+    _this.onkeyup(e);
+  });
+
+  this.navigationActive = true;
+}
+
+this.setNavigationActive = function(state) {
+  this.navigationActive = state;
+  this.clearMoveTimeout();
+}
+
+this.onkeyup = function(e) {
+  if (!this.navigationActive) return;
+
+  switch(e.keyCode) {
+    case 37: //Event.KEY_LEFT:
+    case 38: //Event.KEY_UP:
+    case 39: //Event.KEY_RIGHT:
+    case 40: //Event.KEY_DOWN:
+      this.clearMoveTimeout();
+      break;
+  }
+}
+
+this.onkeydown = function(e) {
+  if (!this.navigationActive) return;
+  switch(e.keyCode) {
+    case 37: //Event.KEY_LEFT:
+      if (this.moveLeft()) e.preventDefault();
+      break;
+    case 38: //Event.KEY_UP:
+      if (e.keyCode == 38 || e.ctrlKey) {
+        if (this.moveUp()) e.preventDefault();
+        this.startMoveTimeout(false);
+      }
+      break;
+    case 39: //Event.KEY_RIGHT:
+      if (this.moveRight()) e.preventDefault();
+      break;
+    case 40: //Event.KEY_DOWN:
+      if (e.keyCode == 40 || e.ctrlKey) {
+        if (this.moveDown()) e.preventDefault();
+        this.startMoveTimeout(true);
+      }
+      break;
+    case 13: //Event.KEY_RETURN:
+      if (this.$current)
+        e.preventDefault();
+        this.select(this.$current);
+      break;
+  }
+  if (e.ctrlKey &amp;&amp; e.shiftKey) this.select(this.$current);
+}
+
+this.clearMoveTimeout = function() {
+  clearTimeout(this.moveTimeout);
+  this.moveTimeout = null;
+}
+
+this.startMoveTimeout = function(isDown) {
+  if (!$.browser.mozilla &amp;&amp; !$.browser.opera) return;
+  if (this.moveTimeout) this.clearMoveTimeout();
+  var _this = this;
+
+  var go = function() {
+    if (!_this.moveTimeout) return;
+    _this[isDown ? 'moveDown' : 'moveUp']();
+    _this.moveTimout = setTimeout(go, 100);
+  }
+  this.moveTimeout = setTimeout(go, 200);
+}
+
+this.moveRight = function() {
+}
+
+this.moveLeft = function() {
+}
+
+this.move = function(isDown) {
+}
+
+this.moveUp = function() {
+  return this.move(false);
+}
+
+this.moveDown = function() {
+  return this.move(true);
+}
+
+/*
+   Scrolls to the given element in the scrollable element view.
+  /
+this.scrollInElement = function(element, view) {
+  var offset, viewHeight, viewScroll, height;
+  offset = element.offsetTop;
+  height = element.offsetHeight;
+  viewHeight = view.offsetHeight;
+  viewScroll = view.scrollTop;
+
+  if (offset - viewScroll + height &gt; viewHeight) {
+    view.scrollTop = offset - viewHeight + height;
+  }
+  if (offset &lt; viewScroll) {
+    view.scrollTop = offset;
+  }
+}
+
+/*
+   Scrolls to the given element in the window.  The second argument is
+   ignored
+  /
+this.scrollInWindow = function(element, ignored) {
+  var offset, viewHeight, viewScroll, height;
+  offset = element.offsetTop;
+  height = element.offsetHeight;
+  viewHeight = window.innerHeight;
+  viewScroll = window.scrollY;
+
+  if (offset - viewScroll + height &gt; viewHeight) {
+    window.scrollTo(window.scrollX, offset - viewHeight + height);
+  }
+  if (offset &lt; viewScroll) {
+    window.scrollTo(window.scrollX, offset);
+  }
+}</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
