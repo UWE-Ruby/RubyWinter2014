@@ -1,3 +1,4 @@
+
 require "#{File.dirname(__FILE__)}/calculator"
 
 describe Calculator do

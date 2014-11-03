@@ -4,7 +4,7 @@ Given /^I start a new Tic\-Tac\-Toe game$/ do
   @game = TicTacToe.new
 end
 
-When /^I enter my name (\w+)$/ do |name|
+When /^I enter my name "(.*?)"$/ do |name|
   @game.player = name
 end
 
@@ -35,7 +35,7 @@ end
 
 Then /^the computer prints "(.*?)"$/ do |arg1|
   @game.should_receive(:puts).with(arg1)
-  @game.indicate_palyer_turn
+  @game.indicate_player_turn
 end
 
 Then /^waits for my input of "(.*?)"$/ do |arg1|

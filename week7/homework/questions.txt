@@ -3,7 +3,16 @@ Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
 1. What is method_missing and how can it be used?
+The method_missing hook is apart of BasicObject, which has no super class. So as ruby is searching for the method called, if it doesn't find it method_missing will return an exception saying "Hey I didn't find that method"(para-phrased). It can be overridden to catch these exceptions in more specific ways that relate better to your application either by intercepting all undefined methods or only some undefinied methods.
+
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+An Eigenclass is another name for a Singleton Class, which is as anonymous class that gets created when the current class of self doesn't have a defined direct superclass. Singleton methods live in the anonymous class that Ruby makes when the superclass doesn't recognize the object that 'self' is currently set to.
+
 3. When would you use DuckTypeing? How would you use it to improve your code?
+Duck Typing seems like it could be used all over the place. It can be used to improve code by making it less verbose because with duck typing you don't need to be as specific as to what class the object is apart of but more about the functionality of that object.
+
 4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+Class methods can only be called on classes and instance methods can only be called on instances of classes. Instance_eval acts as though you are working in a singleton class of self and class_eval sets things up if you are working in the body of the class definition.
+
 5. What is the difference between a singleton class and a singleton method?
+A singleton method is put in the singleton class and a singleton class is what gets created when ruby doesn't recognize what class the current self object is apart of.

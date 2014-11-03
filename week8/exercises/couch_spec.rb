@@ -5,7 +5,7 @@ describe Couch do
     @couch = Couch.new [:red, :red, :black, :black], [:grey, :grey], ['Bradley', 'Sticks']
   end
   it "should tell me the pillow colors" do
-    @couch.pillow_colors.should eq ["red", "red", "black", "black"]
+    @couch.pillows_colors.should eq ["red", "red", "black", "black"]
   end
 
   it "should tell me the cushions colors" do

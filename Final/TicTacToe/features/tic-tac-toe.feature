@@ -5,7 +5,7 @@ Feature: Tic-Tac-Toe Game
 
 Scenario: Begin Game
 	Given I start a new Tic-Tac-Toe game
-	When I enter my name Renee
+	When I enter my name "Renee"
 	Then the computer welcomes me to the game with "Welcome Renee"
 		And randomly chooses who goes first
 		And who is X and who is O
