@@ -2,8 +2,55 @@
 Please Read Chapters 23 and 24 DuckTyping and MetaProgramming
 
 Questions:
-1. What is method_missing and how can it be used?
+1. What is method_missing and how can it be used? 
+Method missing is a method that you can define as a default method to use if an 
+object uses a method that is undefined.
+
+eg:
+M08642391% irb
+>> class Jack
+>> def method_missing(name, *args)
+>> puts "Jack is awesome at #{name}: #{args[0]}"
+>> end
+>> end
+=> nil
+>> jack = Jack.new
+=> #<Jack:0x110485c18>
+>> jack.ruby("RUBY!!!")
+Jack is awesome at ruby: RUBY!!!
+=> nil
+--------------------------------------------------------------------------------
 2. What is and Eigenclass and what is it used for? Where Do Singleton methods live?
+Eigenclass is another name for the singleton class and are used for defining methods
+that are specific to a particular object.  
+
+M08642391% irb
+>> class Jack
+>> end
+=> nil
+>> jack=Jack.new
+=> #<Jack:0x10eb2e4b8>
+>> def jack.atbat
+>> puts "Jack hit a home run!!"
+>> end
+=> nil
+>> jack.atbat
+Jack hit a home run!!
+
+--------------------------------------------------------------------------------
 3. When would you use DuckTypeing? How would you use it to improve your code?
-4. What is the difference between a class method and an instance method? What is the difference between instance_eval and class_eval?
+Ducktyping is writing code that works with objects regardless of what type the
+object is.  Opting to use ducktyping can reduce the amount of code and in some
+case can improve performance to your application.
+--------------------------------------------------------------------------------
+4. What is the difference between a class method and an instance method? What is
+the difference between instance_eval and class_eval?
+the difference between a class method and an instance method is that instant
+method works on normal objacts and class methods work on class objects.
+The instance_eval can be used to perform immediate evalualtion on an object.
+The class_eval works the same way, but the method works as though it were in a
+class.
+--------------------------------------------------------------------------------
 5. What is the difference between a singleton class and a singleton method?
+A singleton method is a method defined for a single oject and a singleton class
+is a method defined for an entire class.

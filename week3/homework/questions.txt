@@ -5,11 +5,29 @@ Please Read:
  - Chapter 22 The Ruby Language: basic types (symbols), variables and constants
 
 1. What is a symbol?
+A symbol is a lot like a string in that it stores a chuck of data which can 
+be used multiple times through your program.
+
 
 2. What is the difference between a symbol and a string?
+A string and symbol both store data.  The difference is that while the data
+in a string can change, the data in a symbol will always stay the same unless
+it is overwritten.  This is referred to as being immutable.  However, a string
+can be frozen giving it the characteristics of a symbol.  The advantage to using 
+a symbol over a frozen string is in the way that the symbol is stored in memory
+allowing for better program performance by using strings.
 
-3. What is a block and how do I call a block?
+3. What is a block and how do I call a block?  Blocks are chunks of code that 
+are loaded while the ruby source is being executed or after the ruby code has 
+executed.  The BEGIN blocks are exectued while the code is getting loaded and is
+started wiht the BEGIN delclaration.  The END blocks are executed after the program
+has run and is started with the END declaration.  There can be multiple BEGIN
+and END blocks in a program. 
 
-4. How do I pass a block to a method? What is the method signature?
+4. How do I pass a block to a method? What is the method signature? A block is
+passed to a method by surrounding the block with curly braces after calling the
+method.
 
-5. Where would you use regular expressions?
+5. Where would you use regular expressions? Regular expressions are used for
+pattern matching.    There are many expression patterns associated with expressions
+which gives a wide variety of matching and manipulating data.
