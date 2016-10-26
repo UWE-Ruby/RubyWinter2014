@@ -2,13 +2,26 @@ Please Read:
 Chapter 10 Basic Input and Output
 The Rake Gem: http://rake.rubyforge.org/
 
-1. How does Ruby read files?
+1. How does Ruby read files? Using file i/o method like File.read, File.open
 
 2. How would you output "Hello World!" to a file called my_output.txt?
+fname = "my_output.txt"
+somefile = File.open(fname, "w")
+somefile.puts "Hello file!"
+somefile.close
 
 3. What is the Directory class and what is it used for?
+The Directory (Dir) class main purpose is to offer facilities for quering, iterating and filtering over filesystem directories entries. It also offers some basic methods for creating and removing directories.
 
-4. What is an IO object?
+4. What is an IO object? Ruby defines a single base class, IO, to handle input and output. This base class is subclassed by classes File and BasicSocket to provide more specialized behavior, but the principles are the same throughout. An IO object is a bidirectional channel between a Ruby program and some external resource. http://phrogz.net/programmingruby/tut_io.html	
 
 5. What is rake and what is it used for? What is a rake task?
+Rake has the following features:
+
+Rakefiles (rake's version of Makefiles) are completely defined in standard Ruby syntax. No XML files to edit. No quirky Makefile syntax to worry about (is that a tab or a space?)
+Users can specify tasks with prerequisites.
+Rake supports rule patterns to synthesize implicit tasks.
+Flexible FileLists that act like arrays but know about manipulating file names and paths.
+A library of prepackaged tasks to make building rakefiles easier. For example, tasks for building tarballs and publishing to FTP or SSH sites. (Formerly tasks for building RDoc and Gems were included in rake but they're now available in RDoc and RubyGems respectively.)
+Supports parallel execution of tasks.
 
