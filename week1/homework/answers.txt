@@ -1,0 +1,16 @@
+Please read:
+Chapter 3 Classes, Objects, and Variables
+p.86-90 Strings (Strings section in Chapter 6 Standard Types)
+ 
+1. What is an object? - An object is an instance of a class.  For example: “Back in Black”  could be an object of the class “albums”
+ 
+2. What is a variable?  A variable is a reference to an object and holds values.
+ 
+3. What is the difference between an object and a class?  An object is an individual instance of a class.  Objects are the data members of classes.  Objects are also referred to as class instances.
+ 
+4. What is a String? Strings are sequence of characters stored in a variable.  Strings can be printable characters or binary data.
+ 
+5. What are three messages that I can send to a string object? Hint: think methods:  split, chomp and swapcase.
+ 
+6. What are two ways of defining a String literal? Bonus: What is the difference between them?
+You can define them using single or double quotes.  Double quotes gives you a lot more options for using escape sequences

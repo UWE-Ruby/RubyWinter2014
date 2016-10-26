@@ -2,8 +2,9 @@
 require "./simon_says.rb"
 
 describe SimonSays do
-  include SimonSays # Hint: Inclusion is different than SimonSays.new (read about modules)
-  
+  include SimonSays
+
+#  include SimonSays # Hint: Inclusion is different than SimonSays.new (read about modules)
   # Hint: We are just calling methods, we are not passing a message to a SimonSays object.
   it "should echo hello" do
     echo("hello").should == "hello"
