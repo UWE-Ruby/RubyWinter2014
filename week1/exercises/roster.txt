@@ -1,4 +1,17 @@
 #, name, email, github, twitter, hip chat 
+<<<<<<< HEAD
+0, 
+1, 
+2, 
+3, 
+4, 
+5, Dan Williams, dwilliams@solutionsiq.com, github, hip chat
+6, 
+7, 
+8, 
+9, 
+10, 
+=======
 0, Renée, renee@nird.us, reneedv, @nirdllc, Renee
 1, Andrew Haydock, ahaydock@gmail.com, ahaydock, N/A, Andrew
 2, Armie, armiemargaretlee@yahoo.com, aml888, lilac888, Armie
@@ -10,6 +23,7 @@
 8, jack,jack.howl@gmail.com,jackhowl,,jackhowl 
 9, John Wade, JohnRobertWade@gmail.com, THEJRRR, @THEJRRR, John Wade
 10, Kevin LaFave, kjlafave@gmail.com, kjlafave, none, @Kevin 
+>>>>>>> 94dfcf66c992a45f574f1894e5808847d0b6f32e
 11, 
 12, 
 13, Matt Spah, spahmatthew@gmail.com, MattsFace, @MatthewsFace, Matthew Spah
@@ -19,4 +33,9 @@
 17, Rukia,	rukk86@gmail.com, 	rukk86, 	no twitter, 	Rukia
 18, 
 19, 
+<<<<<<< HEAD
+20
+21
+=======
 20, Zack Walkingstick, zackwalkingstick@gmail.com, zackwalkingstick, no twitter, @zack
+>>>>>>> 94dfcf66c992a45f574f1894e5808847d0b6f32e

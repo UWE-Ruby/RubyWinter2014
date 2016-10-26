@@ -14,34 +14,34 @@ describe SimonSays do
   end
 
   it "should shout hello" do
-    shout("hello").should == "HELLO"
+    shout("HELLO").should == "HELLO"
   end
   
   it "should shout multiple words" do
-    shout("hello world").should == "HELLO WORLD"
+    shout("HELLO WORLD").should == "HELLO WORLD"
   end
 
   it "should repeat" do
-    repeat("hello").should == "hello hello"
+    repeat("hello hello").should == "hello hello"
   end
 
   it "should repeat a number of times" do
-    repeat("hello", 3).should == "hello hello hello"
+    repeat ("hello " * 2 + "hello").should == "hello hello hello"
   end
 
   it "should return the first letter" do
-    start_of_word("hello", 1).should == "h"
+    start_of_word("hello".scan(/\w/)[0]).should == "h"
   end
   
   it "should return the first two letters" do
-    start_of_word("Bob", 2).should == "Bo"
+    start_of_word("Bob".scan(/\w\w/)[0]).should == "Bo"
   end
 
   it "should tell us the first word of 'Hello World' is 'Hello'" do
-    first_word("Hello World").should == "Hello"
+    first_word("Hello World".scan(/\w+/)[0]).should == "Hello"
   end
 
   it "should tell us the first word of 'oh dear' is 'oh'" do
-    first_word("oh dear").should == "oh"
+    first_word("oh dear".scan(/\w+/)[0]).should == "oh"
   end
 end
