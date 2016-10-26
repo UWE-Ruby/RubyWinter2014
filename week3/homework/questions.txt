@@ -6,10 +6,20 @@ Please Read:
 
 1. What is a symbol?
 
+--> A symbol is an identifier consisting of a string of characters prefaced by a colon.  
+
 2. What is the difference between a symbol and a string?
+
+--> For a given identifier, there can be only one symbol in existence.  There could be multiple string objects with identical identifieres in existence at any given time.
 
 3. What is a block and how do I call a block?
 
+--> A block is code that is between either curly braces ("{" and "}") or between "do" and "end".  It can be called from a method via the "yield" command.
+
 4. How do I pass a block to a method? What is the method signature?
 
+--> You pass a block to a method by either defining it as a Proc object and passing it to a method explicitly, or by attaching it to a method by enclosing it in either curly braces or a do/end pair and passing it in as the last parameter to that method.
+
 5. Where would you use regular expressions?
+
+--> Anywhere we need to match or substitute characters in a string object.

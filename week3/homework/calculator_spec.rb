@@ -1,4 +1,4 @@
-require "#{File.dirname(__FILE__)}/calculator"
+require_relative "calculator.rb"
 
 describe Calculator do
   
@@ -29,11 +29,24 @@ describe Calculator do
   describe "#multiply" do
   	it "multiplies two numbers" do
 		@calculator.multiply(2,2).should eq 4
-	end
+	  end
 
-  	it "multiplies an array of numbers" do
+    it "multiplies many numbers" do
+      @calculator.multiply(2,3,4).should eq 24
+    end
+
+  	it "multiplies an array of two numbers" do
 		@calculator.multiply([2,2]).should eq 4
   	end
+
+    it "multiplies an empty array of numbers" do
+      @calculator.multiply([]).should eq 0
+    end
+
+    it "multiplies an array of many numbers" do
+      @calculator.multiply([2,3,4]).should eq 24
+    end
+
   end
   
   it "raises one number to the power of another number" do
