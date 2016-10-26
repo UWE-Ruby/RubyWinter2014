@@ -12,14 +12,23 @@ describe String do
 		before(:all) do
 			@my_string = "Renée is a fun teacher. Ruby is a really cool programming language"
 		end
-		it "should be able to count the charaters"
+    it "should be able to deine empty string" do
+      @my_string.should_not be_empty
+    end
+		it "should be able to count the charaters" do
+      @my_string.should have(@my_string.length).characters
+    end
+      # ruby count string characters
 		it "should be able to split on the . charater" do
-			pending
-			result = #do something with @my_string here
-			result.should have(2).items	
+      # ruby split code
+      #
+      #result = @my_string.split(.)
+			#pending
+			#result.should have(2).items	
 		end
 		it "should be able to give the encoding of the string" do
-			pending 'helpful hint: should eq (Encoding.find("UTF-8"))'
+#      # encoding string
+#      @my_string.encoding.should eq (Encoding.find("("UTF-8").valid_encoding?
 		end
 	end
 end
