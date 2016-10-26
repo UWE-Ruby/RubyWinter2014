@@ -1,4 +1,4 @@
-require "#{File.dirname(__FILE__)}/worker"
+require "./worker.rb"
 
 describe Worker do
 

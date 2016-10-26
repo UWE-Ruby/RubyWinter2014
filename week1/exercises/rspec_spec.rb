@@ -73,23 +73,24 @@ describe "The Rspec ruby gem" do
   end
 
   context "Examples for in-class test exploration" do
-    it "should know order of operations" do
-      # Fix the Failing Test
-      # Order of Operations is Please Excuse My Dear Aunt Sally:
-      # Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
-      ((((1+2)-5)*6)/2).should eq -6
-    end
-    it "should count the characters in your name" do
-      "Tom".should have(3).characters
-    end
-    
-    it "should check basic math" do
-      (40+2).should eq 42
-    end
 
-    it "should check basic spelling" do
-      "Field".should include('ie')
-    end
+  	it "should know order of operations" do
+  		# Fix the Failing Test
+  		# Order of Operations is Please Excuse My Dear Aunt Sally:
+  		# Parentheses, Exponents, Multiplication, Division, Addition, Subtraction
+  		((1+2-5)*6/2).should eq -6
+  	end
+  	it "should count the characters in your name" do
+          "Neil".should have(4).characters
+        end
+  	
+  	it "should check basic math" do
+          (2+2).should eq 4
+        end
+
+  	it "should check basic spelling" do
+          "Neil".should include("ei")
+        end
 
   end
 
