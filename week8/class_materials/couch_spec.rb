@@ -16,9 +16,8 @@ describe Couch do
     @couch.how_many_dogs?.should eq 2
   end
 
-  it "should respond to something silly with 'hi'" do
-    pending
-    @couch.happy.should eq 'hi'
+  it "should respond to something silly with 'what you called'" do
+    @couch.somthing_silly.should eq 'you called something_silly'
   end
 
   it "should respond to something silly" do
